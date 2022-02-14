@@ -1,0 +1,9 @@
+t = t + 1
+nearby[0] = m
+nearby[1] = n
+nearby = host
+if(host == antibody && m == 1) then shoot mn
+else if(m < 3 || n < 3){
+if m>n then move mn
+}
+else if( move random % 8
