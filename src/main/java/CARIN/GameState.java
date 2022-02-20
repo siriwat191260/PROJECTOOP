@@ -2,8 +2,16 @@ package CARIN;
 
 import CARIN.Model.Body;
 import CARIN.Model.BodyImp;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@SpringBootApplication
 public class GameState {
+    public static void main(String[] args) {
+        SpringApplication.run( GameState.class, args);
+
+    }
+
 //    private static String state;
 //    private static int time;
 //    Body body;
