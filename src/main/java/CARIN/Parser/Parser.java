@@ -3,23 +3,28 @@ package CARIN.Parser;
 import CARIN.Model.Host;
 import CARIN.Model.HostImp;
 
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+
 public class Parser {
 
     private Tokenizer tkz;
-    private Expr AST;
     private Host host;
+    private HashMap<String, Expr> idenKeep;
+    private List<Program> statement;
 
     public Parser(String src, Host host){
         this.tkz = new Tokenizer(src);
-        AST = parse();
         this.host = host;
+        idenKeep = host.getIdentifier();
+        this.statement = new LinkedList<>();
+        parse();
     }
 
-    public Expr parse() throws SyntaxError{
-        Expr result = parse();
-        if(tkz.peek().equals(""))
-            return result;
-        else
+    public void parse() throws SyntaxError{
+        parseProgram();
+        if(!tkz.peek().equals(""))
             throw new SyntaxError();
     }
 
@@ -31,21 +36,29 @@ public class Parser {
             return false;
         }
     }
+    public void parseProgram() {
+        while(!tkz.peek(""))
+            this.statement.add(parseStatement());
+    }
     // Statement → Command | BlockStatement | IfStatement | WhileStatement
     public Program parseStatement() throws SyntaxError{
-        Program s = parseCommand();
-            if(tkz.peek("if")) s = parseIf();
-            else if(tkz.peek("while")) s = parseWhile();
-            else if(tkz.peek("{")) s = parseBlock();
+        Program s;
+            if (tkz.peek("if")) s = parseIf();
+            else if (tkz.peek("while")) s = parseWhile();
+            else if (tkz.peek("{")) s = parseBlock();
+            else s = parseCommand();
         return s;
     }
-
     // BlockStatement → { Statement* }
     public Program parseBlock() throws SyntaxError{
+        List<Program> block = new LinkedList<>();
         tkz.consume("{");
-        Program statement = parseStatement();
+        while (!tkz.peek("}")) {
+            block.add(parseStatement());
+            /*block to be fixed*/
+        }
         tkz.consume("}");
-        return statement;
+        return new Statement("block", block);
     }
     // IfStatement → if ( Expression ) then Statement else Statement
     public Program parseIf() throws SyntaxError{
@@ -72,12 +85,13 @@ public class Parser {
     // AssignmentStatement → <identifier> = Expression
     public Program parseCommand() throws SyntaxError{
         Program s;
-        String identifier = null;
+        String identifier;
         if(tkz.peek("move") || tkz.peek("shoot")){
             s = parseAction();
         }else {
             identifier = tkz.consume();
-            s = new Command(identifier, parseExpression());
+            tkz.consume("=");
+            s = new Command(identifier, parseExpression(), idenKeep);
         }
         return s;
     }
@@ -99,8 +113,7 @@ public class Parser {
     }
     // Direction → left | right | up | down | upleft | upright | downleft | downright
     public String parseDirection() throws SyntaxError{
-        String dir = tkz.consume();
-        return dir;
+        return tkz.consume();
     }
     // Expression → Expression + Term | Expression - Term | Term
     public Expr parseExpression() throws SyntaxError{
@@ -138,23 +151,27 @@ public class Parser {
     public Expr parseFactor() throws SyntaxError{
         Expr e = parsePower();
         while(tkz.peek("^")){
+                tkz.consume("^");
                 e = new Arithmetic(e,"^",parsePower());
         }
         return  e;
     }
     // Power → <number> | <identifier> | ( Expression ) | SensorExpression
     public Expr parsePower() throws SyntaxError{
-        Expr e = parseSensor();
-        while(tkz.peek("(") || isNumber(tkz.peek())) {
+        Expr e;
+
             if (isNumber(tkz.peek())) {
                 return new Number(Integer.parseInt(tkz.consume()));
-            } else {
-                tkz.consume("(");
+            } else if(tkz.peek("(") ) {
+                tkz.consume();
                 e = parseExpression();
                 tkz.consume(")");
-                return e;
-            }
-        }
+            } else if(tkz.peek("antibody") || tkz.peek("virus")
+            || tkz.peek("nearby")) {
+                e = parseSensor();
+            }else
+                e = new Identifier(tkz.consume(), idenKeep);
+
         return e;
     }
     // SensorExpression → virus | antibody | nearby Direction
@@ -172,14 +189,19 @@ public class Parser {
         }else throw new SyntaxError(tkz.consume());
     }
 
-    public int eval(){
-        return AST.eval();
+    public void eval(){
+        for(Program each:statement){
+            each.eval();
+        }
     }
 
     public static void main(String[] args) {
-        String gene = "virusLoc % 10 - 7";
-        Parser parser = new Parser(gene, new HostImp());
-        System.out.println(parser.parseExpression());
+//         example genetic code in spec doc
+        String gene = "virusLoc = 0 " +
+                "if (random / 10 - 2^2) " +
+                "then move up else move down";
+//        Parser parser = new Parser(gene, new HostImp());
+//        parser.eval();
     }
 
 }

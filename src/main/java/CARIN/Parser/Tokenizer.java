@@ -19,10 +19,8 @@ public class Tokenizer {
     }
 
     private boolean isOperator(char ch) {
-        if (ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '%' || ch == '(' || ch == ')'
-                || ch == '{'|| ch == '}' || ch == '^')
-            return true;
-        return false;
+        return ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '%' || ch == '(' || ch == ')'
+                || ch == '{' || ch == '}' || ch == '^' || ch == '=';
     }
 
     private boolean isDigit(char ch) {
@@ -85,7 +83,7 @@ public class Tokenizer {
         if (peek(s))
             consume();
         else
-            throw new SyntaxError();
+            throw new SyntaxError(peek());
     }
 
 }

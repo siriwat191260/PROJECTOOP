@@ -1,7 +1,7 @@
 package CARIN.Parser;
 
 public class Number implements Expr{
-    int val;
+    private final int val;
 
     public Number(int val) {
         this.val = val;
