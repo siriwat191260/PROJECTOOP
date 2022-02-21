@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Document</title>
+</head>
+
+<style>
+
+    .column {
+      float: left;
+      width: 33.33%;
+      padding: 5px;
+    }
+    
+    /* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
+    .flex-gap {
+  display: inline-flex;
+  flex-wrap: wrap;
+    }
+
+.flex-gap > div {
+  margin: 10px;
+}
+
+.float-right-top{
+	    float: right;
+        position: absolute;
+        right:180px;
+        top : 20px;
+        }
+</style>
+
+
+<body>
+    <div class="bg-white">
+        
+        <div class=" bg-center bg-no-repeat  w-full h-screen ;" style="background-image: url(image/body.png)" >
+            
+                <div class="flex-gap float-right-top ">
+                <div class="mb-4 space-y-4"> 
+                    <img src="image/anti1.png"  alt="antibody1" style="width:200px;height:150px;">
+                    <form action="/action_page.php">
+                        
+                        <input type="file" id="myFileanti1" name="filename">
+                        
+                      </form>
+                </div> 
+
+                <div class="mb-4 space-y-4">
+                  <img src="image/anti2.png" alt="antibody2" style="width:200px;height:150px;">
+                  <form action="/action_page.php">
+                    
+                        <input type="file" id="myFileanti2" name="filename">
+                    
+                  </form>
+                </div>
+
+                <div class="mb-4 space-y-4"> 
+                  <img src="image/anti3.png" alt="antibody3" style="width:200px;height:150px;">
+                  <form action="/action_page.php">
+                   
+                        <input type="file" id="myFileanti3" name="filename">
+                 
+                    
+                  </form>
+               </div>
+                </div>
+            </div>
+
+        </div>
+    
+    </div>
+
+    
+</body>
+</html>
