@@ -15,18 +15,10 @@ public class Virus extends HostImp {
     public int getType(){
         return 1;
     }
+
     @Override
     public void isDeath(Host antibody){
         setStatus("death", antibody);
     }
 
-    @Override
-    public void update() {
-
-    }
-
-    @Override
-    public void render() {
-
-    }
 }
