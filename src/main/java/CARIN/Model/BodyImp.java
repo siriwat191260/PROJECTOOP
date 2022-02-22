@@ -1,8 +1,6 @@
 package CARIN.Model;
 
 import CARIN.Game;
-import CARIN.State.GameOver;
-import CARIN.State.State;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -10,7 +8,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class BodyImp implements Body{
     List<Host>organismInOrder = new CopyOnWriteArrayList<>();
     int[][] cellLoc;
-    TimeCountDown countDown = new TimeCountDown(20);
     int antiCredit;
     int placeCost;
     int moveCost;
@@ -275,25 +272,7 @@ public class BodyImp implements Body{
             if (virusNum > antibodyNum) System.out.println("Viruses win");
             else System.out.println("Antibodies win!");
             gameOver = true;
-            GameOver over = new GameOver(game);
-            State.setState(over);
         }
-    }
-
-    @Override
-    public void update() {
-        int t = 0;
-        while(virusNum!=0 && antibodyNum!=0 && t<10) {
-            run();
-            t++;
-        }
-        System.out.println("time used = "+t);
-        State.setState(new GameOver(game));
-    }
-
-    @Override
-    public void render() {
-            // render cells
     }
 
     public static void main(String[] args){

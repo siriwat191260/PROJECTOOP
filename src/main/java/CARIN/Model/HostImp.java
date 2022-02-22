@@ -6,7 +6,7 @@ import CARIN.Parser.Parser;
 
 import java.util.*;
 
-public class HostImp extends Entity implements Host{
+public class HostImp implements Host{
 
     int health, attackDamage, gain, moveCost, m, n;
     int[] location;
@@ -344,15 +344,5 @@ public class HostImp extends Entity implements Host{
         }
         System.out.println(ans);
         return ans;
-    }
-
-    @Override
-    public void update() {
-
-    }
-
-    @Override
-    public void render() {
-
     }
 }
