@@ -1,8 +1,8 @@
 package CARIN.Model;
 
-import CARIN.Game;
-import CARIN.State.GameOver;
-import CARIN.State.State;
+import CARIN.Config.ConfigManager;
+import CARIN.Game.Game;
+import CARIN.GeneticCode.GeneticManager;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -10,7 +10,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class BodyImp implements Body{
     List<Host>organismInOrder = new CopyOnWriteArrayList<>();
     int[][] cellLoc;
-    TimeCountDown countDown = new TimeCountDown(20);
     int antiCredit;
     int placeCost;
     int moveCost;
@@ -26,38 +25,24 @@ public class BodyImp implements Body{
     Game game;
     // input from config file
     // assume m and n is <=10 first
-    public BodyImp(
-            Game game,
-            List<String> geneticCodeAnti,
-            List<String> geneticCodeVirus,
-            int m, int n,
-            int antiCredit,
-            int placeCost,
-            int moveCost,
-            double virusSpawn,
-            int antiHealth,
-            int antiAttack,
-            int antiGain,
-            int virusHealth,
-            int virusAttack,
-            int virusGain) {
+    public BodyImp(Game game, GeneticManager gene, ConfigManager config) {
         this.game = game;
+        this.geneticCodeAnti  = gene.getAntiGene();
+        this.geneticCodeVirus = gene.getVirusGene();
         cellLoc = new int[m+1][n+1];
-        this.m = m; this.n =n;
+        this.m = config.m; this.n = config.n;
         buildField();
-        this.antiCredit = antiCredit;
-        this.virusSpawn = virusSpawn;
-        this.placeCost = placeCost;
-        this.moveCost = moveCost;
-        this.antiHealth = antiHealth;
-        this.antiAttack = antiAttack;
-        this.antiGain = antiGain;
-        this.virusHealth = virusHealth;
-        this.virusAttack = virusAttack;
-        this.virusGain = virusGain;
+        this.antiCredit  = config.antiCredit;
+        this.virusSpawn  = config.virusSpawn;
+        this.placeCost   = config.antiCost;
+        this.moveCost    = config.antiMoveCost;
+        this.antiHealth  = config.antibodyHealth;
+        this.antiAttack  = config.antiAttack;
+        this.antiGain    = config.antiKillGain;
+        this.virusHealth = config.virusHealth;
+        this.virusAttack = config.virusAttack;
+        this.virusGain   = config.virusGain;
         this.order = 1;
-        this.geneticCodeAnti = geneticCodeAnti;
-        this.geneticCodeVirus = geneticCodeVirus;
     }
     // create cell field of array which contain row m and column n
     private void buildField(){
@@ -275,25 +260,7 @@ public class BodyImp implements Body{
             if (virusNum > antibodyNum) System.out.println("Viruses win");
             else System.out.println("Antibodies win!");
             gameOver = true;
-            GameOver over = new GameOver(game);
-            State.setState(over);
         }
-    }
-
-    @Override
-    public void update() {
-        int t = 0;
-        while(virusNum!=0 && antibodyNum!=0 && t<10) {
-            run();
-            t++;
-        }
-        System.out.println("time used = "+t);
-        State.setState(new GameOver(game));
-    }
-
-    @Override
-    public void render() {
-            // render cells
     }
 
     public static void main(String[] args){

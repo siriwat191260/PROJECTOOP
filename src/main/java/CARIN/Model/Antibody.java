@@ -23,14 +23,4 @@ public class Antibody extends HostImp{
         setStatus("death", virus);
     }
 
-    @Override
-    public void update() {
-
-    }
-
-    @Override
-    public void render() {
-
-    }
-
 }

@@ -15,6 +15,4 @@ public interface Body {
     void addvirus(int[] location);
     Host findOrganByLocation(int[] location);
     boolean checkEmptyCell(int[] location);
-    void update();
-    void render();
 }

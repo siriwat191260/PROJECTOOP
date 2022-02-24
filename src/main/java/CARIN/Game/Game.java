@@ -1,37 +1,27 @@
-package CARIN;
+package CARIN.Game;
 
-import CARIN.State.GameOver;
-import CARIN.State.GameState;
-import CARIN.State.State;
+import CARIN.Model.Body;
+
+import java.io.IOException;
 
 public class Game implements Runnable{
     private Thread thread;
     public boolean running = false;
-    public State gameState;
-    public State menuState;
-    public State gameOver;
+    private BodyManager bodyManager;
+    private Body body;
 
-    public Game(){
+    public Game() throws IOException {
+        bodyManager = new BodyManager(this);
+        body = bodyManager.getBody();
+    }
 
-    }
-    private void init(){
-        // initialization
-        gameState = new GameState(this);
-        gameOver = new GameOver(this);
-        State.setState(gameState);
-    }
     private void update(){
         // run evaluation
-        if(State.getState() != null)
-            State.getState().update();
+
     }
-    private void render(){
-        if(State.getState() != null)
-            State.getState().render();
-    }
+
     @Override
     public void run() {
-        init();
 
         int fps = 60;
         double timePerTick = 1000000000 / fps;
@@ -49,7 +39,6 @@ public class Game implements Runnable{
 
             if(delta >= 1){
                 update();
-                render();
                 ticks++;
                 delta--;
             }
