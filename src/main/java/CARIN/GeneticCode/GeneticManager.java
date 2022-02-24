@@ -21,19 +21,17 @@ public class GeneticManager {
             virusGene.add(content);
         }
     }
-    public String getAntiGene(int index){
-        System.out.println(antiGene.get(index));
-        return antiGene.get(index);
+    public List<String> getAntiGene(){
+        return antiGene;
     }
-    public String getVirusGene(int index){
-        System.out.println(virusGene.get(index));
-        return virusGene.get(index);
+    public List<String> getVirusGene(){
+        return virusGene;
     }
 
     public static void main(String[] args) throws IOException {
         GeneticRef ref = new GeneticRef();
         GeneticManager read = new GeneticManager(ref.getAntiGene() , ref.getVirusGene() );
-        read.getAntiGene(0);
+        System.out.println(read.getAntiGene().get(0));
     }
 }
 
