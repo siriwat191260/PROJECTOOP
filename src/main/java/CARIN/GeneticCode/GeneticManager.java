@@ -11,12 +11,13 @@ public class GeneticManager {
     List<String> antiGene = new LinkedList<>();
     List<String> virusGene = new LinkedList<>();
 
-    public GeneticManager(String[] pathAnti, String[] pathVirus ) throws IOException {
-        for (String s : pathAnti) {
+    public GeneticManager() throws IOException {
+        GeneticRef ref = new GeneticRef();
+        for (String s : ref.getAntiGene()) {
             String content = Files.readString(Path.of(s), StandardCharsets.US_ASCII);
             antiGene.add(content);
         }
-        for (String virus : pathVirus) {
+        for (String virus : ref.getVirusGene()) {
             String content = Files.readString(Path.of(virus), StandardCharsets.US_ASCII);
             virusGene.add(content);
         }
@@ -29,8 +30,7 @@ public class GeneticManager {
     }
 
     public static void main(String[] args) throws IOException {
-        GeneticRef ref = new GeneticRef();
-        GeneticManager read = new GeneticManager(ref.getAntiGene() , ref.getVirusGene() );
+        GeneticManager read = new GeneticManager();
         System.out.println(read.getAntiGene().get(0));
     }
 }

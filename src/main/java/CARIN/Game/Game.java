@@ -1,15 +1,20 @@
 package CARIN.Game;
 
+import CARIN.Model.Body;
+
+import java.io.IOException;
+
 public class Game implements Runnable{
     private Thread thread;
     public boolean running = false;
+    private BodyManager bodyManager;
+    private Body body;
 
-    public Game(){
+    public Game() throws IOException {
+        bodyManager = new BodyManager(this);
+        body = bodyManager.getBody();
+    }
 
-    }
-    private void init(){
-        // initialization
-    }
     private void update(){
         // run evaluation
 
@@ -17,7 +22,6 @@ public class Game implements Runnable{
 
     @Override
     public void run() {
-        init();
 
         int fps = 60;
         double timePerTick = 1000000000 / fps;
