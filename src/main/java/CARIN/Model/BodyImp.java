@@ -8,21 +8,21 @@ import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class BodyImp implements Body{
-    List<Host>organismInOrder = new CopyOnWriteArrayList<>();
-    int[][] cellLoc;
-    int antiCredit;
-    int placeCost;
-    int moveCost;
-    double virusSpawn;
-    int antiHealth, antiAttack, antiGain;
-    int virusHealth, virusAttack, virusGain;
-    int m, n;
-    int order;
+    private List<Host>organismInOrder = new CopyOnWriteArrayList<>();
+    private int[][] cellLoc;
+    public int antiCredit;
+    private final int placeCost;
+    private final int moveCost;
+    private final double virusSpawn;
+    private final int antiHealth, antiAttack, antiGain;
+    private final int virusHealth, virusAttack, virusGain;
+    private int m, n;
+    private int order;
     private int virusNum, antibodyNum;
-    List<String> geneticCodeAnti;
-    List<String> geneticCodeVirus;
-    boolean gameOver = false;
-    Game game;
+    private final List<String> geneticCodeAnti;
+    private final List<String> geneticCodeVirus;
+    private boolean gameOver = false;
+    private final Game game;
     // input from config file
     // assume m and n is <=10 first
     public BodyImp(Game game, GeneticManager gene, ConfigManager config) {
