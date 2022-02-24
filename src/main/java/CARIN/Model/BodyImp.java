@@ -1,6 +1,6 @@
 package CARIN.Model;
 
-import CARIN.Game;
+import CARIN.Game.Game;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;

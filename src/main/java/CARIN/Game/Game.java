@@ -1,4 +1,4 @@
-package CARIN;
+package CARIN.Game;
 
 public class Game implements Runnable{
     private Thread thread;
