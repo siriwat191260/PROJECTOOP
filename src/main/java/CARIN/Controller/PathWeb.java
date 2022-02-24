@@ -9,22 +9,22 @@ public class PathWeb {
     
     @RequestMapping(value = "/")
     public String start_page() {
-        return "start.html";
+        return "start";
     }
     
     @RequestMapping(value = "/uploadfile")
     public String upload_page() {
-        return "uploadfile.html";
+        return "uploadfile";
     }
 
     @RequestMapping(value = "/howtoplay")
     public String howtoplay_page() {
-        return "howtoplay.html";
+        return "howtoplay";
     }
 
     @RequestMapping(value = "/game")
     public String game_page() {
-        return "game.html";
+        return "game";
     }
 
     @RequestMapping(value = "/pause")
