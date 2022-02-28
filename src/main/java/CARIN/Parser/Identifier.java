@@ -4,16 +4,16 @@ import java.util.HashMap;
 
 public class Identifier implements Expr{
     private final String identifier;
-    private final HashMap<String,Expr> idenKeep;
+    private final HashMap<String,Integer> idKeep;
 
-    public Identifier(String identifier, HashMap<String,Expr> idenKeep){
+    public Identifier(String identifier, HashMap<String,Integer> idKeep){
         this.identifier = identifier;
-        this.idenKeep = idenKeep;
+        this.idKeep = idKeep;
     }
     @Override
     public int eval() throws EvalError{
         try {
-            return idenKeep.get(identifier).eval();
+            return idKeep.get(identifier);
         }catch (EvalError e) {
         throw new EvalError("Cannot evaluate "+identifier);
     }

@@ -1,7 +1,5 @@
 package CARIN.Model;
 
-import CARIN.Parser.Expr;
-import CARIN.Parser.Number;
 import CARIN.Parser.Parser;
 
 import java.util.*;
@@ -11,7 +9,7 @@ public class HostImp implements Host{
     int health, attackDamage, gain, moveCost, m, n;
     int[] location;
     String geneticCode;
-    HashMap<String, Expr> identifier;
+    HashMap<String, Integer> identifier;
     Parser parser;
     Body body;
     String status;
@@ -25,7 +23,7 @@ public class HostImp implements Host{
         this.m = this.body.getMN()[0];
         this.n = this.body.getMN()[1];
         this.identifier = new HashMap<>();
-        this.identifier.put("random", new Number((int)(Math.random()*99)));
+        this.identifier.put("random", (int)(Math.random()*99));
         this.parser = new Parser(geneticCode, this);
         this.status = "normal";
     }
@@ -137,7 +135,7 @@ public class HostImp implements Host{
     }
 
     @Override
-    public HashMap<String, Expr> getIdentifier() {
+    public HashMap<String,Integer> getIdentifier() {
         return identifier;
     }
 

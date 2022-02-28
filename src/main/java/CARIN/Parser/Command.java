@@ -11,7 +11,7 @@ public class Command implements Program {
     private final String direction;
     private final Expr expression;
     private final Host host;
-    private final Map<String, Expr> identifier;
+    private final Map<String, Integer> identifier;
 
     public Command(String type, String direction, Host host){
         this.type = type;
@@ -20,7 +20,7 @@ public class Command implements Program {
         expression = null;
         identifier = null;
     }
-    public Command(String type, Expr expr, HashMap<String, Expr> identifier){
+    public Command(String type, Expr expr, HashMap<String, Integer> identifier){
         this.type = type;
         this.expression = expr;
         this.identifier = identifier;
@@ -42,7 +42,8 @@ public class Command implements Program {
             } else {
                 // assignment statement
                 assert identifier != null;
-                identifier.put(type, expression);
+                assert expression != null;
+                identifier.put(type, expression.eval());
             }
         }catch (EvalError e) {
             throw new EvalError("Cannot evaluate "+type);

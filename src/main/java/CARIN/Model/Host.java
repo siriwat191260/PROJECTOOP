@@ -1,7 +1,5 @@
 package CARIN.Model;
 
-import CARIN.Parser.Expr;
-
 import java.util.HashMap;
 
 public interface Host {
@@ -16,7 +14,7 @@ public interface Host {
     int getType();
     void isDeath(Host host);
     void eval();
-    HashMap<String, Expr> getIdentifier();
+    HashMap<String, Integer> getIdentifier();
     String getGeneticCode();
     void setStatus(String s, Host host);
     String getStatus();
