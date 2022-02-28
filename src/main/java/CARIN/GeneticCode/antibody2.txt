@@ -1,33 +1,82 @@
-virusLoc = antibody
-if (virusLoc / 10 - 1)
-then
-  if (anLoc % 10 - 7) then move upleft
-  else if (virusLoc % 10 - 6) then move left
-  else if (virusLoc % 10 - 5) then move downleft
-  else if (virusLoc % 10 - 4) then move down
-  else if (virusLoc % 10 - 3) then move downright
-  else if (virusLoc % 10 - 2) then move right
-  else if (virusLoc % 10 - 1) then move upright
-  else move up
-else if (virusLoc)
-then
-  if (virusLoc % 10 - 7) then shoot upleft
-  else if (virusLoc % 10 - 6) then shoot left
-  else if (virusLoc % 10 - 5) then shoot downleft
-  else if (virusLoc % 10 - 4) then shoot down
-  else if (virusLoc % 10 - 3) then shoot downright
-  else if (virusLoc % 10 - 2) then shoot right
-  else if (virusLoc % 10 - 1) then shoot upright
-  else shoot up
-else
+nUpLeft = nearby upleft
+nLeft = nearby left
+nDownLeft = nearby downleft
+nDown = nearby down
+nDownRight = nearby downright
+nRight = nearby right
+nUpRight = nearby upright
+nUp = nearby up
+if ((nUpLeft % 10 % 2) - (nUpLeft / 10 - 1)^2) then shoot upleft
+else if ((nLeft % 10 % 2) - (nLeft / 10 - 1)^2) then shoot left
+else if ((nDownLeft % 10 % 2) - (nDownLeft / 10 - 1)^2) then shoot downleft
+else if ((nDown % 10 % 2) - (nDown / 10 - 1)^2) then shoot down
+else if ((nDownRight % 10 % 2) - (nDownRight / 10 - 1)^2) then shoot downright
+else if ((nRight % 10 % 2) - (nRight / 10 - 1)^2) then shoot right
+else if ((nUpRight % 10 % 2) - (nUpRight / 10 - 1)^2) then shoot upright
+else if ((nUp % 10 % 2) - (nUp / 10 - 1)^2) then shoot up
+else {
+  if ((nUpLeft / 10 % 2) - (nUpLeft % 10 - 1)^2) then move upleft
+  else { if(nUpLeft % 10 % 2) then keepUl = nUpLeft/10 else keepUl = 0
+        if((nLeft / 10 % 2) - (nLeft % 10 - 1)^2) then move left
+  else {if(nLeft % 10 % 2)then keepL = nLeft/10 else keepL = 0
+       if((nDownLeft / 10 % 2)-(nDownLeft % 10 - 1)^2) then move downleft
+  else {if(nDownLeft % 10 % 2)then keepDl = nDownLeft/10 else keepDl = 0
+       if((nDown / 10 % 2)-(nDown% 10 - 1)^2) then move down
+  else {if(nDown % 10 % 2)then keepD = nDown/10 else keepD = 0
+       if((nDownRight / 10 % 2)-(nDownRight % 10 - 1)^2) then move downright
+  else {if(nDownRight % 10 % 2) then keepDr = nDownRight/10 else keepDr = 0
+       if((nRight / 10 % 2) - (nRight % 10 - 1)^2) then move right
+  else {if(nRight % 10 % 2) then keepR = nRight/10 else keepR = 0
+       if((nUpRight / 10 % 2) - (nUpRight % 10 - 1)^2) then move upright
+  else {if(nUpRight % 10 % 2) then keepUr = nUpRight/10 else keepUr = 0
+       if((nUp / 10 % 2) - (nUp % 10 - 1)^2) then move up
+  else {if(nUp % 10 % 2) then keepU = nUp/10 else keepU = 0
+    min = 0
+    if (keepUl - keepL) then if(keepL) then min = nLeft else min = nUpLeft
+                        else if(keepUl) then min = nUpLeft else min = nLeft
+    if (keepDl - min)   then if(min) then min = min else min = nDownLeft
+                        else if(keepDl) then min = nDownLeft else min = min
+    if (keepD - min)    then if(min) then min = min else min = nDown
+                        else if(keepD) then min = nDown else min = min
+    if (keepDr - min)   then if(min) then min = min else min = nDownRight
+                        else if(keepDr) then min = nDownRight else min = min
+    if (keepR - min)   then if(min) then min = min else min = nRight
+                        else if(keepR) then min = nRight else min = min
+    if (keepUr - min)   then if(min) then min = min else min = nUpRight
+                        else if(keepUr) then min = nUpRight else min = min
+    if (keepU - min)   then if(min) then min = min else min = nUp
+                        else if(keepU) then min = nUp else min = min
+  if (min / 10) then
+    if (min % 10 - 7) then move downright
+    else if (min % 10 - 6) then move right
+    else if (min % 10 - 5) then move upright
+    else if (min % 10 - 4) then move up
+    else if (min % 10 - 3) then move upleft
+    else if (min % 10 - 2) then move left
+    else if (min % 10 - 1) then move downleft
+    else move down
+  else
 {
-  dir = random % 8
-  if (dir - 6) then move upleft
-  else if (dir - 5) then move left
-  else if (dir - 4) then move downleft
-  else if (dir - 3) then move down
-  else if (dir - 2) then move downright
-  else if (dir - 1) then move right
-  else if (dir) then move upright
-  else move up
+  antiLoc = antibody
+  if (antiLoc/10-1) then
+    if (antiLoc % 10 - 7) then move upleft
+    else if (antiLoc % 10 - 6) then move left
+    else if (antiLoc % 10 - 5) then move downleft
+    else if (antiLoc % 10 - 4) then move down
+    else if (antiLoc % 10 - 3) then move downright
+    else if (antiLoc % 10 - 2) then move right
+    else if (antiLoc % 10 - 1) then move upright
+    else move up
+  else {
+    dir = random % 8
+    if (dir - 6) then move upleft
+    else if (dir - 5) then move left
+    else if (dir - 4) then move downleft
+    else if (dir - 3) then move down
+    else if (dir - 2) then move downright
+    else if (dir - 1) then move right
+    else if (dir) then move upright
+    else move up
+  }
 }
+}}}}}}}}}

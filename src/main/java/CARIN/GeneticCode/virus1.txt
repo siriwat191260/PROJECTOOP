@@ -1,26 +1,49 @@
-virusLoc = virus
-if (virusLoc / 10 - 1)
-then 
-  if (virusLoc % 10 - 7) then move upleft
-  else if (virusLoc % 10 - 6) then move left
-  else if (virusLoc % 10 - 5) then move downleft
-  else if (virusLoc % 10 - 4) then move down
-  else if (virusLoc % 10 - 3) then move downright
-  else if (virusLoc % 10 - 2) then move right
-  else if (virusLoc % 10 - 1) then move upright
-  else move up
-else if (virusLoc)
-then 
-  if (virusLoc % 10 - 7) then shoot upleft
-  else if (virusLoc % 10 - 6) then shoot left
-  else if (virusLoc % 10 - 5) then shoot downleft
-  else if (virusLoc % 10 - 4) then shoot down
-  else if (virusLoc % 10 - 3) then shoot downright
-  else if (virusLoc % 10 - 2) then shoot right
-  else if (virusLoc % 10 - 1) then shoot upright
-  else shoot up
-else 
-{
+nUpLeft = nearby upleft
+nLeft = nearby left
+nDownLeft = nearby downleft
+nDown = nearby down
+nDownRight = nearby downright
+nRight = nearby right
+nUpRight = nearby upright
+nUp = nearby up
+if ((nUpLeft % 10 - 1) - (nUpLeft / 10 - 1)^2) then shoot upleft
+else if ((nLeft % 10 - 1) - (nLeft / 10 - 1)^2) then shoot left
+else if ((nDownLeft % 10 - 1) - (nDownLeft / 10 - 1)^2) then shoot downleft
+else if ((nDown % 10 - 1) - (nDown / 10 - 1)^2) then shoot down
+else if ((nDownRight % 10 - 1) - (nDownRight / 10 - 1)^2) then shoot downright
+else if ((nRight % 10 - 1) - (nRight / 10 - 1)^2) then shoot right
+else if ((nUpRight % 10 - 1) - (nUpRight / 10 - 1)^2) then shoot upright
+else if ((nUp % 10 - 1) - (nUp / 10 - 1)^2) then shoot up
+else {
+numUpLeft = 0
+numDownLeft = 0
+numDownRight = 0
+numUpRight = 0
+if (nUpLeft % 10 - 1) then numUpLeft = numUpLeft+1 else numUpLeft = numUpLeft+0
+if (nLeft % 10 - 1) then {numUpLeft = numUpLeft+1 numDownLeft = numDownLeft+1
+} else numUpLeft = numUpLeft+0
+if (nDownLeft % 10 - 1) then numDownLeft = numDownLeft+1 else numDownLeft = numDownLeft+0
+if (nDown % 10 - 1) then {numDownLeft = numDownLeft+1 numDownRight = numDownRight+1
+} else numDownLeft = numDownLeft+0
+if (nDownRight % 10 - 1) then numDownRight = numDownRight +1 else numDownRight = numDownRight +0
+if (nRight % 10 - 1) then {numDownRight = numDownRight +1 numUpRight = numUpRight +1
+} else numDownRight = numDownRight +0
+if (nUpRight % 10 - 1) then numUpRight = numUpRight +1 else numUpRight = numUpRight +0
+if (nUp % 10 - 1) then {numUpRight = numUpRight +1 numUpLeft = numUpLeft +1
+} else numUpRight = numUpRight+0
+if (numUpLeft - numDownLeft) then
+    if (numDownLeft) then exMinA = 3 else exMinA = 4
+    else if(numUpLeft) then exMinA = 4 else exMinA = 3
+ if (numUpRight - numDownRight) then
+    if (numDownRight) then exMinB = 2 else exMinB = 1
+    else if (numUpRight) then exMinB = 1 else exMinB = 2
+if (exMinA - exMinB) then min = exMinB else min = exMinA
+if (min) then
+ if (min % 5 - 3) then move upleft
+ else if (min % 5 - 2) then move downleft
+ else if (min % 5 - 1) then move downright
+ else move upright
+else {
   dir = random % 8
   if (dir - 6) then move upleft
   else if (dir - 5) then move left
@@ -30,4 +53,5 @@ else
   else if (dir - 1) then move right
   else if (dir) then move upright
   else move up
-}
+ }}
+

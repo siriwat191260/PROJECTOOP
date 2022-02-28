@@ -1,6 +1,23 @@
+nUpLeft = nearby upleft
+nLeft = nearby left
+nDownLeft = nearby downleft
+nDown = nearby down
+nDownRight = nearby downright
+nRight = nearby right
+nUpRight = nearby upright
+nUp = nearby up
+if ((nUpLeft %10 - 1) - (nUpLeft/10 - 1)) then shoot upleft
+else if ((nLeft %10 - 1) - (nLeft/10 - 1)) then shoot left
+else if ((nDownLeft %10 - 1) - (nDownLeft/10 - 1)) then shoot downleft
+else if ((nDown %10 - 1) - (nDown /10 - 1)) then shoot down
+else if ((nDownRight %10 - 1) - (nDownRight/10 - 1)) then shoot downright
+else if ((nRight %10 - 1) - (nRight/10 - 1)) then shoot right
+else if ((nUpRight %10 - 1) - (nUpRight/10 - 1)) then shoot upright
+else if ((nUp %10 - 1) - (nUp/10 - 1)) then shoot up
+else
+{
 virusLoc = virus
-if (virusLoc / 10 - 1)
-then
+if (virusLoc/10-1) then
   if (virusLoc % 10 - 7) then move upleft
   else if (virusLoc % 10 - 6) then move left
   else if (virusLoc % 10 - 5) then move downleft
@@ -9,25 +26,42 @@ then
   else if (virusLoc % 10 - 2) then move right
   else if (virusLoc % 10 - 1) then move upright
   else move up
-else if (virusLoc)
-then
-  if (virusLoc % 10 - 7) then shoot upleft
-  else if (virusLoc % 10 - 6) then shoot left
-  else if (virusLoc % 10 - 5) then shoot downleft
-  else if (virusLoc % 10 - 4) then shoot down
-  else if (virusLoc % 10 - 3) then shoot downright
-  else if (virusLoc % 10 - 2) then shoot right
-  else if (virusLoc % 10 - 1) then shoot upright
-  else shoot up
-else
-{
+else if (virusLoc/10) then {
   dir = random % 8
-  if (dir - 6) then move upleft
-  else if (dir - 5) then move left
-  else if (dir - 4) then move downleft
-  else if (dir - 3) then move down
-  else if (dir - 2) then move downright
-  else if (dir - 1) then move right
-  else if (dir) then move upright
-  else move up
-}
+    if (antiLoc % 10 - 7) then
+      if (nUp / 10 - 1) then move up else
+      if (nLeft / 10 - 1) then move left else move dir
+    else if (antiLoc % 10 - 6) then
+      if (nUpLeft / 10 - 1) then move upleft else
+      if (nDownLeft / 10 - 1) then move downleft else move dir
+    else if (antiLoc % 10 - 5) then
+      if (nLeft / 10 - 1) then move left else
+      if (nDown / 10 - 1) then move down else move dir
+    else if (antiLoc % 10 - 4) then
+      if (nDownLeft / 10 - 1) then move downleft else
+      if (nDownRight / 10 - 1) then move downright else move dir
+    else if (antiLoc % 10 - 3) then
+      if (nDown / 10 - 1) then move down else
+      if (nRight / 10 - 1) then move right else move dir
+    else if (antiLoc % 10 - 2) then
+      if (nDownRight / 10 - 1) then move downright else
+      if (nUpRight / 10 - 1) then move upright else move dir
+    else if (antiLoc % 10 - 1) then
+      if (nRight / 10 - 1) then move right else
+      if (nUp / 10 - 1) then move up else move dir
+    else
+      if (nUpRight / 10 - 1) then move upright else
+      if (nUpLeft / 10 - 1) then move upleft else move dir
+  } else {
+    dir = random*7 % 8
+    if (dir - 6) then move upleft
+    else if (dir - 5) then move left
+    else if (dir - 4) then move downleft
+    else if (dir - 3) then move down
+    else if (dir - 2) then move downright
+    else if (dir - 1) then move right
+    else if (dir) then move upright
+    else move up
+  }
+  }
+
