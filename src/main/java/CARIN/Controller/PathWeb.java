@@ -9,7 +9,7 @@ public class PathWeb {
     
     @RequestMapping(value = "/")
     public String start_page() {
-        return "start";
+        return "index";
     }
     
     @RequestMapping(value = "/uploadfile")
@@ -27,11 +27,6 @@ public class PathWeb {
         return "game";
     }
 
-    @RequestMapping(value = "/pause")
-    public String pause_page() {
-        return "index.html";
-    }
 
-    
 }
 
