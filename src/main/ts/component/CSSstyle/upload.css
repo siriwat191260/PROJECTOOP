@@ -1,0 +1,36 @@
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+  
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+
+  .flex-gap {
+display: inline-flex;
+flex-wrap: wrap;
+  }
+
+.flex-gap > div {
+margin: 10px;
+}
+
+.float-right-top{
+      float: right;
+      position: absolute;
+      right:180px;
+      top : 100px;
+      }
+
+      .float-right-bottom{
+      float: right;
+      position: absolute;
+      right:180px;
+      bottom: 80px;
+      }
