@@ -30,34 +30,10 @@ public class HostImp implements Host{
 
     @Override
     public void shoot(String direction) {
-        String dir = direction.toLowerCase();
-        int[] shootloc = new int[2];
-        shootloc[0] = location[0];
-        shootloc[1] = location[1];
-        if(dir.equals("up") && location[0]>1){
-            shootloc[0]-=1;
-        }else if (dir.equals("down") && location[0]<m){
-            shootloc[0]+=1;
-        }else if (dir.equals("left") && location[1]>0){
-            shootloc[1]-=1;
-        }else if (dir.equals("right") && location[1]<n){
-            shootloc[1]+=1;
-        }else if (dir.equals("upleft") && location[0]>1 && location[1]>0){
-            shootloc[0]-=1;
-            shootloc[1]-=1;
-        }else if(dir.equals("upright") && location[0]>1 && location[1]<n){
-            shootloc[0]-=1;
-            shootloc[1]+=1;
-        }else if (dir.equals("downleft") && location[0]<m && location[1]>0){
-            shootloc[0]+=1;
-            shootloc[1]-=1;
-        }else if (dir.equals("downright") && location[0]<m && location[1]<n){
-            shootloc[0]+=1;
-            shootloc[1]+=1;
-        }
+        int[] shootloc = findloc(direction);
         Host shoot = body.findOrganByLocation(shootloc);
          if(!body.checkEmptyCell(shootloc) && !Arrays.equals(shootloc, location) && shoot.getStatus().equals("normal")){
-             System.out.println(this.location[0] + "" + this.location[1] + " shoot " + dir + shoot.getLocation()[0] + "" + shoot.getLocation()[1]);
+             System.out.println(this.location[0] + "" + this.location[1] + " shoot " + direction + shoot.getLocation()[0] + "" + shoot.getLocation()[1]);
              if(shoot.setHealth(attackDamage)) shoot.isDeath(this);
              health+=gain;
         }else System.out.println("can't shoot");
@@ -65,38 +41,9 @@ public class HostImp implements Host{
 
     @Override
     public void move(String newLocation) {
-        String dir = newLocation.toLowerCase();
-        int[] newLoc = {location[0], location[1]};
-        if(dir.equals("up") && location[0]>1 ){
-            newLoc[0]-=1;
-        }else if (dir.equals("down") && location[0]<m){
-            newLoc[0]+=1;
-        }else if (dir.equals("left") && location[1]>1){
-            newLoc[1]-=1;
-        }else if (dir.equals("right") && location[1]<n){
-            newLoc[1]+=1;
-        }else if (dir.equals("upleft") && location[0]>1 && location[1]>1){
-            newLoc[0]-=1;
-            newLoc[1]-=1;
-        }else if(dir.equals("upright") && location[0]>1 && location[1]<n){
-            newLoc[0]-=1;
-            newLoc[1]+=1;
-        }else if (dir.equals("downleft") && location[0]<m && location[1]>1){
-            newLoc[0]+=1;
-            newLoc[1]-=1;
-        }else if (dir.equals("downright") && location[0]<m && location[1]<n){
-            newLoc[0]+=1;
-            newLoc[1]+=1;
-        }
-
-        if(body.checkEmptyCell(newLoc) && !Arrays.equals(newLoc, location)){
-            System.out.println(location[0] +""+ location[1] + " moved to " + newLoc[0] + newLoc[1]);
-            int order = body.getOrganism().indexOf(this);
-            int[][] cellLoc = body.getCellLoc();
-            cellLoc[location[0]][location[1]] = 0;
-            cellLoc[newLoc[0]][newLoc[1]] = order+1;
-            location = newLoc;
-        }else if(!body.checkEmptyCell(newLoc) && !Arrays.equals(newLoc, location) && body.findOrganByLocation(newLoc).getStatus().equals("death")) {
+        int[] newLoc = findloc(newLocation);
+        if((body.checkEmptyCell(newLoc) || (!body.checkEmptyCell(newLoc) && body.findOrganByLocation(newLoc).getStatus().equals("death")))
+                && !Arrays.equals(newLoc, location) ){
             System.out.println(location[0] +""+ location[1] + " moved to " + newLoc[0] + newLoc[1]);
             int order = body.getOrganism().indexOf(this);
             int[][] cellLoc = body.getCellLoc();
@@ -104,6 +51,33 @@ public class HostImp implements Host{
             cellLoc[newLoc[0]][newLoc[1]] = order+1;
             location = newLoc;
         }else this.cantMove();
+    }
+
+    private int[] findloc(String newLocation){
+        String dir = newLocation.toLowerCase();
+        int[] Loc = {location[0], location[1]};
+        if(dir.equals("up") && location[0]>1 ){
+            Loc[0]-=1;
+        }else if (dir.equals("down") && location[0]<m){
+            Loc[0]+=1;
+        }else if (dir.equals("left") && location[1]>1){
+            Loc[1]-=1;
+        }else if (dir.equals("right") && location[1]<n){
+            Loc[1]+=1;
+        }else if (dir.equals("upleft") && location[0]>1 && location[1]>1){
+            Loc[0]-=1;
+            Loc[1]-=1;
+        }else if(dir.equals("upright") && location[0]>1 && location[1]<n){
+            Loc[0]-=1;
+            Loc[1]+=1;
+        }else if (dir.equals("downleft") && location[0]<m && location[1]>1){
+            Loc[0]+=1;
+            Loc[1]-=1;
+        }else if (dir.equals("downright") && location[0]<m && location[1]<n){
+            Loc[0]+=1;
+            Loc[1]+=1;
+        }
+        return Loc;
     }
 
     @Override
@@ -232,16 +206,15 @@ public class HostImp implements Host{
                 }
             }
         }
-        String dis = String.valueOf(ans);
         return switch (dir) {
-            case "up" -> Integer.parseInt(dis + "1");
-            case "upright" -> Integer.parseInt(dis + "2");
-            case "right" -> Integer.parseInt(dis + "3");
-            case "downright" -> Integer.parseInt(dis + "4");
-            case "down" -> Integer.parseInt(dis + "5");
-            case "downleft" -> Integer.parseInt(dis + "6");
-            case "left" -> Integer.parseInt(dis + "7");
-            case "upleft" -> Integer.parseInt(dis + "8");
+            case "up" -> (ans*10)+1;
+            case "upright" -> (ans*10)+2;
+            case "right" -> (ans*10)+3;
+            case "downright" -> (ans*10)+4;
+            case "down" -> (ans*10)+5;
+            case "downleft" -> (ans*10)+6;
+            case "left" -> (ans*10)+7;
+            case "upleft" -> (ans*10)+8;
             default -> 0;
         };
     }
