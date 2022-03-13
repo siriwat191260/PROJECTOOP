@@ -1,9 +1,9 @@
 package CARIN.GeneticCode;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -13,12 +13,24 @@ public class GeneticManager {
 
     public GeneticManager() throws IOException {
         GeneticRef ref = new GeneticRef();
-        for (String s : ref.getAntiGene()) {
-            String content = Files.readString(Path.of(s), StandardCharsets.US_ASCII);
+        for (String gene : ref.getAntiGene()) {
+            File fp = new File(gene);
+            FileReader fr = new FileReader(fp);
+            BufferedReader br = new BufferedReader(fr);
+
+            String content="";
+            String line;
+            while((line = br.readLine()) != null) { content = content+" "+line; }
             antiGene.add(content);
         }
-        for (String virus : ref.getVirusGene()) {
-            String content = Files.readString(Path.of(virus), StandardCharsets.US_ASCII);
+        for (String gene : ref.getVirusGene()) {
+            File fp = new File(gene);
+            FileReader fr = new FileReader(fp);
+            BufferedReader br = new BufferedReader(fr);
+
+            String content="";
+            String line;
+            while((line = br.readLine()) != null) { content = content+" "+line; }
             virusGene.add(content);
         }
     }

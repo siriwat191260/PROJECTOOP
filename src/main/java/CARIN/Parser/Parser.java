@@ -1,7 +1,6 @@
 package CARIN.Parser;
 
 import CARIN.Model.Host;
-import CARIN.Model.HostImp;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -11,13 +10,13 @@ public class Parser {
 
     private Tokenizer tkz;
     private Host host;
-    private HashMap<String, Expr> idenKeep;
+    private HashMap<String, Integer> idKeep;
     private List<Program> statement;
 
     public Parser(String src, Host host){
         this.tkz = new Tokenizer(src);
         this.host = host;
-        idenKeep = host.getIdentifier();
+        idKeep = host.getIdentifier();
         this.statement = new LinkedList<>();
         parse();
     }
@@ -91,7 +90,7 @@ public class Parser {
         }else {
             identifier = tkz.consume();
             tkz.consume("=");
-            s = new Command(identifier, parseExpression(), idenKeep);
+            s = new Command(identifier, parseExpression(), idKeep);
         }
         return s;
     }
@@ -170,7 +169,7 @@ public class Parser {
             || tkz.peek("nearby")) {
                 e = parseSensor();
             }else
-                e = new Identifier(tkz.consume(), idenKeep);
+                e = new Identifier(tkz.consume(), idKeep);
 
         return e;
     }
@@ -196,12 +195,7 @@ public class Parser {
     }
 
     public static void main(String[] args) {
-//         example genetic code in spec doc
-        String gene = "virusLoc = 0 " +
-                "if (random / 10 - 2^2) " +
-                "then move up else move down";
-//        Parser parser = new Parser(gene, new HostImp());
-//        parser.eval();
+
     }
 
 }
