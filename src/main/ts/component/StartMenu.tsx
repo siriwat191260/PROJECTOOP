@@ -1,7 +1,5 @@
 import React from "react";
-import {Link} from 'react-router-dom';
-import { render } from "react-dom";
-import './CSSstyle/start.module.css';
+import './CSSstyle/start.css';
 import play_btn from './CSSstyle/image/play.png';
 import howtoplay_btn from './CSSstyle/image/howto.png';
 

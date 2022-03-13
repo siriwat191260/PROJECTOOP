@@ -12,21 +12,5 @@ public class PathWeb {
         return "index";
     }
     
-    @RequestMapping(value = "/uploadfile")
-    public String upload_page() {
-        return "uploadfile";
-    }
-
-    @RequestMapping(value = "/howtoplay")
-    public String howtoplay_page() {
-        return "howtoplay";
-    }
-
-    @RequestMapping(value = "/game")
-    public String game_page() {
-        return "game";
-    }
-
-
 }
 
