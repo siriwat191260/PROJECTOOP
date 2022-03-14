@@ -104,6 +104,7 @@ public class BodyImp implements Body{
                 antiCredit -= placeCost;
                 antibodyNum++;
                 order++;
+                /* send decrease antibody credit output */
             }
             else System.out.println("This cell is not empty!.");
         }else
@@ -125,6 +126,7 @@ public class BodyImp implements Body{
             System.out.println("Added virus to cell "+ loc);
             virusNum++;
             order++;
+            /* send add virus output */
         }else
             System.out.println("A virus did not spawn to the body this time unit.");
     }
@@ -133,6 +135,7 @@ public class BodyImp implements Body{
         virusNum--;
         antiCredit+=placeCost;
         System.out.println("Antibody credit added!");
+        /* send add antibody credit output */
         checkGameOver();
     }
 
@@ -144,6 +147,7 @@ public class BodyImp implements Body{
         int loc = Integer.parseInt((location[0])+String.valueOf(location[1]));
         System.out.println("Antibody at cell"+ loc+"turned into virus!");
         virusNum++;
+        /* send add virus output */
         checkGameOver();
     }
     // called to be evaluating organisms in order at each time unit

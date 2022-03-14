@@ -38,6 +38,7 @@ public class Antibody extends HostImp{
     @Override
     public void isDeath(Host virus){
         setStatus("death", virus);
+        /* send dead output */
     }
 
 }
