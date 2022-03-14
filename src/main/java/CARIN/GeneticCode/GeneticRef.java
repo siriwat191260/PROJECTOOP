@@ -1,6 +1,9 @@
 package CARIN.GeneticCode;
 
+import java.io.IOException;
+
 public class GeneticRef {
+    private static GeneticRef geneticRef;
     private static final int antiType = 3;
     private static final int virusType = 3;
     private static String[] antiPath = new String[antiType];
@@ -21,24 +24,12 @@ public class GeneticRef {
         virusPath[2] = virus3;
     }
 
-    public void setAntibody1(String antibody1) {
-        GeneticRef.antiPath[0] = antibody1;
+    // singleton
+    public static GeneticRef createGeneticManager() throws IOException {
+        if(geneticRef != null) geneticRef = new GeneticRef();
+        return geneticRef;
     }
-    public void setAntibody2(String antibody2) {
-        GeneticRef.antiPath[1] = antibody2;
-    }
-    public void setAntibody3(String antibody3) {
-        GeneticRef.antiPath[2] = antibody3;
-    }
-    public void setVirus1(String virus1) {
-        GeneticRef.antiPath[0] = virus1;
-    }
-    public void setVirus2(String virus2) {
-        GeneticRef.antiPath[1] = virus2;
-    }
-    public void setVirus3(String virus3) {
-        GeneticRef.antiPath[2] = virus3;
-    }
+
     public String[] getAntiGene() {
         return antiPath;
     }

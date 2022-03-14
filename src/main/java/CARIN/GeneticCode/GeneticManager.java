@@ -8,6 +8,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class GeneticManager {
+    private static GeneticManager geneticManager;
     List<String> antiGene = new LinkedList<>();
     List<String> virusGene = new LinkedList<>();
 
@@ -34,6 +35,21 @@ public class GeneticManager {
             virusGene.add(content);
         }
     }
+
+    // singleton
+    public static GeneticManager createGeneticManager() throws IOException {
+        if(geneticManager != null) geneticManager = new GeneticManager();
+        return geneticManager;
+    }
+
+    public void setAntibody(int kind, String gene){
+        antiGene.add(kind, gene);
+    }
+
+    public void setVirus(int kind, String gene){
+        virusGene.add(kind, gene);
+    }
+
     public List<String> getAntiGene(){
         return antiGene;
     }
@@ -43,6 +59,7 @@ public class GeneticManager {
 
     public static void main(String[] args) throws IOException {
         GeneticManager read = new GeneticManager();
+        read.setAntibody(0, "hi");
         System.out.println(read.getAntiGene().get(0));
     }
 }
