@@ -30,19 +30,13 @@ public class HostImp implements Host{
 
     @Override
     public void shoot(String direction) {
-        int[] shootloc = findloc(direction);
-        Host shoot = body.findOrganByLocation(shootloc);
-         if(!body.checkEmptyCell(shootloc) && !Arrays.equals(shootloc, location) && shoot.getStatus().equals("normal")){
-             System.out.println(this.location[0] + "" + this.location[1] + " shoot " + direction + shoot.getLocation()[0] + "" + shoot.getLocation()[1]);
-             if(shoot.setHealth(attackDamage)) shoot.isDeath(this);
-             health+=gain;
-        }else System.out.println("can't shoot");
     }
 
     @Override
     public void move(String newLocation) {
-        int[] newLoc = findloc(newLocation);
-        if((body.checkEmptyCell(newLoc) || (!body.checkEmptyCell(newLoc) && body.findOrganByLocation(newLoc).getStatus().equals("death")))
+        int[] newLoc = findLoc(newLocation);
+        if((body.checkEmptyCell(newLoc[0], newLoc[1]) || (!body.checkEmptyCell(newLoc[0], newLoc[1])
+                && body.findOrganByLocation(newLoc).getStatus().equals("death")))
                 && !Arrays.equals(newLoc, location) ){
             System.out.println(location[0] +""+ location[1] + " moved to " + newLoc[0] + newLoc[1]);
             int order = body.getOrganism().indexOf(this);
@@ -50,10 +44,11 @@ public class HostImp implements Host{
             cellLoc[location[0]][location[1]] = 0;
             cellLoc[newLoc[0]][newLoc[1]] = order+1;
             location = newLoc;
+            /* send move output */
         }else this.cantMove();
     }
 
-    private int[] findloc(String newLocation){
+    protected int[] findLoc(String newLocation){
         String dir = newLocation.toLowerCase();
         int[] Loc = {location[0], location[1]};
         if(dir.equals("up") && location[0]>1 ){
@@ -82,7 +77,7 @@ public class HostImp implements Host{
 
     @Override
     public void move(int[] newLocation) {
-        if(body.checkEmptyCell(newLocation)){
+        if(body.checkEmptyCell(newLocation[0], newLocation[1])){
             System.out.println(location[0] +""+ location[1] + " moved to " + newLocation[0] + newLocation[1]);
             location = newLocation;
             health -= moveCost;
@@ -228,7 +223,7 @@ public class HostImp implements Host{
             case "up":
                 while (ans == 0 && loc[0] > 1) {
                     loc[0]--;
-                    if (!body.checkEmptyCell(loc)){
+                    if (!body.checkEmptyCell(loc[0], loc[1])){
                         if(body.findOrganByLocation(loc).getStatus().equals("normal")){
                             ans = ((location[0] - loc[0]) * 10) + body.findOrganByLocation(loc).getType();
                         }
@@ -238,7 +233,7 @@ public class HostImp implements Host{
             case "down":
                 while (ans == 0 && loc[0] < m) {
                     loc[0]++;
-                    if (!body.checkEmptyCell(loc)){
+                    if (!body.checkEmptyCell(loc[0], loc[1])){
                         if(body.findOrganByLocation(loc).getStatus().equals("normal")){
                             ans = ((loc[0] - location[0]) * 10) + body.findOrganByLocation(loc).getType();
                         }
@@ -248,7 +243,7 @@ public class HostImp implements Host{
             case "left":
                 while (ans == 0 && loc[1] > 1) {
                     loc[1]--;
-                    if (!body.checkEmptyCell(loc)){
+                    if (!body.checkEmptyCell(loc[0], loc[1])){
                         if(body.findOrganByLocation(loc).getStatus().equals("normal")){
                             ans = ((location[1] - loc[1]) * 10) + body.findOrganByLocation(loc).getType();
                         }
@@ -258,7 +253,7 @@ public class HostImp implements Host{
             case "right":
                 while (ans == 0 && loc[1] < n) {
                     loc[1]++;
-                    if (!body.checkEmptyCell(loc)){
+                    if (!body.checkEmptyCell(loc[0], loc[1])){
                         if(body.findOrganByLocation(loc).getStatus().equals("normal")){
                             ans = ((loc[1] - location[1]) * 10) + body.findOrganByLocation(loc).getType();
                         }
@@ -269,7 +264,7 @@ public class HostImp implements Host{
                 while (ans == 0 && loc[0] > 1 && loc[1] > 1) {
                     loc[0]--;
                     loc[1]--;
-                    if (!body.checkEmptyCell(loc)){
+                    if (!body.checkEmptyCell(loc[0], loc[1])){
                         if(body.findOrganByLocation(loc).getStatus().equals("normal")){
                             ans = ((location[0] - loc[0]) * 10) + body.findOrganByLocation(loc).getType();
                         }
@@ -280,7 +275,7 @@ public class HostImp implements Host{
                 while (ans == 0 && loc[0] > 1 && loc[1] < n) {
                     loc[0]--;
                     loc[1]++;
-                    if (!body.checkEmptyCell(loc)){
+                    if (!body.checkEmptyCell(loc[0], loc[1])){
                         if(body.findOrganByLocation(loc).getStatus().equals("normal")){
                             ans = ((loc[1] - location[1]) * 10) + body.findOrganByLocation(loc).getType();
                         }
@@ -291,7 +286,7 @@ public class HostImp implements Host{
                 while (ans == 0 && loc[0] < m && loc[1] > 1) {
                     loc[0]++;
                     loc[1]--;
-                    if (!body.checkEmptyCell(loc)){
+                    if (!body.checkEmptyCell(loc[0], loc[1])){
                         if(body.findOrganByLocation(loc).getStatus().equals("normal")){
                             ans = ((location[1] - loc[1]) * 10) + body.findOrganByLocation(loc).getType();
                         }
@@ -302,7 +297,7 @@ public class HostImp implements Host{
                 while (ans == 0 && loc[0] < m && loc[1] < n) {
                     loc[0]++;
                     loc[1]++;
-                    if (!body.checkEmptyCell(loc)){
+                    if (!body.checkEmptyCell(loc[0], loc[1])){
                         if(body.findOrganByLocation(loc).getStatus().equals("normal")){
                             ans = ((loc[0] - location[0]) * 10) + body.findOrganByLocation(loc).getType();
                         }

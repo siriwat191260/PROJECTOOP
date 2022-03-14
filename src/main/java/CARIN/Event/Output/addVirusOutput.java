@@ -5,6 +5,5 @@ public class addVirusOutput extends OutputEvent{
 
     public addVirusOutput(){
         super("add");
-        outputEvents.add(this);
     }
 }

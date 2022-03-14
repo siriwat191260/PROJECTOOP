@@ -1,58 +1,83 @@
 package CARIN.Game;
 
+import CARIN.Event.EventQueue;
+import CARIN.Event.Input.InputEvent;
+import CARIN.Event.Input.addAntibody;
+import CARIN.Event.Input.moveAntibody;
 import CARIN.Model.Body;
-
+import CARIN.Parser.SyntaxError;
 import java.io.IOException;
 
 public class Game implements Runnable{
+    private float speed = 1.0f;
     private Thread thread;
     public boolean running = false;
-    private BodyManager bodyManager;
+    private final BodyManager bodyManager;
     private Body body;
+    private EventQueue<InputEvent> inputEventQueue;
 
     public Game() throws IOException {
         bodyManager = new BodyManager(this);
-        body = bodyManager.getBody();
     }
 
-    private void update(){
-        // run evaluation
-
+    public void setSpeed(float speed){
+        this.speed = speed;
     }
 
     @Override
     public void run() {
+        body = bodyManager.getBody();
+        inputEventQueue = new EventQueue<>();
+        try {
+            loop();
+        } catch (SyntaxError e) {
+            e.printStackTrace();
+        }
+    }
 
-        int fps = 60;
-        double timePerTick = 1000000000 / fps;
-        double delta = 0;
-        long now;
-        long lastTime = System.nanoTime();
-        long timer = 0;
-        int ticks = 0;
+    private void loop(){
+        long gameLastTime = System.nanoTime();
+        long inputLastTime = System.nanoTime();
+        long evalDeltaTime, inputDeltaTime;
 
-        while(running){
-            now = System.nanoTime();
-            delta += (now - lastTime) / timePerTick;
-            timer += now - lastTime;
-            lastTime = now;
+        while (running) {
+            long currentTime = System.nanoTime();
+            evalDeltaTime = currentTime - gameLastTime;
+            inputDeltaTime = currentTime - inputLastTime;
 
-            if(delta >= 1){
-                update();
-                ticks++;
-                delta--;
+            // waiting for inputs
+            if (inputDeltaTime - inputLastTime >= 30 * 1000000) {
+                inputLastTime = currentTime;
+                receiveInputEvent();
             }
 
-            if(timer >= 1000000000){
-                System.out.println("Ticks and Frames: " + ticks);
-                ticks = 0;
-                timer = 0;
+            long timeUnit = 7000;
+            if (evalDeltaTime * speed >= timeUnit * 1000000) {
+                gameLastTime = currentTime;
+                evaluate();
             }
         }
-        try {
-            stop();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+
+    }
+
+    public void evaluate(){
+        body.addVirus();
+        body.run();
+    }
+
+    public void addInputEvent(InputEvent event) {
+        inputEventQueue.addEvent(event);
+    }
+
+    // processing move or add antibody
+    private void receiveInputEvent(){
+        if (!inputEventQueue.isEmpty()) {
+            InputEvent input = inputEventQueue.removeEvent();
+            if (input instanceof addAntibody addAntiEvent) {
+                body.addAntibody(addAntiEvent.getLocation(), addAntiEvent.getGeneNum());
+            } else if (input instanceof moveAntibody moveAntiEvent) {
+                body.move(moveAntiEvent.getLocation(), moveAntiEvent.getDestination());
+            }
         }
     }
 
@@ -71,4 +96,5 @@ public class Game implements Runnable{
             e.printStackTrace();
         }
     }
+
 }
