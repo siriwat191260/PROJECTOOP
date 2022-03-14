@@ -52,7 +52,7 @@ var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".btn-float-right-bottom{\r\n    float: right;\r\n    position: absolute;\r\n    right:    450px;\r\n    bottom:   70px;\r\n    }\r\n\r\n.btnscale{\r\n        transition: .2s ease-in-out 0s;\r\n        }\r\n        .btn-scale:hover{\r\n        cursor: pointer;\r\n        transform: scale(1.25);\r\n      }    \r\n    \r\n.bg-main{\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n    background-repeat: no-repeat; \r\n    background-position: center;\r\n    width: 100%;\r\n    height: 100vh;\r\n}\r\n\r\n.bg-green{\r\n    background-color: green;\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/component/CSSstyle/start.css"],"names":[],"mappings":"AAAA;IACI,YAAY;IACZ,kBAAkB;IAClB,eAAe;IACf,cAAc;IACd;;AAEJ;QACQ,8BAA8B;QAC9B;QACA;QACA,eAAe;QACf,sBAAsB;MACxB;;AAEN;IACI,yDAAyC;IACzC,4BAA4B;IAC5B,2BAA2B;IAC3B,WAAW;IACX,aAAa;AACjB;;AAEA;IACI,uBAAuB;AAC3B","sourcesContent":[".btn-float-right-bottom{\r\n    float: right;\r\n    position: absolute;\r\n    right:    450px;\r\n    bottom:   70px;\r\n    }\r\n\r\n.btnscale{\r\n        transition: .2s ease-in-out 0s;\r\n        }\r\n        .btn-scale:hover{\r\n        cursor: pointer;\r\n        transform: scale(1.25);\r\n      }    \r\n    \r\n.bg-main{\r\n    background-image: url('./image/main.jpg');\r\n    background-repeat: no-repeat; \r\n    background-position: center;\r\n    width: 100%;\r\n    height: 100vh;\r\n}\r\n\r\n.bg-green{\r\n    background-color: green;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".btn-float-right-bottom{\r\n    float: right;\r\n    position: absolute;\r\n    right:    450px;\r\n    bottom:   70px;\r\n    }\r\n\r\n.btnscale{\r\n        transition: .2s ease-in-out 0s;\r\n        }\r\n        .btn-scale:hover{\r\n        cursor: pointer;\r\n        transform: scale(1.25);\r\n      }    \r\n    \r\n.bg-main{\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n    background-repeat: no-repeat; \r\n    background-position: center;\r\n    width: 100%;\r\n    height: 100vh;\r\n}\r\n\r\n", "",{"version":3,"sources":["webpack://./src/main/ts/component/CSSstyle/start.css"],"names":[],"mappings":"AAAA;IACI,YAAY;IACZ,kBAAkB;IAClB,eAAe;IACf,cAAc;IACd;;AAEJ;QACQ,8BAA8B;QAC9B;QACA;QACA,eAAe;QACf,sBAAsB;MACxB;;AAEN;IACI,yDAAyC;IACzC,4BAA4B;IAC5B,2BAA2B;IAC3B,WAAW;IACX,aAAa;AACjB","sourcesContent":[".btn-float-right-bottom{\r\n    float: right;\r\n    position: absolute;\r\n    right:    450px;\r\n    bottom:   70px;\r\n    }\r\n\r\n.btnscale{\r\n        transition: .2s ease-in-out 0s;\r\n        }\r\n        .btn-scale:hover{\r\n        cursor: pointer;\r\n        transform: scale(1.25);\r\n      }    \r\n    \r\n.bg-main{\r\n    background-image: url('./image/main.jpg');\r\n    background-repeat: no-repeat; \r\n    background-position: center;\r\n    width: 100%;\r\n    height: 100vh;\r\n}\r\n\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -32038,7 +32038,8 @@ function App() {
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Routes, null,
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, { path: "/", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_component_StartMenu__WEBPACK_IMPORTED_MODULE_2__["default"], null) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, { path: "/uploadfile", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_component_Uploadfile__WEBPACK_IMPORTED_MODULE_3__["default"], null) }))));
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, { path: "/uploadfile", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_component_Uploadfile__WEBPACK_IMPORTED_MODULE_3__["default"], null) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, { path: "/game", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Sawaddeeee") }))));
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
 
@@ -32093,53 +32094,111 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _CSSstyle_upload_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CSSstyle/upload.css */ "./src/main/ts/component/CSSstyle/upload.css");
 /* harmony import */ var _CSSstyle_image_submit_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CSSstyle/image/submit.png */ "./src/main/ts/component/CSSstyle/image/submit.png");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _CSSstyle_image_anti1_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CSSstyle/image/anti1.png */ "./src/main/ts/component/CSSstyle/image/anti1.png");
+/* harmony import */ var _CSSstyle_image_anti2_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./CSSstyle/image/anti2.png */ "./src/main/ts/component/CSSstyle/image/anti2.png");
+/* harmony import */ var _CSSstyle_image_anti3_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./CSSstyle/image/anti3.png */ "./src/main/ts/component/CSSstyle/image/anti3.png");
+/* harmony import */ var _CSSstyle_image_virus1_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./CSSstyle/image/virus1.png */ "./src/main/ts/component/CSSstyle/image/virus1.png");
+/* harmony import */ var _CSSstyle_image_virus2_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./CSSstyle/image/virus2.png */ "./src/main/ts/component/CSSstyle/image/virus2.png");
+/* harmony import */ var _CSSstyle_image_virus3_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./CSSstyle/image/virus3.png */ "./src/main/ts/component/CSSstyle/image/virus3.png");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+
+
+
+
+
+
 
 
 
 
 var Uploadfile = function () {
-    var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
-    var upload = function () {
-        var file = document.getElementById("antibody1");
-        console.log(file);
-        fetch("/uploadfile?f1=".concat(file));
-        /* navigate("/game") */
+    var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_9__.useNavigate)();
+    var data = ['', '', '', '', '', ''];
+    var upload = function (e, i) {
+        e.preventDefault();
+        if (data[i] == '') {
+            alert("No Selected File");
+        }
+        else {
+            fetch("/uploadfile?file=".concat(data[i], "&number=").concat(i));
+        }
+    };
+    var handlefile = function (e, i) {
+        var file = e.target.files[0];
+        var reader = new FileReader();
+        reader.readAsText(file);
+        reader.onload = function () {
+            data[i] = (reader.result);
+        };
+        console.log(reader.result);
     };
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "bg-white" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: " bg-body bg-center bg-no-repeat  w-full h-screen  ;" },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex-gap float-right-top " },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "mb-4 space-y-4" },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: "./CSSstyle/image/anti1.png", alt: "antibody1", style: { width: "200px", height: "150px" } }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", { action: "/action_page.php" },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", { type: "file", id: "antibody1", name: "filename" }))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_anti1_png__WEBPACK_IMPORTED_MODULE_3__, alt: "antibody1", style: { width: "200px", height: "150px" } }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", { type: "file", onChange: function (e) { return handlefile(e, 1); }, id: "file1", name: "filename1" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btn-scale", onClick: function (e) { return upload(e, 1); } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_submit_png__WEBPACK_IMPORTED_MODULE_2__, alt: "submit_button", style: { width: "100px", height: "40px" } }))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "mb-4 space-y-4" },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: "./CSSstyle/image/anti2.png", alt: "antibody2", style: { width: "200px", height: "150px" } }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", { action: "/action_page.php" },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", { type: "file", id: "antibody2", name: "filename" }))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_anti2_png__WEBPACK_IMPORTED_MODULE_4__, alt: "antibody2", style: { width: "200px", height: "150px" } }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", { type: "file", onChange: function (e) { return handlefile(e, 2); }, id: "file2", name: "filename1" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btn-scale", onClick: function (e) { return upload(e, 2); } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_submit_png__WEBPACK_IMPORTED_MODULE_2__, alt: "submit_button", style: { width: "100px", height: "40px" } }))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "mb-4 space-y-4" },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: "./CSSstyle/image/anti3.png", alt: "antibody3", style: { width: "200px", height: "150px" } }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", { action: "/action_page.php" },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", { type: "file", id: "antibody3", name: "filename" })))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_anti3_png__WEBPACK_IMPORTED_MODULE_5__, alt: "antibody3", style: { width: "200px", height: "150px" } }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", { type: "file", onChange: function (e) { return handlefile(e, 3); }, id: "file3", name: "filename1" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btn-scale", onClick: function (e) { return upload(e, 3); } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_submit_png__WEBPACK_IMPORTED_MODULE_2__, alt: "submit_button", style: { width: "100px", height: "40px" } })))),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex-gap float-right-bottom " },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "mb-4 space-y-4" },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: "./CSSstyle/image/virus1.png", alt: "virus1", style: { width: "200px", height: "150px" } }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", { action: "/action_page.php" },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", { type: "file", id: "virus1", name: "filename" }))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_virus1_png__WEBPACK_IMPORTED_MODULE_6__, alt: "virus1", style: { width: "200px", height: "150px" } }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", { type: "file", onChange: function (e) { return handlefile(e, 4); }, id: "file4", name: "filename1" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btn-scale", onClick: function (e) { return upload(e, 4); } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_submit_png__WEBPACK_IMPORTED_MODULE_2__, alt: "submit_button", style: { width: "100px", height: "40px" } }))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "mb-4 space-y-4" },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: "./CSSstyle/image/virus2.png", alt: "virus2", style: { width: "200px", height: "150px" } }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", { action: "/action_page.php" },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", { type: "file", id: "virus2", name: "filename" }))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_virus2_png__WEBPACK_IMPORTED_MODULE_7__, alt: "virus2", style: { width: "200px", height: "150px" } }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", { type: "file", onChange: function (e) { return handlefile(e, 5); }, id: "file5", name: "filename1" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btn-scale", onClick: function (e) { return upload(e, 5); } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_submit_png__WEBPACK_IMPORTED_MODULE_2__, alt: "submit_button", style: { width: "100px", height: "40px" } }))),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "mb-4 space-y-4" },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: "./CSSstyle/image/virus3.png", alt: "virus3", style: { width: "200px", height: "150px" } }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", { action: "/action_page.php" },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", { type: "file", id: "virus3", style: { width: "200px", height: "150px" } })))),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "float-right-bottom-btn" },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btn-scale " },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_submit_png__WEBPACK_IMPORTED_MODULE_2__, alt: "submit_button", style: { width: "200px", height: "80px" }, onClick: function () { upload; } }))))));
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_virus3_png__WEBPACK_IMPORTED_MODULE_8__, alt: "virus3", style: { width: "200px", height: "150px" } }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", { type: "file", onChange: function (e) { return handlefile(e, 6); }, id: "file6", name: "filename1" }),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btn-scale", onClick: function (e) { return upload(e, 6); } },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_submit_png__WEBPACK_IMPORTED_MODULE_2__, alt: "submit_button", style: { width: "100px", height: "40px" } })))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Uploadfile);
 
+
+/***/ }),
+
+/***/ "./src/main/ts/component/CSSstyle/image/anti1.png":
+/*!********************************************************!*\
+  !*** ./src/main/ts/component/CSSstyle/image/anti1.png ***!
+  \********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "8aed12be9ea254865b05.png";
+
+/***/ }),
+
+/***/ "./src/main/ts/component/CSSstyle/image/anti2.png":
+/*!********************************************************!*\
+  !*** ./src/main/ts/component/CSSstyle/image/anti2.png ***!
+  \********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "44175806872db896ed2b.png";
+
+/***/ }),
+
+/***/ "./src/main/ts/component/CSSstyle/image/anti3.png":
+/*!********************************************************!*\
+  !*** ./src/main/ts/component/CSSstyle/image/anti3.png ***!
+  \********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "01b49cfa92dd973e1646.png";
 
 /***/ }),
 
@@ -32190,6 +32249,36 @@ module.exports = __webpack_require__.p + "aecc4c58c6b8592e8fde.png";
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__.p + "afac938b1af596977db9.png";
+
+/***/ }),
+
+/***/ "./src/main/ts/component/CSSstyle/image/virus1.png":
+/*!*********************************************************!*\
+  !*** ./src/main/ts/component/CSSstyle/image/virus1.png ***!
+  \*********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "23fccd7b254f20886502.png";
+
+/***/ }),
+
+/***/ "./src/main/ts/component/CSSstyle/image/virus2.png":
+/*!*********************************************************!*\
+  !*** ./src/main/ts/component/CSSstyle/image/virus2.png ***!
+  \*********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "8e474e54e8b53ef15064.png";
+
+/***/ }),
+
+/***/ "./src/main/ts/component/CSSstyle/image/virus3.png":
+/*!*********************************************************!*\
+  !*** ./src/main/ts/component/CSSstyle/image/virus3.png ***!
+  \*********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "29f4ee4e5bc689149c62.png";
 
 /***/ }),
 
