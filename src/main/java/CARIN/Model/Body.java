@@ -9,8 +9,6 @@ public interface Body {
     int[][] getCellLoc();
     List<Host> getOrganism();
     void move(int[] location, int[] newLocation);
-    int getVirusNum();
-    int getAntibodyNum();
     int[] getMN();
     Host findOrganByLocation(int[] location);
     boolean checkEmptyCell(int row, int column);

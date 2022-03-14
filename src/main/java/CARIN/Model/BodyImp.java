@@ -24,6 +24,7 @@ public class BodyImp implements Body{
     private final List<String> geneticCodeVirus;
     private boolean gameOver = false;
     private final Game game;
+    private int startGameCheck = 0;
     // input from config file
     // assume m and n is <=10 first
     public BodyImp(Game game, GeneticManager gene, ConfigManager config) {
@@ -93,6 +94,7 @@ public class BodyImp implements Body{
     @Override
     public void addAntibody(int[] location, int geneNum) {
         if(antiCredit>0) {
+            if(startGameCheck == 1) startGameCheck = 2;
             if(checkEmptyCell(location[0], location[1])){
                 this.organismInOrder.add(new Antibody(geneticCodeAnti.get(geneNum),
                         antiHealth, antiAttack, antiGain, moveCost,location,this));
@@ -115,6 +117,7 @@ public class BodyImp implements Body{
         // if random number less than virus spawn rate then a virus spawned.
         double probability = Math.random();
         if(probability<=this.virusSpawn){
+            if(startGameCheck == 0) startGameCheck = 1;
             int[] location = randomLocation();
             this.organismInOrder.add(randomVirus(location));
             addToCellLoc(location[0], location[1]);
@@ -148,35 +151,18 @@ public class BodyImp implements Body{
     public void run() {
             for (Host each : organismInOrder) {
                 if(!each.getStatus().equals("death")) {
-                    if (gameOver) return;
+                    if (gameOver) {
+                        /* send game over output */
+                        sendGameOverOutput();
+                        return;
+                    }
                     else {
                         System.out.println("Eval organism " + (organismInOrder.indexOf(each) + 1));
                         each.eval();
                     }
                 }
             }
-            for (Host each : organismInOrder){
-                if(each.getStatus().equals("death")){
-                    int m = each.getLocation()[0];
-                    int n = each.getLocation()[1];
-                    int currentOrder = cellLoc[m][n];
-                    System.out.println("Organism order: "+currentOrder+" is dead");
-                    for(int i=1; i<=this.m; i++){
-                        for(int j=1; j<=this.n; j++)
-                            if(cellLoc[i][j]>currentOrder)
-                                cellLoc[i][j]-=1;
-                    }
-                    cellLoc[m][n] = 0;
-                    order--;
-                    if(each.getType()==2){
-                        addAntiTurnVirus(each.getGeneticCode(),each.getLocation());
-                    }else if(each.getType()==1){
-                        addVirusTurnAntiCredit();
-                    }
-                    organismInOrder.remove(each);
-                }
-            }
-
+            removeOrganism();
     }
     // return cell field that contains order of organisms
     @Override
@@ -198,38 +184,42 @@ public class BodyImp implements Body{
             changeCellLoc(location, newLocation, order + 1);
         }
     }
-    @Override
-    public int getVirusNum() {
-        return virusNum;
-    }
-    @Override
-    public int getAntibodyNum() {
-        return antibodyNum;
-    }
 
     @Override
     public int[] getMN() {
         return new int[]{m,n};
     }
 
-    private void removeOrganism(int[] location) {
-        int m = location[0];
-        int n = location[1];
-        int currentOrder = cellLoc[m][n];
-        organismInOrder.remove(currentOrder-1);
-        cellLoc[m][n] = 0;
-        for(int i=1; i<this.m; i++){
-            for(int j=1; j<this.n; j++)
-                if(cellLoc[i][j]!=0 && cellLoc[i][j]>currentOrder)
-                    cellLoc[i][j]-=1;
+    private void removeOrganism() {
+        for (Host each : organismInOrder){
+            if(each.getStatus().equals("death")){
+                int m = each.getLocation()[0];
+                int n = each.getLocation()[1];
+                int currentOrder = cellLoc[m][n];
+                System.out.println("Organism order: "+currentOrder+" is dead");
+                for(int i=1; i<=this.m; i++){
+                    for(int j=1; j<=this.n; j++)
+                        if(cellLoc[i][j]>currentOrder)
+                            cellLoc[i][j]-=1;
+                }
+                cellLoc[m][n] = 0;
+                order--;
+                if(each.getType()==2){
+                    addAntiTurnVirus(each.getGeneticCode(),each.getLocation());
+                }else if(each.getType()==1){
+                    addVirusTurnAntiCredit();
+                }
+                organismInOrder.remove(each);
+            }
         }
-        order--;
-        int loc = Integer.parseInt((location[0])+String.valueOf(location[1]));
-        System.out.println("Organism at cell "+ loc+", order: "+currentOrder+" is dead");
+    }
+
+    private void sendGameOverOutput(){
+        /* send game over output */
     }
 
     private void checkGameOver(){
-        if(virusNum==0 || antibodyNum==0 ) {
+        if(virusNum==0 || antibodyNum==0 && startGameCheck >= 2) {
             System.out.println("Game over ");
             if (virusNum > antibodyNum) System.out.println("Viruses win");
             else System.out.println("Antibodies win!");

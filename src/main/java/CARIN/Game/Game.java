@@ -54,10 +54,15 @@ public class Game implements Runnable{
             long timeUnit = 7000;
             if (evalDeltaTime * speed >= timeUnit * 1000000) {
                 gameLastTime = currentTime;
-                body.run();
+                evaluate();
             }
         }
 
+    }
+
+    public void evaluate(){
+        body.addVirus();
+        body.run();
     }
 
     public void addInputEvent(InputEvent event) {
