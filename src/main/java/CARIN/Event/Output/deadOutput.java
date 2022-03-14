@@ -5,6 +5,5 @@ public class deadOutput extends OutputEvent {
 
     public deadOutput(){
         super("dead");
-        outputEvents.add(this);
     }
 }
