@@ -14,14 +14,14 @@ const StartMenu = () => {
 
     return(
     
-    <div className ="bg-white">
+    <div className ="bg-body">
        
        <div  className ="bg-main" >
 
        <div className ="btn-float-right-bottom flex flex-col space-y-4 ">
-           <button className="btn-scale"><img src={play_btn} alt="start_button" style={{width:"280px" ,height:"120px"}}
+           <button className="btnscale btn-scale"><img src={play_btn} alt="start_button" style={{width:"280px" ,height:"120px"}}
            onClick = {() =>navigate("/uploadfile")} /></button>
-            <button className="btn-scale"><img src={howtoplay_btn} alt="howto_button" style={{width:"280px" ,height:"120px"}} 
+            <button className="btnscale btn-scale"><img src={howtoplay_btn} alt="howto_button" style={{width:"280px" ,height:"120px"}} 
             onClick = {() =>navigate("/howtoplay")} /></button>
        </div>
 

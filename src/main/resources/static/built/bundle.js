@@ -52,7 +52,7 @@ var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".btn-float-right-bottom{\r\n    float: right;\r\n    position: absolute;\r\n    right:    450px;\r\n    bottom:   70px;\r\n    }\r\n\r\n.btnscale{\r\n        transition: .2s ease-in-out 0s;\r\n        }\r\n        .btn-scale:hover{\r\n        cursor: pointer;\r\n        transform: scale(1.25);\r\n      }    \r\n    \r\n.bg-main{\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n    background-repeat: no-repeat; \r\n    background-position: center;\r\n    width: 100%;\r\n    height: 100vh;\r\n}\r\n\r\n", "",{"version":3,"sources":["webpack://./src/main/ts/component/CSSstyle/start.css"],"names":[],"mappings":"AAAA;IACI,YAAY;IACZ,kBAAkB;IAClB,eAAe;IACf,cAAc;IACd;;AAEJ;QACQ,8BAA8B;QAC9B;QACA;QACA,eAAe;QACf,sBAAsB;MACxB;;AAEN;IACI,yDAAyC;IACzC,4BAA4B;IAC5B,2BAA2B;IAC3B,WAAW;IACX,aAAa;AACjB","sourcesContent":[".btn-float-right-bottom{\r\n    float: right;\r\n    position: absolute;\r\n    right:    450px;\r\n    bottom:   70px;\r\n    }\r\n\r\n.btnscale{\r\n        transition: .2s ease-in-out 0s;\r\n        }\r\n        .btn-scale:hover{\r\n        cursor: pointer;\r\n        transform: scale(1.25);\r\n      }    \r\n    \r\n.bg-main{\r\n    background-image: url('./image/main.jpg');\r\n    background-repeat: no-repeat; \r\n    background-position: center;\r\n    width: 100%;\r\n    height: 100vh;\r\n}\r\n\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".btn-float-right-bottom{\r\n    float: right;\r\n    position: absolute;\r\n    right:    450px;\r\n    bottom:   70px;\r\n    }\r\n\r\n.btnscale{\r\n        transition: .2s ease-in-out 0s;\r\n        }\r\n        .btn-scale:hover{\r\n        cursor: pointer;\r\n        transform: scale(1.25);\r\n      }    \r\n    \r\n.bg-main{\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n    background-repeat: no-repeat; \r\n    background-position: center;\r\n    width: 100%;\r\n    height: 100vh;\r\n}\r\n\r\n.bg-white{\r\n    background-color: white;\r\n}\r\n\r\n.bg-body{\r\n    background-color:#FFD7B5;\r\n  }", "",{"version":3,"sources":["webpack://./src/main/ts/component/CSSstyle/start.css"],"names":[],"mappings":"AAAA;IACI,YAAY;IACZ,kBAAkB;IAClB,eAAe;IACf,cAAc;IACd;;AAEJ;QACQ,8BAA8B;QAC9B;QACA;QACA,eAAe;QACf,sBAAsB;MACxB;;AAEN;IACI,yDAAyC;IACzC,4BAA4B;IAC5B,2BAA2B;IAC3B,WAAW;IACX,aAAa;AACjB;;AAEA;IACI,uBAAuB;AAC3B;;AAEA;IACI,wBAAwB;EAC1B","sourcesContent":[".btn-float-right-bottom{\r\n    float: right;\r\n    position: absolute;\r\n    right:    450px;\r\n    bottom:   70px;\r\n    }\r\n\r\n.btnscale{\r\n        transition: .2s ease-in-out 0s;\r\n        }\r\n        .btn-scale:hover{\r\n        cursor: pointer;\r\n        transform: scale(1.25);\r\n      }    \r\n    \r\n.bg-main{\r\n    background-image: url('./image/main.jpg');\r\n    background-repeat: no-repeat; \r\n    background-position: center;\r\n    width: 100%;\r\n    height: 100vh;\r\n}\r\n\r\n.bg-white{\r\n    background-color: white;\r\n}\r\n\r\n.bg-body{\r\n    background-color:#FFD7B5;\r\n  }"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -73,17 +73,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
 
-
-var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ./image/body.png */ "./src/main/ts/component/CSSstyle/image/body.png"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".column {\r\n    float: left;\r\n    width: 33.33%;\r\n    padding: 5px;\r\n  }\r\n  \r\n  /* Clearfix (clear floats) */\r\n  .row::after {\r\n    content: \"\";\r\n    clear: both;\r\n    display: table;\r\n  }\r\n\r\n\r\n  .flex-gap {\r\ndisplay: inline-flex;\r\nflex-wrap: wrap;\r\n  }\r\n\r\n.flex-gap > div {\r\nmargin: 10px;\r\n}\r\n\r\n.float-right-top{\r\n      float: right;\r\n      position: absolute;\r\n      right:180px;\r\n      top : 100px;\r\n      }\r\n\r\n      .float-right-bottom{\r\n      float: left;\r\n      position: absolute;\r\n      left:320px;\r\n      bottom: 20px;\r\n      } \r\n\r\n      .float-right-bottom-btn{\r\n        float: right;\r\n        position: absolute;\r\n        right:220px;\r\n        bottom: 20px;\r\n        } \r\n\r\n.bg-body{\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/component/CSSstyle/upload.css"],"names":[],"mappings":"AAAA;IACI,WAAW;IACX,aAAa;IACb,YAAY;EACd;;EAEA,4BAA4B;EAC5B;IACE,WAAW;IACX,WAAW;IACX,cAAc;EAChB;;;EAGA;AACF,oBAAoB;AACpB,eAAe;EACb;;AAEF;AACA,YAAY;AACZ;;AAEA;MACM,YAAY;MACZ,kBAAkB;MAClB,WAAW;MACX,WAAW;MACX;;MAEA;MACA,WAAW;MACX,kBAAkB;MAClB,UAAU;MACV,YAAY;MACZ;;MAEA;QACE,YAAY;QACZ,kBAAkB;QAClB,WAAW;QACX,YAAY;QACZ;;AAER;EACE,yDAAyC;AAC3C","sourcesContent":[".column {\r\n    float: left;\r\n    width: 33.33%;\r\n    padding: 5px;\r\n  }\r\n  \r\n  /* Clearfix (clear floats) */\r\n  .row::after {\r\n    content: \"\";\r\n    clear: both;\r\n    display: table;\r\n  }\r\n\r\n\r\n  .flex-gap {\r\ndisplay: inline-flex;\r\nflex-wrap: wrap;\r\n  }\r\n\r\n.flex-gap > div {\r\nmargin: 10px;\r\n}\r\n\r\n.float-right-top{\r\n      float: right;\r\n      position: absolute;\r\n      right:180px;\r\n      top : 100px;\r\n      }\r\n\r\n      .float-right-bottom{\r\n      float: left;\r\n      position: absolute;\r\n      left:320px;\r\n      bottom: 20px;\r\n      } \r\n\r\n      .float-right-bottom-btn{\r\n        float: right;\r\n        position: absolute;\r\n        right:220px;\r\n        bottom: 20px;\r\n        } \r\n\r\n.bg-body{\r\n  background-image: url('./image/body.png');\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".column {\r\n    float: left;\r\n    width: 33.33%;\r\n    padding: 5px;\r\n  }\r\n  \r\n  /* Clearfix (clear floats) */\r\n  .row::after {\r\n    content: \"\";\r\n    clear: both;\r\n    display: table;\r\n  }\r\n\r\n\r\n  .flex-gap {\r\ndisplay: inline-flex;\r\nflex-wrap: wrap;\r\n  }\r\n\r\n.flex-gap > div {\r\nmargin: 10px;\r\n}\r\n\r\n.float-right-top{\r\n      float: right;\r\n      position: absolute;\r\n      right:250px;\r\n      top : 100px;\r\n      }\r\n\r\n.float-left-tom{\r\n      float: left;\r\n      position: absolute;\r\n      left:100px;\r\n      top : 100px;\r\n      } \r\n\r\n.float-right-bottom-btn{\r\n        float: right;\r\n        position: absolute;\r\n        right:220px;\r\n        bottom: 20px;\r\n        } \r\n\r\n       \r\n\r\n.bg-body{\r\n  background-color:#FFD7B5;\r\n}\r\n\r\n .btnscale{\r\n  transition: .2s ease-in-out 0s;\r\n  }\r\n  .btn-scale:hover{\r\n  cursor: pointer;\r\n  transform: scale(1.25);\r\n}\r\n\r\n.row:after {\r\n  content: \"\";\r\n  display: table;\r\n  clear: both;\r\n}\r\n\r\n.column {\r\n  float: left;\r\n  padding: 10px;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/main/ts/component/CSSstyle/upload.css"],"names":[],"mappings":"AAAA;IACI,WAAW;IACX,aAAa;IACb,YAAY;EACd;;EAEA,4BAA4B;EAC5B;IACE,WAAW;IACX,WAAW;IACX,cAAc;EAChB;;;EAGA;AACF,oBAAoB;AACpB,eAAe;EACb;;AAEF;AACA,YAAY;AACZ;;AAEA;MACM,YAAY;MACZ,kBAAkB;MAClB,WAAW;MACX,WAAW;MACX;;AAEN;MACM,WAAW;MACX,kBAAkB;MAClB,UAAU;MACV,WAAW;MACX;;AAEN;QACQ,YAAY;QACZ,kBAAkB;QAClB,WAAW;QACX,YAAY;QACZ;;;;AAIR;EACE,wBAAwB;AAC1B;;CAEC;EACC,8BAA8B;EAC9B;EACA;EACA,eAAe;EACf,sBAAsB;AACxB;;AAEA;EACE,WAAW;EACX,cAAc;EACd,WAAW;AACb;;AAEA;EACE,WAAW;EACX,aAAa;AACf","sourcesContent":[".column {\r\n    float: left;\r\n    width: 33.33%;\r\n    padding: 5px;\r\n  }\r\n  \r\n  /* Clearfix (clear floats) */\r\n  .row::after {\r\n    content: \"\";\r\n    clear: both;\r\n    display: table;\r\n  }\r\n\r\n\r\n  .flex-gap {\r\ndisplay: inline-flex;\r\nflex-wrap: wrap;\r\n  }\r\n\r\n.flex-gap > div {\r\nmargin: 10px;\r\n}\r\n\r\n.float-right-top{\r\n      float: right;\r\n      position: absolute;\r\n      right:250px;\r\n      top : 100px;\r\n      }\r\n\r\n.float-left-tom{\r\n      float: left;\r\n      position: absolute;\r\n      left:100px;\r\n      top : 100px;\r\n      } \r\n\r\n.float-right-bottom-btn{\r\n        float: right;\r\n        position: absolute;\r\n        right:220px;\r\n        bottom: 20px;\r\n        } \r\n\r\n       \r\n\r\n.bg-body{\r\n  background-color:#FFD7B5;\r\n}\r\n\r\n .btnscale{\r\n  transition: .2s ease-in-out 0s;\r\n  }\r\n  .btn-scale:hover{\r\n  cursor: pointer;\r\n  transform: scale(1.25);\r\n}\r\n\r\n.row:after {\r\n  content: \"\";\r\n  display: table;\r\n  clear: both;\r\n}\r\n\r\n.column {\r\n  float: left;\r\n  padding: 10px;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -32067,12 +32062,12 @@ __webpack_require__.r(__webpack_exports__);
 
 var StartMenu = function () {
     var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)();
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "bg-green" },
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "bg-body" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "bg-main" },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "btn-float-right-bottom flex flex-col space-y-4 " },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btn-scale" },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btnscale btn-scale" },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_play_png__WEBPACK_IMPORTED_MODULE_2__, alt: "start_button", style: { width: "280px", height: "120px" }, onClick: function () { return navigate("/uploadfile"); } })),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btn-scale" },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btnscale btn-scale" },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_howto_png__WEBPACK_IMPORTED_MODULE_3__, alt: "howto_button", style: { width: "280px", height: "120px" }, onClick: function () { return navigate("/howtoplay"); } }))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (StartMenu);
@@ -32132,39 +32127,47 @@ var Uploadfile = function () {
         console.log(reader.result);
     };
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "bg-white" },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: " bg-body bg-center bg-no-repeat  w-full h-screen  ;" },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex-gap float-right-top " },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "mb-4 space-y-4" },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_anti1_png__WEBPACK_IMPORTED_MODULE_3__, alt: "antibody1", style: { width: "200px", height: "150px" } }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", { type: "file", onChange: function (e) { return handlefile(e, 1); }, id: "file1", name: "filename1" }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btn-scale", onClick: function (e) { return upload(e, 1); } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_submit_png__WEBPACK_IMPORTED_MODULE_2__, alt: "submit_button", style: { width: "100px", height: "40px" } }))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "mb-4 space-y-4" },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_anti2_png__WEBPACK_IMPORTED_MODULE_4__, alt: "antibody2", style: { width: "200px", height: "150px" } }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", { type: "file", onChange: function (e) { return handlefile(e, 2); }, id: "file2", name: "filename1" }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btn-scale", onClick: function (e) { return upload(e, 2); } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_submit_png__WEBPACK_IMPORTED_MODULE_2__, alt: "submit_button", style: { width: "100px", height: "40px" } }))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "mb-4 space-y-4" },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_anti3_png__WEBPACK_IMPORTED_MODULE_5__, alt: "antibody3", style: { width: "200px", height: "150px" } }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", { type: "file", onChange: function (e) { return handlefile(e, 3); }, id: "file3", name: "filename1" }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btn-scale", onClick: function (e) { return upload(e, 3); } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_submit_png__WEBPACK_IMPORTED_MODULE_2__, alt: "submit_button", style: { width: "100px", height: "40px" } })))),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex-gap float-right-bottom " },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "mb-4 space-y-4" },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_virus1_png__WEBPACK_IMPORTED_MODULE_6__, alt: "virus1", style: { width: "200px", height: "150px" } }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", { type: "file", onChange: function (e) { return handlefile(e, 4); }, id: "file4", name: "filename1" }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btn-scale", onClick: function (e) { return upload(e, 4); } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_submit_png__WEBPACK_IMPORTED_MODULE_2__, alt: "submit_button", style: { width: "100px", height: "40px" } }))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "mb-4 space-y-4" },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_virus2_png__WEBPACK_IMPORTED_MODULE_7__, alt: "virus2", style: { width: "200px", height: "150px" } }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", { type: "file", onChange: function (e) { return handlefile(e, 5); }, id: "file5", name: "filename1" }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btn-scale", onClick: function (e) { return upload(e, 5); } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_submit_png__WEBPACK_IMPORTED_MODULE_2__, alt: "submit_button", style: { width: "100px", height: "40px" } }))),
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "mb-4 space-y-4" },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_virus3_png__WEBPACK_IMPORTED_MODULE_8__, alt: "virus3", style: { width: "200px", height: "150px" } }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", { type: "file", onChange: function (e) { return handlefile(e, 6); }, id: "file6", name: "filename1" }),
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btn-scale", onClick: function (e) { return upload(e, 6); } },
-                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_submit_png__WEBPACK_IMPORTED_MODULE_2__, alt: "submit_button", style: { width: "100px", height: "40px" } })))))));
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: " bg-body bg-center bg-no-repeat  w-full h-screen " },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "px-32 pt-20 mx-52 " },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "row space-x-52 " },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "column space-y-5 " },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_anti1_png__WEBPACK_IMPORTED_MODULE_3__, alt: "antibody1", style: { width: "120px", height: "120px" } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex" },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", { type: "file", onChange: function (e) { return handlefile(e, 1); }, id: "file1", name: "filename1" }),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btnscale btn-scale", onClick: function (e) { return upload(e, 1); } },
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_submit_png__WEBPACK_IMPORTED_MODULE_2__, alt: "submit_button", style: { width: "160px", height: "40px" } })))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "column space-y-5" },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_virus1_png__WEBPACK_IMPORTED_MODULE_6__, alt: "virus1", style: { width: "120px", height: "120px" } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex" },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", { type: "file", onChange: function (e) { return handlefile(e, 4); }, id: "file4", name: "filename1" }),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btnscale btn-scale", onClick: function (e) { return upload(e, 4); } },
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_submit_png__WEBPACK_IMPORTED_MODULE_2__, alt: "submit_button", style: { width: "160px", height: "40px" } }))))),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "row space-x-52 " },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "column space-y-5" },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_anti2_png__WEBPACK_IMPORTED_MODULE_4__, alt: "antibody2", style: { width: "120px", height: "120px" } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex" },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", { type: "file", onChange: function (e) { return handlefile(e, 2); }, id: "file2", name: "filename1" }),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btnscale btn-scale", onClick: function (e) { return upload(e, 2); } },
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_submit_png__WEBPACK_IMPORTED_MODULE_2__, alt: "submit_button", style: { width: "160px", height: "40px" } })))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "column space-y-5" },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_virus2_png__WEBPACK_IMPORTED_MODULE_7__, alt: "virus2", style: { width: "120px", height: "120px" } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex" },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", { type: "file", onChange: function (e) { return handlefile(e, 5); }, id: "file5", name: "filename1" }),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btnscale btn-scale", onClick: function (e) { return upload(e, 5); } },
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_submit_png__WEBPACK_IMPORTED_MODULE_2__, alt: "submit_button", style: { width: "160px", height: "40px" } }))))),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "row space-x-52 " },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "column space-y-5" },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_anti3_png__WEBPACK_IMPORTED_MODULE_5__, alt: "antibody3", style: { width: "120px", height: "120px" } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex" },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", { type: "file", onChange: function (e) { return handlefile(e, 3); }, id: "file3", name: "filename1" }),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btnscale btn-scale", onClick: function (e) { return upload(e, 3); } },
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_submit_png__WEBPACK_IMPORTED_MODULE_2__, alt: "submit_button", style: { width: "160px", height: "40px" } })))),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "column space-y-5" },
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_virus3_png__WEBPACK_IMPORTED_MODULE_8__, alt: "virus3", style: { width: "120px", height: "120px" } }),
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex" },
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", { type: "file", onChange: function (e) { return handlefile(e, 6); }, id: "file6", name: "filename1" }),
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btnscale btn-scale", onClick: function (e) { return upload(e, 6); } },
+                                react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_submit_png__WEBPACK_IMPORTED_MODULE_2__, alt: "submit_button", style: { width: "160px", height: "40px" } })))))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Uploadfile);
 
@@ -32198,16 +32201,6 @@ module.exports = __webpack_require__.p + "44175806872db896ed2b.png";
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__.p + "01b49cfa92dd973e1646.png";
-
-/***/ }),
-
-/***/ "./src/main/ts/component/CSSstyle/image/body.png":
-/*!*******************************************************!*\
-  !*** ./src/main/ts/component/CSSstyle/image/body.png ***!
-  \*******************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-module.exports = __webpack_require__.p + "87ee2e93621f62f13163.png";
 
 /***/ }),
 
