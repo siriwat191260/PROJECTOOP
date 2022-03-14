@@ -8,6 +8,7 @@ import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class BodyImp implements Body{
+    private static BodyImp body;
     private List<Host>organismInOrder = new CopyOnWriteArrayList<>();
     private int[][] cellLoc;
     public int antiCredit;
@@ -42,6 +43,12 @@ public class BodyImp implements Body{
         this.virusAttack = config.virusAttack;
         this.virusGain   = config.virusGain;
         this.order = 1;
+    }
+
+    // singleton
+    public static BodyImp createBody(Game game, GeneticManager gene, ConfigManager config){
+        if(body != null) body = new BodyImp(game, gene, config);
+        return body;
     }
 
     // random genetic code to virus

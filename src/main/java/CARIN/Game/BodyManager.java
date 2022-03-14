@@ -10,7 +10,7 @@ public class BodyManager {
     private Body body;
 
     public BodyManager(Game game) throws IOException {
-        body = new BodyImp(game, new GeneticManager(), new ConfigManager());
+        body = BodyImp.createBody(game, new GeneticManager(), new ConfigManager());
     }
 
     protected Body getBody(){
