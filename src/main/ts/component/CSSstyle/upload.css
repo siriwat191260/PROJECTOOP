@@ -29,8 +29,19 @@ margin: 10px;
       }
 
       .float-right-bottom{
-      float: right;
+      float: left;
       position: absolute;
-      right:180px;
-      bottom: 80px;
-      }
+      left:320px;
+      bottom: 20px;
+      } 
+
+      .float-right-bottom-btn{
+        float: right;
+        position: absolute;
+        right:220px;
+        bottom: 20px;
+        } 
+
+.bg-body{
+  background-image: url('./image/body.png');
+}
