@@ -31,7 +31,6 @@ public class BodyImp implements Body{
         this.geneticCodeVirus = gene.getVirusGene();
         cellLoc = new int[m+1][n+1];
         this.m = config.m; this.n = config.n;
-        buildField();
         this.antiCredit  = config.antiCredit;
         this.virusSpawn  = config.virusSpawn;
         this.placeCost   = config.antiCost;
@@ -44,27 +43,15 @@ public class BodyImp implements Body{
         this.virusGain   = config.virusGain;
         this.order = 1;
     }
-    // create cell field of array which contain row m and column n
-    private void buildField(){
-        for (int i=0;i<=m;i++){
-            for (int j=0;i<=n;i++){
-                cellLoc[i][j] = 0;
-            }
-        }
-    }
-    // random genetic code to antibody
-    private Host randomAnti(int[] location) {
-        int x = (int) (Math.random() * geneticCodeAnti.size());
-        return new Antibody(geneticCodeAnti.get(x), antiHealth, antiAttack, antiGain, moveCost,location,this);
-    }
+
     // random genetic code to virus
     private Host randomVirus(int[] location) {
         int x = (int) (Math.random() * geneticCodeVirus.size());
         return new Virus(geneticCodeVirus.get(x), virusHealth, virusAttack, virusGain, location, this);
     }
     // when adding new organism -> add to cell field
-    private void addToCellLoc(int[] location){
-        cellLoc[location[0]][location[1]] = order;
+    private void addToCellLoc(int row, int column){
+        cellLoc[row][column] = order;
     }
     // when moving an organism -> change location in field
     private void changeCellLoc(int[] location, int[] newLocation, int order){
@@ -76,15 +63,10 @@ public class BodyImp implements Body{
     private int[] randomLocation(){
         int[] location = new int[2];
         // avoiding adding to owned cell
-        if(order == 1) {
+        do {
             location[0] = (int) (Math.random() * m) + 1;
             location[1] = (int) (Math.random() * n) + 1;
-        }else {
-            do {
-                location[0] = (int) (Math.random() * m) + 1;
-                location[1] = (int) (Math.random() * n) + 1;
-            } while (cellLoc[location[0]][location[1]] != 0);
-        }
+        } while (cellLoc[location[0]][location[1]] != 0);
         return location;
     }
     //
@@ -96,18 +78,18 @@ public class BodyImp implements Body{
     }
 
     @Override
-    public boolean checkEmptyCell(int[] location) {
-        return cellLoc[location[0]][location[1]] == 0 ;
+    public boolean checkEmptyCell(int row, int column) {
+        return cellLoc[row][column] == 0 ;
     }
 
     // adding new antibody
     @Override
-    public void addAntibody(int[] location) {
+    public void addAntibody(int[] location, int geneNum) {
         if(antiCredit>0) {
-            if(checkEmptyCell(location)){
-                this.organismInOrder.add(randomAnti(location));
-                addToCellLoc(location);
-                cellLoc[location[0]][location[1]] = order;
+            if(checkEmptyCell(location[0], location[1])){
+                this.organismInOrder.add(new Antibody(geneticCodeAnti.get(geneNum),
+                        antiHealth, antiAttack, antiGain, moveCost,location,this));
+                addToCellLoc(location[0], location[1]);
                 int loc = Integer.parseInt((location[0])+String.valueOf(location[1]));
                 System.out.println("Added antibody to cell "+ loc);
                 antiCredit -= placeCost;
@@ -119,20 +101,6 @@ public class BodyImp implements Body{
             System.out.println("Run out of antibody credit! Please try to move your existed antibody instead.");
     }
 
-    /* for test */
-    @Override
-    public void addvirus(int[] location) {
-        if(checkEmptyCell(location)){
-            this.organismInOrder.add(randomVirus(location));
-            addToCellLoc(location);
-            int loc = Integer.parseInt((location[0])+String.valueOf(location[1]));
-            System.out.println("Added virus to cell "+ loc);
-            virusNum++;
-            order++;
-        }else
-            System.out.println("The cell you tried to add a virus is not empty.");
-    }
-
     // adding new virus
     @Override
     public void addVirus() {
@@ -142,7 +110,7 @@ public class BodyImp implements Body{
         if(probability<=this.virusSpawn){
             int[] location = randomLocation();
             this.organismInOrder.add(randomVirus(location));
-            addToCellLoc(location);
+            addToCellLoc(location[0], location[1]);
             int loc = Integer.parseInt((location[0])+String.valueOf(location[1]));
             System.out.println("Added virus to cell "+ loc);
             virusNum++;
@@ -159,7 +127,6 @@ public class BodyImp implements Body{
     }
 
     // when an antibody is dead and turn into a virus
-
     private void addAntiTurnVirus(String geneticCode, int[] location) {
         antibodyNum--;
         this.organismInOrder.add( new Virus(geneticCode, antiHealth, antiAttack, antiGain,location,this));
@@ -217,7 +184,7 @@ public class BodyImp implements Body{
     // when an antibody is moved by player
     @Override
     public void move(int[] location, int[] newLocation) {
-        if(this.checkEmptyCell(newLocation)) {
+        if(this.checkEmptyCell(newLocation[0], newLocation[1])) {
             Host host = findOrganByLocation(location);
             host.move(newLocation);
             int order = organismInOrder.indexOf(host);
