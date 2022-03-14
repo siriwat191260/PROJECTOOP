@@ -6,8 +6,8 @@ public class GeneticRef {
     private static GeneticRef geneticRef;
     private static final int antiType = 3;
     private static final int virusType = 3;
-    private static String[] antiPath = new String[antiType];
-    private static String[] virusPath = new String[virusType];
+    private static final String[] antiPath = new String[antiType];
+    private static final String[] virusPath = new String[virusType];
 
     public GeneticRef(){
         String antibody1 = "src/main/java/CARIN/GeneticCode/antibody1.txt";

@@ -52,7 +52,11 @@ var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
+<<<<<<< HEAD
 ___CSS_LOADER_EXPORT___.push([module.id, ".btn-float-right-bottom{\r\n    float: right;\r\n    position: absolute;\r\n    right:    450px;\r\n    bottom:   70px;\r\n    }\r\n\r\n.btnscale{\r\n        transition: .2s ease-in-out 0s;\r\n        }\r\n        .btn-scale:hover{\r\n        cursor: pointer;\r\n        transform: scale(1.25);\r\n      }    \r\n    \r\n.bg-main{\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n    background-repeat: no-repeat; \r\n    background-position: center;\r\n    width: 100%;\r\n    height: 100vh;\r\n}\r\n\r\n.bg-white{\r\n    background-color: white;\r\n}\r\n\r\n.bg-body{\r\n    background-color:#FFD7B5;\r\n  }", "",{"version":3,"sources":["webpack://./src/main/ts/component/CSSstyle/start.css"],"names":[],"mappings":"AAAA;IACI,YAAY;IACZ,kBAAkB;IAClB,eAAe;IACf,cAAc;IACd;;AAEJ;QACQ,8BAA8B;QAC9B;QACA;QACA,eAAe;QACf,sBAAsB;MACxB;;AAEN;IACI,yDAAyC;IACzC,4BAA4B;IAC5B,2BAA2B;IAC3B,WAAW;IACX,aAAa;AACjB;;AAEA;IACI,uBAAuB;AAC3B;;AAEA;IACI,wBAAwB;EAC1B","sourcesContent":[".btn-float-right-bottom{\r\n    float: right;\r\n    position: absolute;\r\n    right:    450px;\r\n    bottom:   70px;\r\n    }\r\n\r\n.btnscale{\r\n        transition: .2s ease-in-out 0s;\r\n        }\r\n        .btn-scale:hover{\r\n        cursor: pointer;\r\n        transform: scale(1.25);\r\n      }    \r\n    \r\n.bg-main{\r\n    background-image: url('./image/main.jpg');\r\n    background-repeat: no-repeat; \r\n    background-position: center;\r\n    width: 100%;\r\n    height: 100vh;\r\n}\r\n\r\n.bg-white{\r\n    background-color: white;\r\n}\r\n\r\n.bg-body{\r\n    background-color:#FFD7B5;\r\n  }"],"sourceRoot":""}]);
+=======
+___CSS_LOADER_EXPORT___.push([module.id, ".btn-float-right-bottom{\r\n    float: right;\r\n    position: absolute;\r\n    right:    450px;\r\n    bottom:   70px;\r\n    }\r\n\r\n.btnscale{\r\n        transition: .2s ease-in-out 0s;\r\n        }\r\n        .btn-scale:hover{\r\n        cursor: pointer;\r\n        transform: scale(1.25);\r\n      }    \r\n    \r\n.bg-main{\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n    background-repeat: no-repeat; \r\n    background-position: center;\r\n    width: 100%;\r\n    height: 100vh;\r\n}\r\n\r\n.bg-white{\r\n    background-color: white;\r\n}", "",{"version":3,"sources":["webpack://./src/main/ts/component/CSSstyle/start.css"],"names":[],"mappings":"AAAA;IACI,YAAY;IACZ,kBAAkB;IAClB,eAAe;IACf,cAAc;IACd;;AAEJ;QACQ,8BAA8B;QAC9B;QACA;QACA,eAAe;QACf,sBAAsB;MACxB;;AAEN;IACI,yDAAyC;IACzC,4BAA4B;IAC5B,2BAA2B;IAC3B,WAAW;IACX,aAAa;AACjB;;AAEA;IACI,uBAAuB;AAC3B","sourcesContent":[".btn-float-right-bottom{\r\n    float: right;\r\n    position: absolute;\r\n    right:    450px;\r\n    bottom:   70px;\r\n    }\r\n\r\n.btnscale{\r\n        transition: .2s ease-in-out 0s;\r\n        }\r\n        .btn-scale:hover{\r\n        cursor: pointer;\r\n        transform: scale(1.25);\r\n      }    \r\n    \r\n.bg-main{\r\n    background-image: url('./image/main.jpg');\r\n    background-repeat: no-repeat; \r\n    background-position: center;\r\n    width: 100%;\r\n    height: 100vh;\r\n}\r\n\r\n.bg-white{\r\n    background-color: white;\r\n}"],"sourceRoot":""}]);
+>>>>>>> ea858fedfab34d2532a1e6ba9c0fc6fdc0c84b92
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -32062,7 +32066,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var StartMenu = function () {
     var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)();
+<<<<<<< HEAD
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "bg-body" },
+=======
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "bg-white" },
+>>>>>>> ea858fedfab34d2532a1e6ba9c0fc6fdc0c84b92
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "bg-main" },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "btn-float-right-bottom flex flex-col space-y-4 " },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btnscale btn-scale" },

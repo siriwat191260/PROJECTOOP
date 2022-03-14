@@ -48,7 +48,7 @@ public class BodyImp implements Body{
 
     // singleton
     public static BodyImp createBody(Game game, GeneticManager gene, ConfigManager config){
-        if(body != null) body = new BodyImp(game, gene, config);
+        if(body == null) body = new BodyImp(game, gene, config);
         return body;
     }
 

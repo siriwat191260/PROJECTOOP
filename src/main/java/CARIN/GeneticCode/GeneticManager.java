@@ -38,7 +38,7 @@ public class GeneticManager {
 
     // singleton
     public static GeneticManager createGeneticManager() throws IOException {
-        if(geneticManager != null) geneticManager = new GeneticManager();
+        if(geneticManager == null) geneticManager = new GeneticManager();
         return geneticManager;
     }
 
@@ -59,8 +59,7 @@ public class GeneticManager {
 
     public static void main(String[] args) throws IOException {
         GeneticManager read = new GeneticManager();
-        read.setAntibody(0, "hi");
-        System.out.println(read.getAntiGene().get(0));
+        System.out.println(read.getVirusGene().get(0));
     }
 }
 
