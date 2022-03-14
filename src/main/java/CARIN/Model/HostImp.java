@@ -30,20 +30,11 @@ public class HostImp implements Host{
 
     @Override
     public void shoot(String direction) {
-        int[] shootLoc = findloc(direction);
-        Host shoot = body.findOrganByLocation(shootLoc);
-         if(!body.checkEmptyCell(shootLoc[0], shootLoc[1]) &&
-                 !Arrays.equals(shootLoc, location) && shoot.getStatus().equals("normal")){
-             System.out.println(this.location[0] + "" + this.location[1] + " shoot " +
-                     direction + shoot.getLocation()[0] + "" + shoot.getLocation()[1]);
-             if(shoot.setHealth(attackDamage)) shoot.isDeath(this);
-             health+=gain;
-        }else System.out.println("can't shoot");
     }
 
     @Override
     public void move(String newLocation) {
-        int[] newLoc = findloc(newLocation);
+        int[] newLoc = findLoc(newLocation);
         if((body.checkEmptyCell(newLoc[0], newLoc[1]) || (!body.checkEmptyCell(newLoc[0], newLoc[1])
                 && body.findOrganByLocation(newLoc).getStatus().equals("death")))
                 && !Arrays.equals(newLoc, location) ){
@@ -53,10 +44,11 @@ public class HostImp implements Host{
             cellLoc[location[0]][location[1]] = 0;
             cellLoc[newLoc[0]][newLoc[1]] = order+1;
             location = newLoc;
+            /* send move output */
         }else this.cantMove();
     }
 
-    private int[] findloc(String newLocation){
+    protected int[] findLoc(String newLocation){
         String dir = newLocation.toLowerCase();
         int[] Loc = {location[0], location[1]};
         if(dir.equals("up") && location[0]>1 ){
