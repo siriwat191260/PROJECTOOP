@@ -32067,7 +32067,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var StartMenu = function () {
     var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)();
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "bg-white" },
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "bg-green" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "bg-main" },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "btn-float-right-bottom flex flex-col space-y-4 " },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btn-scale" },
