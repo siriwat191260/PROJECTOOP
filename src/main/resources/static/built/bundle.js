@@ -35415,15 +35415,17 @@ var render = function (host) {
     if (host === 'anti3')
         return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_anti3_png__WEBPACK_IMPORTED_MODULE_5__ }));
 };
-var fetch_order_location = function (a, b) {
-    fetch("/game/orderlocation?x=".concat(a, "&y=").concat(b));
+var fetch_order_location = function (e, a, b) {
+    e.preventDefault();
+    var state = _stores_Cellstore__WEBPACK_IMPORTED_MODULE_1__.CellStore.useState();
+    fetch("/game/orderlocation?x=".concat(a, "&y=").concat(b, "&order=").concat(state.order));
 };
 var Cell = function (_a) {
     var x = _a.x, y = _a.y;
     var state = _stores_Cellstore__WEBPACK_IMPORTED_MODULE_1__.CellStore.useState();
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", { className: "w-10 h-10 cursor-pointer p-2 ", style: { borderColor: "transparent", backgroundImage: "url(".concat(_CSSstyle_image_block_png__WEBPACK_IMPORTED_MODULE_2__, ")"), backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }, onClick: function () {
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", { className: "w-10 h-10 cursor-pointer p-2 ", style: { borderColor: "transparent", backgroundImage: "url(".concat(_CSSstyle_image_block_png__WEBPACK_IMPORTED_MODULE_2__, ")"), backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }, onClick: function (e) {
             (0,_stores_Cellstore__WEBPACK_IMPORTED_MODULE_1__.selectcell)(y, x, state.host);
-            fetch_order_location(x, y);
+            fetch_order_location(e, x, y);
         } }, render(state.log[y][x])));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Cell);
