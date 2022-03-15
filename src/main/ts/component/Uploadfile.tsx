@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './CSSstyle/upload.css';
+import play_btn from './CSSstyle/image/play.png';
 import submit_btn from './CSSstyle/image/submit.png';
 import antibody_pic1 from './CSSstyle/image/anti1.png';
 import antibody_pic2 from './CSSstyle/image/anti2.png';
@@ -108,10 +109,10 @@ const Uploadfile = () => {
         </div>
 
       </div >
-      {/*  <div className="float-right-bottom-btn">
-              <button className="btn-scale "><img src={submit_btn} alt="submit_button" style={{width:"200px" ,height:"80px"}} 
-              onClick = {() =>{upload}} /></button>
-            </div> */}
+       <div className="float-right-bottom-btn">
+              <button className="btn-scale "><img src={play_btn} alt="play_button" style={{width:"200px" ,height:"80px"}} 
+              onClick = {() =>navigate("/game")} /></button>
+            </div>
 
     </div >
 

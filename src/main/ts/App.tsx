@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Link , Route ,Routes } from 'react-router-dom'
 import './App.css';
 import StartMenu from './component/StartMenu';
 import Uploadfile from './component/Uploadfile';
+import Game from './component/Game';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<StartMenu/>} />
           <Route path="/uploadfile" element={<Uploadfile/>} />
+          <Route path="/game" element={<Game/>}/>
         </Routes>
 
       
