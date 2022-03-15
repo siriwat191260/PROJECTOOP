@@ -5,6 +5,7 @@ import CARIN.Event.Input.InputEvent;
 import CARIN.Event.Input.addAntibody;
 import CARIN.Event.Input.moveAntibody;
 import CARIN.Model.Body;
+import CARIN.Model.BodyImp;
 import CARIN.Parser.SyntaxError;
 import java.io.IOException;
 
@@ -13,12 +14,11 @@ public class Game implements Runnable{
     private float speed = 1.0f;
     private Thread thread;
     public boolean running = false;
-    private final BodyManager bodyManager;
     public Body body;
     private EventQueue<InputEvent> inputEventQueue;
 
     public Game() throws IOException {
-        bodyManager = new BodyManager(this);
+        body = BodyImp.createBody();
     }
 
     // singleton
@@ -34,7 +34,6 @@ public class Game implements Runnable{
     @Override
     public void run() {
         thread = new Thread(this);
-        body = bodyManager.getBody();
         inputEventQueue = new EventQueue<>();
         running = true;
         try {

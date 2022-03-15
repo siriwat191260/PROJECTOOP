@@ -13,4 +13,6 @@ public interface Body {
     Host findOrganByLocation(int[] location);
     boolean checkEmptyCell(int row, int column);
     boolean isGameOver();
+    int getAntiCredit();
+    int getAntiCreditCost();
 }

@@ -6,13 +6,15 @@ type Cell = {
     log: string[][]
     host: string
     order: number
+    low:number
+    colum:number
 }
 
 let m:number
 let n:number
 
-m=20
-n=20
+m=5
+n=10
 
 const createcell = () =>{
     
@@ -29,7 +31,9 @@ const createcell = () =>{
 export const CellStore = new Store<Cell>({
     log: createcell(),
     host: "",
-    order:0
+    order:0,
+    low:m,
+    colum:n
 })
 
 export const selectanti = (anti: string) => {

@@ -24,12 +24,10 @@ public class BodyImp implements Body{
     private final List<String> geneticCodeAnti;
     private final List<String> geneticCodeVirus;
     public boolean gameOver = false;
-    private final Game game;
     private int startGameCheck = 0;
     // input from config file
     // assume m and n is <=10 first
-    public BodyImp(Game game, GeneticManager gene, ConfigManager config) {
-        this.game = game;
+    public BodyImp(GeneticManager gene, ConfigManager config) {
         this.geneticCodeAnti  = gene.getAntiGene();
         this.geneticCodeVirus = gene.getVirusGene();
         this.m = config.m; this.n = config.n;
@@ -52,16 +50,26 @@ public class BodyImp implements Body{
         return gameOver;
     }
 
+    @Override
+    public int getAntiCredit() {
+        return antiCredit;
+    }
+
+    @Override
+    public int getAntiCreditCost() {
+        return placeCost;
+    }
+
     // singleton
-    public static BodyImp createBody(Game game, GeneticManager gene, ConfigManager config){
-        if(body == null) body = new BodyImp(game, gene, config);
+    public static BodyImp createBody() throws IOException {
+        if(body == null) body = new BodyImp(GeneticManager.createGeneticManager(), ConfigManager.getConfig());
         return body;
     }
 
     // random genetic code to virus
     private Host randomVirus(int[] location) {
         int x = (int) (Math.random() * geneticCodeVirus.size());
-        return new Virus(geneticCodeVirus.get(x), virusHealth, virusAttack, virusGain, location, this);
+        return new Virus(x, geneticCodeVirus.get(x), virusHealth, virusAttack, virusGain, location, this);
     }
     // when adding new organism -> add to cell field
     private void addToCellLoc(int row, int column){
@@ -102,7 +110,7 @@ public class BodyImp implements Body{
         if(antiCredit>0) {
             if(startGameCheck == 1) startGameCheck = 2;
             if(checkEmptyCell(location[0], location[1])){
-                this.organismInOrder.add(new Antibody(geneticCodeAnti.get(geneNum),
+                this.organismInOrder.add(new Antibody(geneNum, geneticCodeAnti.get(geneNum),
                         antiHealth, antiAttack, antiGain, moveCost,location,this));
                 addToCellLoc(location[0], location[1]);
                 int loc = Integer.parseInt((location[0])+String.valueOf(location[1]));
@@ -146,9 +154,9 @@ public class BodyImp implements Body{
     }
 
     // when an antibody is dead and turn into a virus
-    private void addAntiTurnVirus(String geneticCode, int[] location) {
+    private void addAntiTurnVirus(int geneNum, String geneticCode, int[] location) {
         antibodyNum--;
-        this.organismInOrder.add( new Virus(geneticCode, antiHealth, antiAttack, antiGain,location,this));
+        this.organismInOrder.add( new Virus(geneNum, geneticCode, antiHealth, antiAttack, antiGain,location,this));
         cellLoc[location[0]][location[1]] = order;
         int loc = Integer.parseInt((location[0])+String.valueOf(location[1]));
         System.out.println("Antibody at cell"+ loc+"turned into virus!");
@@ -215,7 +223,7 @@ public class BodyImp implements Body{
                 cellLoc[m][n] = 0;
                 order--;
                 if(each.getType()==2){
-                    addAntiTurnVirus(each.getGeneticCode(),each.getLocation());
+                    addAntiTurnVirus(each.getGeneNum(), each.getGeneticCode(),each.getLocation());
                 }else if(each.getType()==1){
                     addVirusTurnAntiCredit();
                 }

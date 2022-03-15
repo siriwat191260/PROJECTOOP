@@ -8,7 +8,7 @@ const Bar = () => {
       <div className='pt-7 border-white rounded-full border-4 flex justify-center' style={{ width: "450px", height: "100px", backgroundColor: '#a6d2ff' }}>
         <text className='text-4xl'>Antibody credit : 1000 </text>
       </div>
-
+      
       <img src={speedup} className="" style={{ width: "100px" }}></img>
       <text className='pt-7 text-4xl '>time left: 10 </text>
       <img src={pause} style={{ width: "100px" }}></img>
