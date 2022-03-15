@@ -18,4 +18,5 @@ public interface Host {
     String getGeneticCode();
     void setStatus(String s, Host host);
     String getStatus();
+    int getGeneNum();
 }
