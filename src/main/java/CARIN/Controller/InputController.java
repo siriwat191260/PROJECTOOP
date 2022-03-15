@@ -17,7 +17,7 @@ public class InputController {
         System.out.println("Type: "+type);
         BodyImp body = BodyImp.createBody();
         // add antibody
-        int[] location = new int[]{x,y};
+        int[] location = new int[]{x+1,y+1};
         int geneNum = switch (type) {
             case "anti1" -> 0;
             case "anti2" -> 1;

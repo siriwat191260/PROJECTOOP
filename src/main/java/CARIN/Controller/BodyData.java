@@ -14,7 +14,10 @@ public class BodyData {
     public List<Integer> posX = new LinkedList<>();
     public List<Integer> posY = new LinkedList<>();
     public List<Integer> order = new LinkedList<>();
+    public List<Integer> hp = new LinkedList<>();
     public int antiCreditCost;
+    public int antiNum, virusNum;
+    public int antiHealth, virusHealth;
 
     public BodyData() throws IOException {
         BodyImp body = BodyImp.createBody();
@@ -36,9 +39,14 @@ public class BodyData {
                     posX.add(i);
                     posY.add(j);
                     order.add(body.getCellLoc()[i][j]);
+                    hp.add(host.getHealth());
                 }
             }
         }
         antiCreditCost = body.getAntiCreditCost();
+        antiNum = body.getAntiNum();
+        virusNum = body.getVirusNum();
+        antiHealth = body.getAntiMaxHp();
+        virusHealth = body.getVirusMaxHp();
     }
 }

@@ -71,7 +71,7 @@ public class Game implements Runnable{
 
     public void evaluate(){
         body.addVirus();
-        body.addAntibody(new int[]{ (int) (Math.random()*(body.getMN()[0])), (int) (Math.random()*body.getMN()[1])},
+        body.addAntibody(new int[]{ (int) (Math.random()*(body.getMN()[0])+1), (int) (Math.random()*body.getMN()[1])+1},
         (int) (Math.random()*3));
         body.run();
     }
@@ -109,7 +109,8 @@ public class Game implements Runnable{
     }
 
     public static void main(String[] args) throws IOException {
-        new Game();
+        Game game = new Game();
+        game.run();
 
     }
 
