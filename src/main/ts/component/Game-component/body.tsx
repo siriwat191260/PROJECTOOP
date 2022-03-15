@@ -6,7 +6,7 @@ const Body = () => {
     const state = CellStore.useState()
 
     return (
-        <table className="ring-2 ring-gray-200 rounded-md mx-auto">
+      <table className="rounded-lg mx-auto" style={{backgroundColor: "#F3A883"}}>
           <tbody>
             {state.log.map((row, i) =>
               <tr key={i}>

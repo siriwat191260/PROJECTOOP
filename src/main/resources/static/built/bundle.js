@@ -33767,14 +33767,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Bar = function () {
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex p-6 space-x-6 mx-auto max-w-screen-md" },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: 'pt-2 border-white rounded-full border-4', style: { width: "250px", height: "50px", backgroundColor: '#a6d2ff' } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("text", { className: 'flex justify-center' }, "Antibody credit : 1000 ")),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_zoomin_png__WEBPACK_IMPORTED_MODULE_1__, className: "", style: { width: "60px", height: "60px" } }),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_zoomout_png__WEBPACK_IMPORTED_MODULE_2__, className: "", style: { width: "60px", height: "60px" } }),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_speed_png__WEBPACK_IMPORTED_MODULE_3__, className: "", style: { width: "60px", height: "60px" } }),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("text", { className: 'pt-4' }, "time left: "),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_pause_png__WEBPACK_IMPORTED_MODULE_4__, style: { width: "60px", height: "60px" } })));
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "flex justify-center p-6 space-x-6 " },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: 'pt-7 border-white rounded-full border-4 flex justify-center', style: { width: "450px", height: "100px", backgroundColor: '#a6d2ff' } },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("text", { className: 'text-4xl' }, "Antibody credit : 1000 ")),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_zoomin_png__WEBPACK_IMPORTED_MODULE_1__, className: "", style: { width: "100px" } }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_zoomout_png__WEBPACK_IMPORTED_MODULE_2__, className: "", style: { width: "100px" } }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_speed_png__WEBPACK_IMPORTED_MODULE_3__, className: "", style: { width: "100px" } }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("text", { className: 'pt-7 text-4xl ' }, "time left: 10 "),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_pause_png__WEBPACK_IMPORTED_MODULE_4__, style: { width: "100px" } })));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Bar);
 
@@ -33814,7 +33814,7 @@ var render = function (host) {
 var Cell = function (_a) {
     var x = _a.x, y = _a.y;
     var state = _stores_Cellstore__WEBPACK_IMPORTED_MODULE_1__.CellStore.useState();
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", { className: "w-10 h-10 cursor-pointer p-1.5", style: { borderColor: "transparent", backgroundImage: "url(".concat(_CSSstyle_image_block_png__WEBPACK_IMPORTED_MODULE_2__, ")"), backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }, onClick: function () { return (0,_stores_Cellstore__WEBPACK_IMPORTED_MODULE_1__.selectcell)(y, x, state.host); } }, render(state.log[y][x])));
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", { className: "w-14 h-14 cursor-pointer p-2 ", style: { borderColor: "transparent", backgroundImage: "url(".concat(_CSSstyle_image_block_png__WEBPACK_IMPORTED_MODULE_2__, ")"), backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }, onClick: function () { return (0,_stores_Cellstore__WEBPACK_IMPORTED_MODULE_1__.selectcell)(y, x, state.host); } }, render(state.log[y][x])));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Cell);
 
@@ -33859,10 +33859,11 @@ var Selectantibutton = function (_a) {
         else
             return "";
     };
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "".concat(renderselect(), " rounded-md w-12 h-12 cursor-pointer"), onClick: function () { (0,_stores_Cellstore__WEBPACK_IMPORTED_MODULE_1__.selectanti)(anti); } }, render(anti)));
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "".concat(renderselect(), " rounded-md w-24 h-24 cursor-pointer justify-self-center"), onClick: function () { (0,_stores_Cellstore__WEBPACK_IMPORTED_MODULE_1__.selectanti)(anti); } }, render(anti)));
 };
 var Antipicker = function () {
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "rounded space-y-10 p-6 mr-4", style: { width: "100px", height: "300px", backgroundColor: "#b6e9ff" } },
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "rounded-lg grid grid-flow-row justify-center pt-4 m-4 border-white border-4", style: { width: "150px", height: "450px", backgroundColor: "#e9b4f1" } },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("text", { className: "text-2xl font-bolds text-center" }, "Buy antibody cost : 100"),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(Selectantibutton, { anti: 'anti1' }),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(Selectantibutton, { anti: 'anti2' }),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(Selectantibutton, { anti: 'anti3' })));
@@ -33890,7 +33891,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var Body = function () {
     var state = _stores_Cellstore__WEBPACK_IMPORTED_MODULE_1__.CellStore.useState();
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { className: "ring-2 ring-gray-200 rounded-md mx-auto" },
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("table", { className: "rounded-lg mx-auto p-4", style: { backgroundColor: "#F3A883" } },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("tbody", null, state.log.map(function (row, i) {
             return react__WEBPACK_IMPORTED_MODULE_0__.createElement("tr", { key: i }, row.map(function (cell, j) {
                 return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Cell__WEBPACK_IMPORTED_MODULE_2__["default"], { x: j, y: i, key: "".concat(j).concat(i) });
