@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.IOException;
 
 @RestController
-public class EventController {
+public class OutputController {
 
 //    public EventController() throws IOException {
 //        Game game = Game.initGame();

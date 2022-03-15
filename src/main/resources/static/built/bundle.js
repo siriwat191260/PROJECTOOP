@@ -35416,8 +35416,8 @@ var render = function (host) {
     if (host === 'anti3')
         return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_anti3_png__WEBPACK_IMPORTED_MODULE_5__ }));
 };
-var fetch_order_location = function (a, b, type, order) {
-    fetch("/game/orderlocation?x=".concat(a, "&y=").concat(b, "&type=").concat(type, "&order=").concat(order));
+var fetch_order_location = function (a, b, type) {
+    fetch("/game/addAntibody?x=".concat(a, "&y=").concat(b, "&type=").concat(type));
 };
 var size = function () {
     var state = _stores_Cellstore__WEBPACK_IMPORTED_MODULE_1__.CellStore.useState();
@@ -35430,9 +35430,8 @@ var Cell = function (_a) {
     var x = _a.x, y = _a.y;
     var state = _stores_Cellstore__WEBPACK_IMPORTED_MODULE_1__.CellStore.useState();
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", { className: "".concat(size(), " cursor-pointer"), style: { borderColor: "transparent", backgroundImage: "url(".concat(_CSSstyle_image_block_png__WEBPACK_IMPORTED_MODULE_2__, ")"), backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }, onClick: function () {
-            order = order + 1;
             (0,_stores_Cellstore__WEBPACK_IMPORTED_MODULE_1__.selectcell)(y, x, state.host);
-            fetch_order_location(y, x, state.host, order);
+            fetch_order_location(y, x, state.host);
         } }, render(state.log[y][x])));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Cell);
@@ -35765,7 +35764,6 @@ var createcell = function () {
 var CellStore = new pullstate__WEBPACK_IMPORTED_MODULE_0__.Store({
     log: createcell(),
     host: "",
-    order: 0,
     low: m,
     colum: n
 });
@@ -35777,7 +35775,6 @@ var selectanti = function (anti) {
 var selectcell = function (x, y, host) {
     CellStore.update(function (s) {
         s.log[x][y] = host;
-        s.order = s.order + 1;
     });
 };
 
