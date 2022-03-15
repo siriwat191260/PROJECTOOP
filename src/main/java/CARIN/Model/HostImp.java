@@ -6,6 +6,7 @@ import java.util.*;
 
 public class HostImp implements Host{
 
+    int gene;
     int health, attackDamage, gain, moveCost, m, n;
     int[] location;
     String geneticCode;
@@ -13,7 +14,8 @@ public class HostImp implements Host{
     Parser parser;
     Body body;
     String status;
-    public HostImp(String geneticCode, int health, int attackDamage,int gain, int[] location, Body body){
+    public HostImp(int gene, String geneticCode, int health, int attackDamage,int gain, int[] location, Body body){
+        this.gene = gene;
         this.health = health;
         this.attackDamage = attackDamage;
         this.gain = gain;
@@ -122,6 +124,11 @@ public class HostImp implements Host{
     @Override
     public String getStatus() {
         return status;
+    }
+
+    @Override
+    public int getGeneNum() {
+        return gene;
     }
 
     public void cantMove(){}

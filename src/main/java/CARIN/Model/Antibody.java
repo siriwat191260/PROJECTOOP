@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 public class Antibody extends HostImp{
 
-    public Antibody(String geneticCode, int health, int attackDamage,int gain,int moveCost,
+    public Antibody(int gene, String geneticCode, int health, int attackDamage,int gain,int moveCost,
                     int[] location,Body body) {
-        super(geneticCode, health, attackDamage, gain, location, body);
+        super(gene, geneticCode, health, attackDamage, gain, location, body);
         this.moveCost = moveCost;
     }
 

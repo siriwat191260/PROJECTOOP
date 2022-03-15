@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class Virus extends HostImp {
 
-    public Virus(String geneticCode, int health, int attackDamage,int gain, int[] location, Body body) {
-        super(geneticCode, health, attackDamage, gain, location, body);
+    public Virus(int gene, String geneticCode, int health, int attackDamage,int gain, int[] location, Body body) {
+        super(gene, geneticCode, health, attackDamage, gain, location, body);
     }
 
     @Override
