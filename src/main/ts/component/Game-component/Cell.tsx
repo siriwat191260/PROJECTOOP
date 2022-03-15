@@ -10,8 +10,6 @@ type celltype = {
     y:number
 }
 
-let w:number
-
 const render = (host:string) =>{
     if (host === 'anti1')
     return (
@@ -27,15 +25,24 @@ const render = (host:string) =>{
     )
 }
 
+const fetch_order_location = (e , a:number , b:number) =>{
+  e.preventDefault();
+  const state = CellStore.useState()
+  fetch(`/game/orderlocation?x=${a}&y=${b}&order=${state.order}`)  
+}
+
 const Cell = ({ x, y }: celltype) => {
 
     const state = CellStore.useState()
   
     return (
-      <td className="w-10 h-10 cursor-pointer p-2 " style={{borderColor: "transparent", backgroundImage: `url(${block})`,backgroundRepeat: 'no-repeat',backgroundPosition: 'center',backgroundSize: 'cover' }} onClick={() => selectcell(y,x,state.host)}>
+      <td className="w-10 h-10 cursor-pointer p-2 " style={{borderColor: "transparent", backgroundImage: `url(${block})`,backgroundRepeat: 'no-repeat',backgroundPosition: 'center',backgroundSize: 'cover' }} onClick={ e => {
+        selectcell(y,x,state.host)
+        fetch_order_location(e,x,y)
+      }}>
       {render(state.log[y][x])}
       </td>
     )
-  }
+}
   
   export default Cell
