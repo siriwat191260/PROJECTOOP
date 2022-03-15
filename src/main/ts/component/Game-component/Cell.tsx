@@ -34,12 +34,8 @@ const fetch_order_location = (a:number , b:number) =>{
 
 const size = () =>{
   const state = CellStore.useState()
-  let max = state.low
-  if (state.low < state.colum ){
-  max = state.colum
-  }
-
-  if(max<12) return "w-32 h-32 p-4"
+  if(state.low<6 && state.colum<12) return "w-32 h-32 p-4"
+  else return "w-24 h-24 p-4"
 }
 
 const Cell = ({ x, y }: celltype) => {
