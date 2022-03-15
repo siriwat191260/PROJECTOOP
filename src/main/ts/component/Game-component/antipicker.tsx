@@ -1,5 +1,5 @@
 import React from "react";
-import { CellStore,selectanti } from "../../stores/Cellstore";
+import { CellStore, selectanti } from "../../stores/Cellstore";
 import anti1 from '../CSSstyle/image/anti1.png'
 import anti2 from '../CSSstyle/image/anti2.png'
 import anti3 from '../CSSstyle/image/anti3.png'
@@ -33,7 +33,7 @@ const Selectantibutton = ({ anti }: antibody) => {
     }
 
     return (
-        <div className={`${renderselect()} rounded-md w-12 h-12 cursor-pointer`}
+        <div className={`${renderselect()} rounded-md w-24 h-24 cursor-pointer justify-self-center`}
             onClick={() => { selectanti(anti) }}
         >
             {render(anti)}
@@ -43,7 +43,8 @@ const Selectantibutton = ({ anti }: antibody) => {
 
 const Antipicker = () => {
     return (
-        <div className="rounded space-y-10 p-6 mr-4" style={{ width: "100px", height: "300px", backgroundColor: "#b6e9ff" }}>
+        <div className="rounded-lg grid grid-flow-row justify-center pt-4 m-4 border-white border-4" style={{ width: "150px", height: "450px", backgroundColor: "#e9b4f1" }}>
+            <text className="text-2xl font-bolds text-center">Buy antibody cost : 100</text>
             <Selectantibutton anti='anti1' />
             <Selectantibutton anti='anti2' />
             <Selectantibutton anti='anti3' />
