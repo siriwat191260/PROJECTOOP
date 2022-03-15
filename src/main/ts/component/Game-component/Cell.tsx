@@ -10,8 +10,6 @@ type celltype = {
   y: number
 }
 
-let order: number = 0
-
 const render = (host: string) => {
   if (host === 'anti1')
     return (
@@ -49,10 +47,9 @@ const Cell = ({ x, y }: celltype) => {
   return (
     <td className={`${size()} cursor-pointer`} style={{ borderColor: "transparent", backgroundImage: `url(${block})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }} onClick={() => {
       if(state.log[y][x] === ''){
-      order = order + 1
       selectcell(y, x, state.host)
       selectanti('')
-      fetch_order_location(y, x, state.host , order )
+      fetch_order_location(y, x, state.host)
       }
     }}>
       {render(state.log[y][x])}
