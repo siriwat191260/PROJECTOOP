@@ -7,13 +7,13 @@ import CARIN.Model.BodyImp;
 import java.io.IOException;
 
 public class BodyManager {
-    private Body body;
+    private final Body body;
 
     public BodyManager(Game game) throws IOException {
-        body = BodyImp.createBody(game, new GeneticManager(), new ConfigManager());
+        body = BodyImp.createBody(game, GeneticManager.createGeneticManager(), ConfigManager.getConfig());
     }
 
-    protected Body getBody(){
+    public Body getBody(){
         return body;
     }
 }

@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class ConfigManager {
+    private static ConfigManager config;
     protected static String inFile = "src/main/java/CARIN/Config/configFile.in";
     public int m, n;                           // positive
     public double virusSpawn;                  // between  0 and 1
@@ -30,6 +31,11 @@ public class ConfigManager {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static ConfigManager getConfig(){
+        if(config == null) config = new ConfigManager();
+        return config;
     }
 
     public void setConfig(String path){

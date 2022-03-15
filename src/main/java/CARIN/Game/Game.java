@@ -13,7 +13,7 @@ public class Game implements Runnable{
     private Thread thread;
     public boolean running = false;
     private final BodyManager bodyManager;
-    private Body body;
+    public Body body;
     private EventQueue<InputEvent> inputEventQueue;
 
     public Game() throws IOException {
@@ -26,16 +26,18 @@ public class Game implements Runnable{
 
     @Override
     public void run() {
+        thread = new Thread(this);
         body = bodyManager.getBody();
         inputEventQueue = new EventQueue<>();
+        running = true;
         try {
             loop();
-        } catch (SyntaxError e) {
+        } catch (SyntaxError | InterruptedException e) {
             e.printStackTrace();
         }
     }
 
-    private void loop(){
+    private void loop() throws InterruptedException {
         long gameLastTime = System.nanoTime();
         long inputLastTime = System.nanoTime();
         long evalDeltaTime, inputDeltaTime;
@@ -51,17 +53,20 @@ public class Game implements Runnable{
                 receiveInputEvent();
             }
 
-            long timeUnit = 7000;
+            long timeUnit = 1000;
             if (evalDeltaTime * speed >= timeUnit * 1000000) {
                 gameLastTime = currentTime;
                 evaluate();
+                if(body.isGameOver())
+                    stop();
             }
         }
-
     }
 
     public void evaluate(){
         body.addVirus();
+        body.addAntibody(new int[]{ (int) (Math.random()*(body.getMN()[0])), (int) (Math.random()*body.getMN()[1])},
+        (int) (Math.random()*3));
         body.run();
     }
 
@@ -95,6 +100,11 @@ public class Game implements Runnable{
         }catch (InterruptedException e){
             e.printStackTrace();
         }
+    }
+
+    public static void main(String[] args) throws IOException {
+        new Game();
+
     }
 
 }

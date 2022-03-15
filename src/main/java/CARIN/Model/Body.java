@@ -12,4 +12,5 @@ public interface Body {
     int[] getMN();
     Host findOrganByLocation(int[] location);
     boolean checkEmptyCell(int row, int column);
+    boolean isGameOver();
 }
