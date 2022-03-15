@@ -27,9 +27,9 @@ const render = (host: string) => {
     )
 }
 
-const fetch_order_location = (a: number, b: number,  type:String , order: number ) => {
+const fetch_order_location = (a: number, b: number,  type:String) => {
   
-  fetch(`/game/orderlocation?x=${a}&y=${b}&type=${type}&order=${order}`)
+  fetch(`/game/addAntibody?x=${a}&y=${b}&type=${type}`)
 }
 
 const size = () => {
