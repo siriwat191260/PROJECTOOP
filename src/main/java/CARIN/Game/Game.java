@@ -9,6 +9,7 @@ import CARIN.Parser.SyntaxError;
 import java.io.IOException;
 
 public class Game implements Runnable{
+    private static Game game;
     private float speed = 1.0f;
     private Thread thread;
     public boolean running = false;
@@ -18,6 +19,12 @@ public class Game implements Runnable{
 
     public Game() throws IOException {
         bodyManager = new BodyManager(this);
+    }
+
+    // singleton
+    public static Game initGame() throws IOException {
+        if(game == null) game = new Game();
+        return game;
     }
 
     public void setSpeed(float speed){
