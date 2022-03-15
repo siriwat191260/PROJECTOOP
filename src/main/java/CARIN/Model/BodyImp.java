@@ -60,6 +60,26 @@ public class BodyImp implements Body{
         return placeCost;
     }
 
+    @Override
+    public int getAntiNum() {
+        return antibodyNum;
+    }
+
+    @Override
+    public int getVirusNum() {
+        return virusNum;
+    }
+
+    @Override
+    public int getVirusMaxHp() {
+        return virusHealth;
+    }
+
+    @Override
+    public int getAntiMaxHp() {
+        return antiHealth;
+    }
+
     // singleton
     public static BodyImp createBody() throws IOException {
         if(body == null) body = new BodyImp(GeneticManager.createGeneticManager(), ConfigManager.getConfig());

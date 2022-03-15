@@ -15,4 +15,8 @@ public interface Body {
     boolean isGameOver();
     int getAntiCredit();
     int getAntiCreditCost();
+    int getAntiNum();
+    int getVirusNum();
+    int getVirusMaxHp();
+    int getAntiMaxHp();
 }
