@@ -35407,7 +35407,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var order = 0;
 var render = function (host) {
     if (host === 'anti1')
         return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_anti1_png__WEBPACK_IMPORTED_MODULE_3__ }));
@@ -35416,26 +35415,17 @@ var render = function (host) {
     if (host === 'anti3')
         return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_anti3_png__WEBPACK_IMPORTED_MODULE_5__ }));
 };
-var fetch_order_location = function (a, b) {
+var fetch_order_location = function (e, a, b) {
+    e.preventDefault();
     var state = _stores_Cellstore__WEBPACK_IMPORTED_MODULE_1__.CellStore.useState();
-    fetch("/game/orderlocation?x=".concat(a, "&y=").concat(b, "&order=").concat(order));
-};
-var size = function () {
-    var state = _stores_Cellstore__WEBPACK_IMPORTED_MODULE_1__.CellStore.useState();
-    var max = state.low;
-    if (state.low < state.colum) {
-        max = state.colum;
-    }
-    if (max < 12)
-        return "w-32 h-32 p-4";
+    fetch("/game/orderlocation?x=".concat(a, "&y=").concat(b, "&order=").concat(state.order));
 };
 var Cell = function (_a) {
     var x = _a.x, y = _a.y;
     var state = _stores_Cellstore__WEBPACK_IMPORTED_MODULE_1__.CellStore.useState();
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", { className: "".concat(size(), " cursor-pointer"), style: { borderColor: "transparent", backgroundImage: "url(".concat(_CSSstyle_image_block_png__WEBPACK_IMPORTED_MODULE_2__, ")"), backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }, onClick: function () {
-            order = order + 1;
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", { className: "w-10 h-10 cursor-pointer p-2 ", style: { borderColor: "transparent", backgroundImage: "url(".concat(_CSSstyle_image_block_png__WEBPACK_IMPORTED_MODULE_2__, ")"), backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }, onClick: function (e) {
             (0,_stores_Cellstore__WEBPACK_IMPORTED_MODULE_1__.selectcell)(y, x, state.host);
-            fetch_order_location(x, y);
+            fetch_order_location(e, x, y);
         } }, render(state.log[y][x])));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Cell);
@@ -35753,8 +35743,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var m;
 var n;
-m = 11;
-n = 11;
+m = 5;
+n = 10;
 var createcell = function () {
     var output = [];
     for (var i = 0; i < m; i++) {
@@ -35768,6 +35758,7 @@ var createcell = function () {
 var CellStore = new pullstate__WEBPACK_IMPORTED_MODULE_0__.Store({
     log: createcell(),
     host: "",
+    order: 0,
     low: m,
     colum: n
 });
@@ -35779,6 +35770,7 @@ var selectanti = function (anti) {
 var selectcell = function (x, y, host) {
     CellStore.update(function (s) {
         s.log[x][y] = host;
+        s.order = s.order + 1;
     });
 };
 
