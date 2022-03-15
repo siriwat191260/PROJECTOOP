@@ -9,6 +9,12 @@ const StartMenu = () => {
     
     const navigate = useNavigate();
 
+    const newGame =()=>{
+        fetch(`/newgame`)
+        navigate("/uploadfile/main")
+        
+    }
+
    
     
 
@@ -20,7 +26,7 @@ const StartMenu = () => {
 
        <div className ="btn-float-right-bottom flex flex-col space-y-4 ">
            <button className="btnscale btn-scale"><img src={play_btn} alt="start_button" style={{width:"280px" ,height:"120px"}}
-           onClick = {() =>navigate("/uploadfile")} /></button>
+           onClick = {() =>{newGame()}} /></button>
             <button className="btnscale btn-scale"><img src={howtoplay_btn} alt="howto_button" style={{width:"280px" ,height:"120px"}} 
             onClick = {() =>navigate("/howtoplay")} /></button>
        </div>

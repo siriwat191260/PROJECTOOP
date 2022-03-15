@@ -14,7 +14,7 @@ function App() {
       
         <Routes>
           <Route path="/" element={<StartMenu/>} />
-          <Route path="/uploadfile" element={<Uploadfile/>} />
+          <Route path="/uploadfile/main" element={<Uploadfile/>} />
           <Route path="/game" element={<Game/>}/>
         </Routes>
 
