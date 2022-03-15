@@ -18,10 +18,5 @@ public class NewGameController {
             System.out.println("SAWADDEE");
         }
 
-    @RequestMapping("/game/run")
-        public void GameRun(){
-            game.run();
-            System.out.println("SAWADDEE");
-        }
-
+  
 }
