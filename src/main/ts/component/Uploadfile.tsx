@@ -33,7 +33,12 @@ const Uploadfile = () => {
       data[i] = (reader.result)
     }
 
-    console.log(reader.result);
+    /* console.log(reader.result); */
+  }
+
+  const GameRun = () =>{
+    fetch(`/game/run`)
+    navigate("/game")
   }
 
 
@@ -110,8 +115,8 @@ const Uploadfile = () => {
 
       </div >
        <div className="float-right-bottom-btn">
-              <button className="btn-scale "><img src={play_btn} alt="play_button" style={{width:"200px" ,height:"80px"}} 
-              onClick = {() =>navigate("/game")} /></button>
+              <button className="btnscale btn-scale "><img src={play_btn} alt="play_button" style={{width:"200px" ,height:"80px"}} 
+              onClick = {() =>{GameRun()}} /></button>
             </div>
 
     </div >

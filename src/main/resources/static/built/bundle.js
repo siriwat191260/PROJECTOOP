@@ -78,7 +78,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".column {\r\n    float: left;\r\n    width: 33.33%;\r\n    padding: 5px;\r\n  }\r\n  \r\n  /* Clearfix (clear floats) */\r\n  .row::after {\r\n    content: \"\";\r\n    clear: both;\r\n    display: table;\r\n  }\r\n\r\n\r\n  .flex-gap {\r\ndisplay: inline-flex;\r\nflex-wrap: wrap;\r\n  }\r\n\r\n.flex-gap > div {\r\nmargin: 10px;\r\n}\r\n\r\n.float-right-top{\r\n      float: right;\r\n      position: absolute;\r\n      right:250px;\r\n      top : 100px;\r\n      }\r\n\r\n.float-left-tom{\r\n      float: left;\r\n      position: absolute;\r\n      left:100px;\r\n      top : 100px;\r\n      } \r\n\r\n.float-right-bottom-btn{\r\n        float: right;\r\n        position: absolute;\r\n        right:220px;\r\n        bottom: 20px;\r\n        } \r\n\r\n       \r\n\r\n.bg-body{\r\n  background-color:#FFD7B5;\r\n}\r\n\r\n .btnscale{\r\n  transition: .2s ease-in-out 0s;\r\n  }\r\n  .btn-scale:hover{\r\n  cursor: pointer;\r\n  transform: scale(1.25);\r\n}\r\n\r\n.row:after {\r\n  content: \"\";\r\n  display: table;\r\n  clear: both;\r\n}\r\n\r\n.column {\r\n  float: left;\r\n  padding: 10px;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/main/ts/component/CSSstyle/upload.css"],"names":[],"mappings":"AAAA;IACI,WAAW;IACX,aAAa;IACb,YAAY;EACd;;EAEA,4BAA4B;EAC5B;IACE,WAAW;IACX,WAAW;IACX,cAAc;EAChB;;;EAGA;AACF,oBAAoB;AACpB,eAAe;EACb;;AAEF;AACA,YAAY;AACZ;;AAEA;MACM,YAAY;MACZ,kBAAkB;MAClB,WAAW;MACX,WAAW;MACX;;AAEN;MACM,WAAW;MACX,kBAAkB;MAClB,UAAU;MACV,WAAW;MACX;;AAEN;QACQ,YAAY;QACZ,kBAAkB;QAClB,WAAW;QACX,YAAY;QACZ;;;;AAIR;EACE,wBAAwB;AAC1B;;CAEC;EACC,8BAA8B;EAC9B;EACA;EACA,eAAe;EACf,sBAAsB;AACxB;;AAEA;EACE,WAAW;EACX,cAAc;EACd,WAAW;AACb;;AAEA;EACE,WAAW;EACX,aAAa;AACf","sourcesContent":[".column {\r\n    float: left;\r\n    width: 33.33%;\r\n    padding: 5px;\r\n  }\r\n  \r\n  /* Clearfix (clear floats) */\r\n  .row::after {\r\n    content: \"\";\r\n    clear: both;\r\n    display: table;\r\n  }\r\n\r\n\r\n  .flex-gap {\r\ndisplay: inline-flex;\r\nflex-wrap: wrap;\r\n  }\r\n\r\n.flex-gap > div {\r\nmargin: 10px;\r\n}\r\n\r\n.float-right-top{\r\n      float: right;\r\n      position: absolute;\r\n      right:250px;\r\n      top : 100px;\r\n      }\r\n\r\n.float-left-tom{\r\n      float: left;\r\n      position: absolute;\r\n      left:100px;\r\n      top : 100px;\r\n      } \r\n\r\n.float-right-bottom-btn{\r\n        float: right;\r\n        position: absolute;\r\n        right:220px;\r\n        bottom: 20px;\r\n        } \r\n\r\n       \r\n\r\n.bg-body{\r\n  background-color:#FFD7B5;\r\n}\r\n\r\n .btnscale{\r\n  transition: .2s ease-in-out 0s;\r\n  }\r\n  .btn-scale:hover{\r\n  cursor: pointer;\r\n  transform: scale(1.25);\r\n}\r\n\r\n.row:after {\r\n  content: \"\";\r\n  display: table;\r\n  clear: both;\r\n}\r\n\r\n.column {\r\n  float: left;\r\n  padding: 10px;\r\n}\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".column {\r\n    float: left;\r\n    width: 33.33%;\r\n    padding: 5px;\r\n  }\r\n  \r\n  /* Clearfix (clear floats) */\r\n  .row::after {\r\n    content: \"\";\r\n    clear: both;\r\n    display: table;\r\n  }\r\n\r\n\r\n  .flex-gap {\r\ndisplay: inline-flex;\r\nflex-wrap: wrap;\r\n  }\r\n\r\n.flex-gap > div {\r\nmargin: 10px;\r\n}\r\n\r\n.float-right-top{\r\n      float: right;\r\n      position: absolute;\r\n      right:250px;\r\n      top : 100px;\r\n      }\r\n\r\n.float-left-tom{\r\n      float: left;\r\n      position: absolute;\r\n      left:100px;\r\n      top : 100px;\r\n      } \r\n\r\n.float-right-bottom-btn{\r\n        float: right;\r\n        position: absolute;\r\n        right:130px;\r\n        bottom: 20px;\r\n        } \r\n\r\n       \r\n\r\n.bg-body{\r\n  background-color:#FFD7B5;\r\n}\r\n\r\n .btnscale{\r\n  transition: .2s ease-in-out 0s;\r\n  }\r\n  .btn-scale:hover{\r\n  cursor: pointer;\r\n  transform: scale(1.25);\r\n}\r\n\r\n.row:after {\r\n  content: \"\";\r\n  display: table;\r\n  clear: both;\r\n}\r\n\r\n.column {\r\n  float: left;\r\n  padding: 10px;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/main/ts/component/CSSstyle/upload.css"],"names":[],"mappings":"AAAA;IACI,WAAW;IACX,aAAa;IACb,YAAY;EACd;;EAEA,4BAA4B;EAC5B;IACE,WAAW;IACX,WAAW;IACX,cAAc;EAChB;;;EAGA;AACF,oBAAoB;AACpB,eAAe;EACb;;AAEF;AACA,YAAY;AACZ;;AAEA;MACM,YAAY;MACZ,kBAAkB;MAClB,WAAW;MACX,WAAW;MACX;;AAEN;MACM,WAAW;MACX,kBAAkB;MAClB,UAAU;MACV,WAAW;MACX;;AAEN;QACQ,YAAY;QACZ,kBAAkB;QAClB,WAAW;QACX,YAAY;QACZ;;;;AAIR;EACE,wBAAwB;AAC1B;;CAEC;EACC,8BAA8B;EAC9B;EACA;EACA,eAAe;EACf,sBAAsB;AACxB;;AAEA;EACE,WAAW;EACX,cAAc;EACd,WAAW;AACb;;AAEA;EACE,WAAW;EACX,aAAa;AACf","sourcesContent":[".column {\r\n    float: left;\r\n    width: 33.33%;\r\n    padding: 5px;\r\n  }\r\n  \r\n  /* Clearfix (clear floats) */\r\n  .row::after {\r\n    content: \"\";\r\n    clear: both;\r\n    display: table;\r\n  }\r\n\r\n\r\n  .flex-gap {\r\ndisplay: inline-flex;\r\nflex-wrap: wrap;\r\n  }\r\n\r\n.flex-gap > div {\r\nmargin: 10px;\r\n}\r\n\r\n.float-right-top{\r\n      float: right;\r\n      position: absolute;\r\n      right:250px;\r\n      top : 100px;\r\n      }\r\n\r\n.float-left-tom{\r\n      float: left;\r\n      position: absolute;\r\n      left:100px;\r\n      top : 100px;\r\n      } \r\n\r\n.float-right-bottom-btn{\r\n        float: right;\r\n        position: absolute;\r\n        right:130px;\r\n        bottom: 20px;\r\n        } \r\n\r\n       \r\n\r\n.bg-body{\r\n  background-color:#FFD7B5;\r\n}\r\n\r\n .btnscale{\r\n  transition: .2s ease-in-out 0s;\r\n  }\r\n  .btn-scale:hover{\r\n  cursor: pointer;\r\n  transform: scale(1.25);\r\n}\r\n\r\n.row:after {\r\n  content: \"\";\r\n  display: table;\r\n  clear: both;\r\n}\r\n\r\n.column {\r\n  float: left;\r\n  padding: 10px;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -33738,7 +33738,7 @@ function App() {
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null,
         react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Routes, null,
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "/", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_component_StartMenu__WEBPACK_IMPORTED_MODULE_2__["default"], null) }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "/uploadfile", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_component_Uploadfile__WEBPACK_IMPORTED_MODULE_3__["default"], null) }),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "/uploadfile/main", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_component_Uploadfile__WEBPACK_IMPORTED_MODULE_3__["default"], null) }),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, { path: "/game", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_component_Game__WEBPACK_IMPORTED_MODULE_4__["default"], null) }))));
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
@@ -33955,11 +33955,15 @@ __webpack_require__.r(__webpack_exports__);
 
 var StartMenu = function () {
     var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)();
+    var newGame = function () {
+        fetch("/newgame");
+        navigate("/uploadfile/main");
+    };
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "bg-body" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "bg-main" },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "btn-float-right-bottom flex flex-col space-y-4 " },
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btnscale btn-scale" },
-                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_play_png__WEBPACK_IMPORTED_MODULE_2__, alt: "start_button", style: { width: "280px", height: "120px" }, onClick: function () { return navigate("/uploadfile"); } })),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_play_png__WEBPACK_IMPORTED_MODULE_2__, alt: "start_button", style: { width: "280px", height: "120px" }, onClick: function () { newGame(); } })),
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btnscale btn-scale" },
                     react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_howto_png__WEBPACK_IMPORTED_MODULE_3__, alt: "howto_button", style: { width: "280px", height: "120px" }, onClick: function () { return navigate("/howtoplay"); } }))))));
 };
@@ -34019,7 +34023,11 @@ var Uploadfile = function () {
         reader.onload = function () {
             data[i] = (reader.result);
         };
-        console.log(reader.result);
+        /* console.log(reader.result); */
+    };
+    var GameRun = function () {
+        fetch("/game/run");
+        navigate("/game");
     };
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "bg-white" },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: " bg-body bg-center bg-no-repeat  w-full h-screen " },
@@ -34064,8 +34072,8 @@ var Uploadfile = function () {
                             react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btnscale btn-scale", onClick: function (e) { return upload(e, 6); } },
                                 react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_submit_png__WEBPACK_IMPORTED_MODULE_3__, alt: "submit_button", style: { width: "160px", height: "40px" } }))))))),
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "float-right-bottom-btn" },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btn-scale " },
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_play_png__WEBPACK_IMPORTED_MODULE_2__, alt: "play_button", style: { width: "200px", height: "80px" }, onClick: function () { return navigate("/game"); } })))));
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", { className: "btnscale btn-scale " },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_play_png__WEBPACK_IMPORTED_MODULE_2__, alt: "play_button", style: { width: "200px", height: "80px" }, onClick: function () { GameRun(); } })))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Uploadfile);
 
@@ -34112,6 +34120,7 @@ var selectanti = function (anti) {
 var selectcell = function (x, y, host) {
     CellStore.update(function (s) {
         s.log[x][y] = host;
+        fetch("/game?x=".concat(x, "&y=").concat(y));
     });
 };
 
