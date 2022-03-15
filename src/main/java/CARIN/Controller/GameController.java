@@ -10,10 +10,12 @@ import CARIN.Game.Game;
 public class GameController {
    
     @RequestMapping("/game/orderlocation")
-    public void game_position(RequestParam x,RequestParam y,RequestParam order){
+    public void game_position(@RequestParam int x,@RequestParam int y,@RequestParam String type,@RequestParam int order){
         System.out.println(x);
         System.out.println(y);
+        System.out.println(type);
         System.out.println(order);
+        System.out.println("Hello");
     }
     
 }
