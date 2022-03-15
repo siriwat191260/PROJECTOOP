@@ -24,24 +24,45 @@ margin: 10px;
 .float-right-top{
       float: right;
       position: absolute;
-      right:180px;
+      right:250px;
       top : 100px;
       }
 
-      .float-right-bottom{
+.float-left-tom{
       float: left;
       position: absolute;
-      left:320px;
-      bottom: 20px;
+      left:100px;
+      top : 100px;
       } 
 
-      .float-right-bottom-btn{
+.float-right-bottom-btn{
         float: right;
         position: absolute;
         right:220px;
         bottom: 20px;
         } 
 
+       
+
 .bg-body{
-  background-image: url('./image/body.png');
+  background-color:#FFD7B5;
+}
+
+ .btnscale{
+  transition: .2s ease-in-out 0s;
+  }
+  .btn-scale:hover{
+  cursor: pointer;
+  transform: scale(1.25);
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  padding: 10px;
 }
