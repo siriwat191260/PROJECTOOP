@@ -1,18 +1,21 @@
 import { Store } from "pullstate";
 import React from "react";
+import setsize from '../component/Game-component/Cell';
 
 type Cell = {
     log: string[][]
     host: string
+    order: number
 }
 
 let m:number
 let n:number
 
-m=10
-n=10
+m=20
+n=20
 
 const createcell = () =>{
+    
     const output : string[][] = []
     for (let i=0; i<m; i++){
         output[i] = []
@@ -25,7 +28,8 @@ const createcell = () =>{
 
 export const CellStore = new Store<Cell>({
     log: createcell(),
-    host: ""
+    host: "",
+    order:0
 })
 
 export const selectanti = (anti: string) => {
@@ -37,5 +41,6 @@ export const selectanti = (anti: string) => {
 export const selectcell = (x: number, y:number,host:string) => {
     CellStore.update(s => {
         s.log[x][y] = host
+        s.order = s.order+1
     })
 }
