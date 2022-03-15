@@ -5,7 +5,6 @@ import setsize from '../component/Game-component/Cell';
 type Cell = {
     log: string[][]
     host: string
-    order: number
     low:number
     colum:number
 }
@@ -13,8 +12,8 @@ type Cell = {
 let m:number
 let n:number
 
-m=5
-n=10
+m=11
+n=11
 
 const createcell = () =>{
     
@@ -31,7 +30,6 @@ const createcell = () =>{
 export const CellStore = new Store<Cell>({
     log: createcell(),
     host: "",
-    order:0,
     low:m,
     colum:n
 })
@@ -45,6 +43,5 @@ export const selectanti = (anti: string) => {
 export const selectcell = (x: number, y:number,host:string) => {
     CellStore.update(s => {
         s.log[x][y] = host
-        s.order = s.order+1
     })
 }
