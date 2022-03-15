@@ -19,8 +19,10 @@ public class Antibody extends HostImp{
             System.out.println(this.location[0] + "" + this.location[1] + " shoot " +
                     direction + shoot.getLocation()[0] + "" + shoot.getLocation()[1]);
             /* send shoot output */
-            if (shoot.setHealth(attackDamage)) shoot.isDeath(this);
-            health += gain;
+            if (shoot.setHealth(attackDamage)) {
+                shoot.isDeath(this);
+                health += gain;
+            }
             /* send gain output */
         } else System.out.println("can't shoot");
     }
