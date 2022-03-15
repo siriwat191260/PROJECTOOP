@@ -35423,22 +35423,12 @@ var fetch_order_location = function (e, a, b) {
 var Cell = function (_a) {
     var x = _a.x, y = _a.y;
     var state = _stores_Cellstore__WEBPACK_IMPORTED_MODULE_1__.CellStore.useState();
-<<<<<<< HEAD
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", { className: "w-10 h-10 cursor-pointer p-2 ", style: { borderColor: "transparent", backgroundImage: "url(".concat(_CSSstyle_image_block_png__WEBPACK_IMPORTED_MODULE_2__, ")"), backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }, onClick: function (e) { return fetch_order_location(e, x, y); } }, render(state.log[y][x])));
-=======
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", { className: "w-10 h-10 cursor-pointer p-2 ", style: { borderColor: "transparent", backgroundImage: "url(".concat(_CSSstyle_image_block_png__WEBPACK_IMPORTED_MODULE_2__, ")"), backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }, onClick: function (e) {
             (0,_stores_Cellstore__WEBPACK_IMPORTED_MODULE_1__.selectcell)(y, x, state.host);
             fetch_order_location(e, x, y);
         } }, render(state.log[y][x])));
->>>>>>> 96a3a8709e619b26be1ec8e621a6f00e31a2bbf4
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Cell);
-var fetch_order_location = function (e, a, b) {
-    e.preventDefault();
-    var state = _stores_Cellstore__WEBPACK_IMPORTED_MODULE_1__.CellStore.useState();
-    (0,_stores_Cellstore__WEBPACK_IMPORTED_MODULE_1__.selectcell)(b, a, state.host);
-    fetch("/game/orderlocation?x=".concat(a, "&y=").concat(b, "&order=").concat(state.order));
-};
 
 
 /***/ }),
