@@ -25,9 +25,9 @@ public class BodyData {
         n = body.getMN()[1];
         antiCredit = body.getAntiCredit();
         // get type
+        int num = 0;
         for(int i=0; i<=m; i++){
             for(int j=0; j<=n; j++){
-                int num = 0;
                 if(body.getCellLoc()[i][j] !=0){
                     Host host = body.getOrganism().get(num);
                     int geneNum = host.getGeneNum();
@@ -40,6 +40,7 @@ public class BodyData {
                     posY.add(j);
                     order.add(body.getCellLoc()[i][j]);
                     hp.add(host.getHealth());
+                    num++;
                 }
             }
         }
