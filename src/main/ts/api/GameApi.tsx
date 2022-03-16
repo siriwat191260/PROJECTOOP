@@ -1,11 +1,12 @@
 import axios from 'axios'
 import { Store } from "pullstate";
 import { useState, useEffect } from 'react';
-import { renderApi } from '../stores/Cellstore';
+import { renderApi, updatemn } from '../stores/Cellstore';
 
 const API_URL = 'http://localhost:8080/bodyData'
 
 let pause: boolean = false
+let set:boolean = true
 
 type BodyData = {
     m: number
@@ -50,7 +51,12 @@ export const receiveData = () => {
             if (data != resp.data) {
                 setData(resp.data)
                 console.log(data)
+                if(set) {
+                    updatemn(data.m,data.n)
+                    set = false
+                }
             }
+            
         }
         catch (err) {
             console.log(err)
@@ -80,8 +86,10 @@ export const receiveData = () => {
                     s.antiHealth = data.antiHealth
                     s.virusHealth = data.virusHealth
                     
+                    updatemn(data.m,data.n)
+
                     data.order.map(s => {
-                        renderApi(data.type[s],data.posX[s]-1,data.posY[s]-1)
+                        renderApi(data.type[s],data.posX[s],data.posY[s]-1)
                     })
             
 
