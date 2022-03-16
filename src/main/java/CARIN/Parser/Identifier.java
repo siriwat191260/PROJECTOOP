@@ -1,6 +1,7 @@
 package CARIN.Parser;
 
 import java.util.HashMap;
+import java.util.Random;
 
 public class Identifier implements Expr{
     private final String identifier;
@@ -13,6 +14,10 @@ public class Identifier implements Expr{
     @Override
     public int eval() throws EvalError{
         try {
+            if(identifier.equals("random")){
+                Random random = new Random();
+                return random.nextInt(99);
+            }
             return idKeep.get(identifier);
         }catch (EvalError e) {
         throw new EvalError("Cannot evaluate "+identifier);

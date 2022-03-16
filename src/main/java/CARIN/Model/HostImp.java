@@ -25,7 +25,6 @@ public class HostImp implements Host{
         this.m = this.body.getMN()[0];
         this.n = this.body.getMN()[1];
         this.identifier = new HashMap<>();
-        this.identifier.put("random", (int)(Math.random()*99));
         this.parser = new Parser(geneticCode, this);
         this.status = "normal";
     }

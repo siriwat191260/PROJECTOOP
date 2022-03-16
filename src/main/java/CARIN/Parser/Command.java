@@ -42,8 +42,10 @@ public class Command implements Program {
             } else {
                 // assignment statement
                 assert identifier != null;
-                assert expression != null;
-                identifier.put(type, expression.eval());
+                if(!(type.equals("random"))) {
+                    assert expression != null;
+                    identifier.put(type, expression.eval());
+                }
             }
         }catch (EvalError e) {
             throw new EvalError("Cannot evaluate "+type);

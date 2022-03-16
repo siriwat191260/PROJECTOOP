@@ -72,8 +72,10 @@ public class Game implements Runnable{
 
     public void evaluate(){
         body.addVirus();
+        int g = (int) (Math.random()*3);
         body.addAntibody(new int[]{ (int) (Math.random()*(body.getMN()[0])+1), (int) (Math.random()*body.getMN()[1])+1},
-        (int) (Math.random()*3));
+        g);
+        System.out.println("anti gene: "+g);
         body.run();
     }
 
@@ -110,7 +112,7 @@ public class Game implements Runnable{
     }
     
     public void pause(boolean p) throws InterruptedException, IOException{
-        if(p == true){
+        if(p){
             running = false;
         }else{
             running = true;
