@@ -1,6 +1,5 @@
 package CARIN.Controller;
 
-import CARIN.Game.Game;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,16 +9,18 @@ import java.io.IOException;
 @RestController
 public class OutputController {
 
-//    public EventController() throws IOException {
-//        Game game = Game.initGame();
-//        game.run();
-//    }
-
     @CrossOrigin
     @GetMapping("/bodyData")
-    public BodyData greeting() throws IOException {
+    public BodyData sendBody() throws IOException {
         System.out.println("==== fetch Body ====");
         return new BodyData();
+    }
+
+    @CrossOrigin
+    @GetMapping("/countData")
+    public CountData sendCount() throws IOException {
+        System.out.println("==== fetch Count ====");
+        return new CountData();
     }
 
 }
