@@ -6,6 +6,7 @@ import CARIN.Parser.SyntaxError;
 import java.io.IOException;
 
 public class Game implements Runnable{
+    private long timeUnit = 5000;
     private static Game game;
     private float speed = 1.0f;
     private Thread thread;
@@ -46,7 +47,6 @@ public class Game implements Runnable{
             long currentTime = System.nanoTime();
             evalDeltaTime = currentTime - gameLastTime;
 
-            long timeUnit = 5000;
             if (evalDeltaTime * speed >= timeUnit * 1000000) {
                 gameLastTime = currentTime;
                 evaluate();
@@ -57,10 +57,10 @@ public class Game implements Runnable{
     }
 
     public void evaluate(){
-        // int g = (int) (Math.random()*3);
-        // body.addAntibody(new int[]{ (int) (Math.random()*(body.getMN()[0])+1), (int) (Math.random()*body.getMN()[1])+1},
-        // g);
-        // System.out.println("anti gene: "+g);
+//         int g = (int) (Math.random()*3);
+//         body.addAntibody(new int[]{ (int) (Math.random()*(body.getMN()[0])+1), (int) (Math.random()*body.getMN()[1])+1},
+//         g);
+//         System.out.println("anti gene: "+g);
         body.addVirus();
         body.run();
     }

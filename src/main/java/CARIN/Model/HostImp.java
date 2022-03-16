@@ -36,8 +36,7 @@ public class HostImp implements Host{
     @Override
     public void move(String newLocation) {
         int[] newLoc = findLoc(newLocation);
-        if((body.checkEmptyCell(newLoc[0], newLoc[1]) || (!body.checkEmptyCell(newLoc[0], newLoc[1])
-                && body.findOrganByLocation(newLoc).getStatus().equals("death")))
+        if((body.checkEmptyCell(newLoc[0], newLoc[1]))
                 && !Arrays.equals(newLoc, location) ){
             System.out.println(location[0] +""+ location[1] + " moved to " + newLoc[0] + newLoc[1]);
             int order = body.getOrganism().indexOf(this);
@@ -117,6 +116,7 @@ public class HostImp implements Host{
     @Override
     public void setStatus(String s, Host host) {
         this.geneticCode = host.getGeneticCode();
+        this.gene = host.getGeneNum();
         status = s;
     }
 
