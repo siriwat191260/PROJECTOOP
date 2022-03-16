@@ -12,9 +12,8 @@ type Cell = {
 let m:number
 let n:number
 
-m=5
+m=10
 n=10
-
 const createcell = () =>{
     
     const output : string[][] = []
