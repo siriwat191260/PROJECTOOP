@@ -13,9 +13,7 @@ public class Identifier implements Expr{
     @Override
     public int eval() throws EvalError{
         try {
-            if(idKeep.get(identifier) != null)
             return idKeep.get(identifier);
-            else return 0;
         }catch (EvalError e) {
         throw new EvalError("Cannot evaluate "+identifier);
     }

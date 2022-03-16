@@ -196,6 +196,7 @@ public class BodyImp implements Body{
                     }
                     else {
                         System.out.println("Eval organism " + (organismInOrder.indexOf(each) + 1));
+                        System.out.println("Type: "+each.getType());
                         each.eval();
                     }
                 }
@@ -234,7 +235,9 @@ public class BodyImp implements Body{
                 int m = each.getLocation()[0];
                 int n = each.getLocation()[1];
                 int currentOrder = cellLoc[m][n];
-                System.out.println("Organism order: "+currentOrder+" is dead");
+                if(each.getType()==1)
+                System.out.println("Virus order: "+currentOrder+" is dead" +each.getType());
+                else System.out.println("Antibody order: "+currentOrder+" is dead"+each.getType());
                 for(int i=1; i<=this.m; i++){
                     for(int j=1; j<=this.n; j++)
                         if(cellLoc[i][j]>currentOrder)
@@ -266,7 +269,13 @@ public class BodyImp implements Body{
     }
 
     public static void main(String[] args) throws IOException {
-        new Game();
+        BodyImp body = BodyImp.createBody();
+        for (int i=0;i<5;i++){
+            body.addVirus();
+            body.addAntibody(new int[]{ (int) (Math.random()*(body.getMN()[0])+1), (int) (Math.random()*body.getMN()[1])+1},
+                    (int) (Math.random()*3));
+            body.run();
+        }
 
     }
 

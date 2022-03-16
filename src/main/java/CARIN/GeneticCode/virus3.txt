@@ -28,25 +28,25 @@ if (virusLoc/10-1) then
   else move up
 else if (virusLoc/10) then {
   dir = random % 8
-    if (antiLoc % 10 - 7) then
+    if (virusLoc % 10 - 7) then
       if (nUp / 10 - 1) then move up else
       if (nLeft / 10 - 1) then move left else move dir
-    else if (antiLoc % 10 - 6) then
+    else if (virusLoc % 10 - 6) then
       if (nUpLeft / 10 - 1) then move upleft else
       if (nDownLeft / 10 - 1) then move downleft else move dir
-    else if (antiLoc % 10 - 5) then
+    else if (virusLoc % 10 - 5) then
       if (nLeft / 10 - 1) then move left else
       if (nDown / 10 - 1) then move down else move dir
-    else if (antiLoc % 10 - 4) then
+    else if (virusLoc % 10 - 4) then
       if (nDownLeft / 10 - 1) then move downleft else
       if (nDownRight / 10 - 1) then move downright else move dir
-    else if (antiLoc % 10 - 3) then
+    else if (virusLoc % 10 - 3) then
       if (nDown / 10 - 1) then move down else
       if (nRight / 10 - 1) then move right else move dir
-    else if (antiLoc % 10 - 2) then
+    else if (virusLoc % 10 - 2) then
       if (nDownRight / 10 - 1) then move downright else
       if (nUpRight / 10 - 1) then move upright else move dir
-    else if (antiLoc % 10 - 1) then
+    else if (virusLoc % 10 - 1) then
       if (nRight / 10 - 1) then move right else
       if (nUp / 10 - 1) then move up else move dir
     else

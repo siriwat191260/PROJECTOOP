@@ -18,6 +18,9 @@ public class Virus extends HostImp {
                     direction + shoot.getLocation()[0] + "" + shoot.getLocation()[1]);
             /* send shoot output */
             health += gain;
+            if (shoot.setHealth(attackDamage)) {
+                shoot.isDeath(this);
+            }
             /* send gain output */
         } else System.out.println("can't shoot");
     }
