@@ -25,10 +25,8 @@ const StartMenu = () => {
        <div  className ="bg-main" >
 
        <div className ="btn-float-right-bottom flex flex-col space-y-4 ">
-           <button className="btnscale btn-scale"><img src={play_btn} alt="start_button" style={{width:"280px" ,height:"120px"}}
+           <button className="btnscale btn-scale"><img src={play_btn} alt="start_button" style={{width:"350px" ,height:"150px"}}
            onClick = {() =>{newGame()}} /></button>
-            <button className="btnscale btn-scale"><img src={howtoplay_btn} alt="howto_button" style={{width:"280px" ,height:"120px"}} 
-            onClick = {() =>navigate("/howtoplay")} /></button>
        </div>
 
        </div>
