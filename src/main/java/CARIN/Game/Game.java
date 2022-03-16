@@ -48,6 +48,7 @@ public class Game implements Runnable{
         long inputLastTime = System.nanoTime();
         long evalDeltaTime, inputDeltaTime;
 
+        
         while (running) {
             long currentTime = System.nanoTime();
             evalDeltaTime = currentTime - gameLastTime;
@@ -105,6 +106,15 @@ public class Game implements Runnable{
             thread.join();
         }catch (InterruptedException e){
             e.printStackTrace();
+        }
+    }
+    
+    public void pause(boolean p) throws InterruptedException, IOException{
+        if(p == true){
+            running = false;
+        }else{
+            running = true;
+            run();
         }
     }
 
