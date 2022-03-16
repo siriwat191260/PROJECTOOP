@@ -28,10 +28,10 @@ export const updatemn = (x:number ,y:number) => {
 }
 
 export const CellStore = new Store<Cell>({
-    log: createcell(7,7),
+    log: createcell(0,0),
     host: "",
-    low:5,
-    colum:5
+    low:0,
+    colum:0
 })
 
 export const selectanti = (anti: string) => {
