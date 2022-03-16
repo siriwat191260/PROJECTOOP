@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { Store } from "pullstate";
 import { useState, useEffect } from 'react';
+import { renderApi } from '../stores/Cellstore';
 
 const API_URL = 'http://localhost:8080/bodyData'
 
@@ -78,6 +79,11 @@ export const receiveData = () => {
                     s.virusNum = data.virusNum
                     s.antiHealth = data.antiHealth
                     s.virusHealth = data.virusHealth
+                    
+                    data.order.map(s => {
+                        renderApi(data.type[s],data.posX[s]-1,data.posY[s]-1)
+                    })
+            
 
                     console.log("M :" + data.m)
                     console.log("N :" + data.n)

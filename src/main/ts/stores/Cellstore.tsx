@@ -10,14 +10,14 @@ type Cell = {
 let m:number
 let n:number
 
-m=10
-n=10
+m=5
+n=5
 const createcell = () =>{
     
     const output : string[][] = []
-    for (let i=0; i<m; i++){
+    for (let i=1; i<=m; i++){
         output[i] = []
-        for(let j=0; j<n; j++){
+        for(let j=1; j<=n; j++){
             output[i].push('')
         }
     }
@@ -44,7 +44,20 @@ export const selectcell = (x: number, y:number,host:string) => {
 }
 
 export const renderApi = (type: number, x:number, y:number) =>{
-    if(type == 4){
+    if(type == 1){
+        CellStore.update(s =>{
+            s.log[x][y] = "anti1"
+        })
+    }else if(type == 2){
+        CellStore.update(s =>{
+            s.log[x][y] = "anti2"
+        })
+    }else if(type == 3){
+        CellStore.update(s =>{
+            s.log[x][y] = "anti3"
+        })
+    }
+    else if(type == 4){
         CellStore.update(s =>{
             s.log[x][y] = "virus1"
         })
