@@ -7,7 +7,7 @@ import zoomout from '../CSSstyle/image/zoomout.png'
 import speedup from '../CSSstyle/image/speed.png'
 import pause from '../CSSstyle/image/pause.png'
 import Antipicker from "./antipicker";
-import { receiveData } from "../../api/GameApi";
+import { bottonpause } from "../../api/GameApi";
 
 const Body = () => {
   const state = CellStore.useState()
@@ -23,11 +23,11 @@ const Body = () => {
                 <div className='pt-6 border-white rounded-full border-8 flex justify-center' style={{ width: "450px", height: "100px", backgroundColor: '#a6d2ff' }}>
                   <text className='text-4xl'>Antibody credit : 1000 </text>
                 </div>
-                <img src={zoomin} onClick={() => zoomIn()} className="" style={{ width: "100px" }}></img>
+                <img src={zoomin} onClick={() => zoomIn()} className="hover " style={{ width: "100px" }}></img>
                 <img src={zoomout} onClick={() => zoomOut()} className="" style={{ width: "100px" }}></img>
                 <img src={speedup} className="" style={{ width: "100px" }}></img>
                 <text className='pt-7 text-4xl '>time left: 10 </text>
-                <img src={pause} onClick={() => receiveData('pause')} style={{ width: "100px" }}></img>
+                <img src={pause} onClick={() => bottonpause(true)} style={{ width: "100px" }}></img>
               </div>
             </div>
 
