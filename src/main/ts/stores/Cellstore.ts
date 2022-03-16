@@ -1,6 +1,5 @@
 import { Store } from "pullstate";
 import React from "react";
-import setsize from '../component/Game-component/Cell';
 
 type Cell = {
     log: string[][]

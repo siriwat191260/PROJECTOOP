@@ -43,8 +43,8 @@ const Selectantibutton = ({ anti }: antibody) => {
 
 const Antipicker = () => {
     return (
-        <div className="rounded-lg grid grid-flow-row justify-center pt-4 border-white border-4" style={{ width: "150px", height: "450px", backgroundColor: "#e9b4f1" }}>
-            <text className="text-2xl font-bolds text-center">Buy antibody cost : 100</text>
+        <div className="grid grid-flow-row justify-center pt-4 border-white border-8 rounded-lg shadow-lg" style={{ width: "150px", height: "450px", backgroundColor: "#e9b4f1" }}>
+            <text className="text-2xl font-bolds text-center ">Buy antibody cost : 100</text>
             <Selectantibutton anti='anti1' />
             <Selectantibutton anti='anti2' />
             <Selectantibutton anti='anti3' />
