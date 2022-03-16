@@ -14,17 +14,18 @@ type celltype = {
 }
 
 const render = (host: string) => {
+  const state = CellStore.useState();
   if (host == 'anti1')
     return (
-      <img src={anti1}></img>
+      <img src={anti1} onClick={()=>{state.host = "anti1"}}></img>
     )
   if (host == 'anti2')
     return (
-      <img src={anti2}></img>
+      <img src={anti2} onClick={()=>{state.host = "anti2"}}></img>
     )
   if (host == 'anti3')
     return (
-      <img src={anti3}></img>
+      <img src={anti3} onClick={()=>{state.host = "anti3"}}></img>
     )
     if (host == 'virus1')
     return (
