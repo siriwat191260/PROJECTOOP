@@ -38,6 +38,7 @@ export const ApiDataStore = new Store<BodyData>({
 
 export const bottonpause = () => {
     pause = !pause
+    fetch(`/game/pause?p=${pause}`)
 }
 export const receiveData = () => {
     const [data, setData] = useState<BodyData>();
