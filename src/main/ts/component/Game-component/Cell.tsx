@@ -42,7 +42,6 @@ const render = (host: string) => {
 }
 
 const fetch_order_location = (a: number, b: number, type: String) => {
-
   fetch(`/game/addAntibody?x=${a}&y=${b}&type=${type}`)
 }
 
@@ -66,7 +65,7 @@ const Cell = ({ x, y }: celltype) => {
 
   return (
     <td className={`${size()} cursor-pointer`} style={{ borderColor: "transparent", backgroundImage: `url(${block})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }} onClick={() => {
-      if (state.log[y][x] === '') {
+      if (state.log[y][x] == '') {
         selectcell(y, x, state.host)
         selectanti('')
         fetch_order_location(y, x, state.host)

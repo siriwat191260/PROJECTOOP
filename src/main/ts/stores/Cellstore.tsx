@@ -7,12 +7,7 @@ type Cell = {
     colum:number
 }
 
-let m:number
-let n:number
-
-m=5
-n=5
-const createcell = () =>{
+const createcell = (m:number,n:number) =>{
     
     const output : string[][] = []
     for (let i=1; i<=m; i++){
@@ -24,11 +19,19 @@ const createcell = () =>{
     return output
 }
 
+export const updatemn = (x:number ,y:number) => {
+    CellStore.update(s => { 
+        s.log = createcell(x,y)
+        s.low = x
+        s.colum = y
+    })
+}
+
 export const CellStore = new Store<Cell>({
-    log: createcell(),
+    log: createcell(7,7),
     host: "",
-    low:m,
-    colum:n
+    low:5,
+    colum:5
 })
 
 export const selectanti = (anti: string) => {
