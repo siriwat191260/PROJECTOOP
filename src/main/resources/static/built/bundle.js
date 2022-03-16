@@ -35407,7 +35407,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var order = 0;
 var render = function (host) {
     if (host === 'anti1')
         return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", { src: _CSSstyle_image_anti1_png__WEBPACK_IMPORTED_MODULE_3__ }));
@@ -35423,15 +35422,24 @@ var size = function () {
     var state = _stores_Cellstore__WEBPACK_IMPORTED_MODULE_1__.CellStore.useState();
     if (state.low < 6 && state.colum < 12)
         return "w-32 h-32 p-4";
-    else
+    else if (state.low < 7 && state.colum < 16)
         return "w-24 h-24 p-4";
+    else if (state.low < 9 && state.colum < 19)
+        return "w-20 h-20 p-3.5";
+    else if (state.low < 12 && state.colum < 21)
+        return "w-14 h-14 p-3";
+    else
+        return "w-11 h-11 p-2.5";
 };
 var Cell = function (_a) {
     var x = _a.x, y = _a.y;
     var state = _stores_Cellstore__WEBPACK_IMPORTED_MODULE_1__.CellStore.useState();
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("td", { className: "".concat(size(), " cursor-pointer"), style: { borderColor: "transparent", backgroundImage: "url(".concat(_CSSstyle_image_block_png__WEBPACK_IMPORTED_MODULE_2__, ")"), backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }, onClick: function () {
-            (0,_stores_Cellstore__WEBPACK_IMPORTED_MODULE_1__.selectcell)(y, x, state.host);
-            fetch_order_location(y, x, state.host);
+            if (state.log[y][x] === '') {
+                (0,_stores_Cellstore__WEBPACK_IMPORTED_MODULE_1__.selectcell)(y, x, state.host);
+                (0,_stores_Cellstore__WEBPACK_IMPORTED_MODULE_1__.selectanti)('');
+                fetch_order_location(y, x, state.host);
+            }
         } }, render(state.log[y][x])));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Cell);
@@ -35577,7 +35585,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Game = function () {
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: { backgroundColor: "#FFD7B5" } },
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: " bg-body bg-center bg-no-repeat  w-full h-screen", style: { backgroundColor: "#FFD7B5" } },
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "my-auto space-y-3 " },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Game_component_body__WEBPACK_IMPORTED_MODULE_1__["default"], null))));
 };

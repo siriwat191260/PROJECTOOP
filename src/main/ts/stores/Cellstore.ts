@@ -1,6 +1,5 @@
 import { Store } from "pullstate";
 import React from "react";
-import setsize from '../component/Game-component/Cell';
 
 type Cell = {
     log: string[][]
@@ -12,9 +11,8 @@ type Cell = {
 let m:number
 let n:number
 
-m=5
+m=10
 n=10
-
 const createcell = () =>{
     
     const output : string[][] = []

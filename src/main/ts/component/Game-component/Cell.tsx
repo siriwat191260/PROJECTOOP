@@ -32,11 +32,15 @@ const fetch_order_location = (a: number, b: number,  type:String) => {
 
 const size = () => {
   const state = CellStore.useState()
-  if (state.low < 6 && state.colum < 12) return "w-32 h-32 p-4"
+  if (state.low < 5 && state.colum < 12) return "w-32 h-32 p-4"
   else if(state.low<7 && state.colum<16) return "w-24 h-24 p-4"
-  else if(state.low<9 && state.colum<19) return "w-20 h-20 p-3.5"
-  else if(state.low<12 && state.colum<21) return "w-14 h-14 p-3"
-  else return  "w-11 h-11 p-2.5"
+  else if(state.low<8 && state.colum<19) return "w-20 h-20 p-3.5"
+  else if(state.low<12 && state.colum<27) return "w-14 h-14 p-2.5"
+  else if(state.low<15 && state.colum<36) return  "w-11 h-11 p-2"
+  else if(state.low<18 && state.colum<45) return  "w-9 h-9 p-1.5"
+  else if(state.low<26 && state.colum<64) return  "w-6 h-6 p-1"
+  else if(state.low<38 && state.colum<98) return  "w-4 h-4 p-0.5"
+  else  return  "w-2 h-2 p-0.5"
 }
 
 const Cell = ({ x, y }: celltype) => {

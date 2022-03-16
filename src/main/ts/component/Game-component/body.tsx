@@ -7,6 +7,7 @@ import zoomout from '../CSSstyle/image/zoomout.png'
 import speedup from '../CSSstyle/image/speed.png'
 import pause from '../CSSstyle/image/pause.png'
 import Antipicker from "./antipicker";
+import { receiveData } from "../../api/GameApi";
 
 const Body = () => {
   const state = CellStore.useState()
@@ -14,41 +15,42 @@ const Body = () => {
   return (
     <div>
       <TransformWrapper initialScale={1} initialPositionX={200} initialPositionY={100}>
-        {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
+        {({ zoomIn, zoomOut, ...rest }) => (
           <React.Fragment>
             {/* bar */}
             <div className="tools">
               <div className="flex justify-center p-6 space-x-6 ">
-                <div className='pt-7 border-white rounded-full border-4 flex justify-center' style={{ width: "450px", height: "100px", backgroundColor: '#a6d2ff' }}>
+                <div className='pt-6 border-white rounded-full border-8 flex justify-center' style={{ width: "450px", height: "100px", backgroundColor: '#a6d2ff' }}>
                   <text className='text-4xl'>Antibody credit : 1000 </text>
                 </div>
                 <img src={zoomin} onClick={() => zoomIn()} className="" style={{ width: "100px" }}></img>
                 <img src={zoomout} onClick={() => zoomOut()} className="" style={{ width: "100px" }}></img>
-                <button onClick={() => resetTransform()}>x</button>
                 <img src={speedup} className="" style={{ width: "100px" }}></img>
                 <text className='pt-7 text-4xl '>time left: 10 </text>
-                <img src={pause} style={{ width: "100px" }}></img>
+                <img src={pause} onClick={() => receiveData('pause')} style={{ width: "100px" }}></img>
               </div>
             </div>
 
-            <div className="flex ">
-            {/* body */}
-              <table className="rounded-lg mx-auto" style={{ backgroundColor: "#F3A883" }}>
-                <TransformComponent>
-                  <tbody>
-                    {state.log.map((row, i) =>
-                      <tr key={i}>
-                        {row.map((cell, j) =>
-                          <Cell x={j} y={i} key={`${j}${i}`} />)}
-                      </tr>
-                    )}
-                  </tbody>
-
-                </TransformComponent>
-              </table >
-
+            <div className="grid grid-rows-2 grid-flow-col gap-8 justify-center mt-4 ">
+              {/* body */}
+              <div className="row-end-3 row-span-2">
+                <table className="rounded-lg mx-auto shadow-xl" style={{ backgroundColor: "#F3A883" }}>
+                  <TransformComponent>
+                    <tbody>
+                      {state.log.map((row, i) =>
+                        <tr key={i}>
+                          {row.map((cell, j) =>
+                            <Cell x={j} y={i} key={`${j}${i}`} />)}
+                        </tr>
+                      )}
+                    </tbody>
+                  </TransformComponent>
+                </table >
+              </div>
               {/* antipicker */}
-              <Antipicker />
+              <div className="row-start-1 row-end-4">
+                <Antipicker />
+              </div>
             </div>
           </React.Fragment>
         )}
