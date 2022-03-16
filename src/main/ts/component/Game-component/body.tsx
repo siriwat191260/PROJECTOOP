@@ -7,12 +7,29 @@ import zoomin from '../CSSstyle/image/zoomin.png'
 import zoomout from '../CSSstyle/image/zoomout.png'
 import speedup from '../CSSstyle/image/speed.png'
 import pause from '../CSSstyle/image/pause.png'
+import playbt from '../CSSstyle/image/playbt.png'
 import Antipicker from "./antipicker";
 import { bottonpause } from "../../api/GameApi";
+
+
+let pauseCheck: boolean = false
+let img = pause
+
+const Toggle = () =>{
+  if(pauseCheck == false){
+    img = playbt
+    pauseCheck = true
+  }else{
+    img = pause
+    pauseCheck = false
+  }
+}
 
 const Body = () => {
   const state = CellStore.useState()
   const api = ApiDataStore.useState()
+
+
     return (
     <div>
       <TransformWrapper initialScale={1} initialPositionX={200} initialPositionY={100}>
@@ -28,7 +45,10 @@ const Body = () => {
                 <img src={zoomout} onClick={() => zoomOut()} className="cursor-pointer " style={{ width: "100px" }}></img>
                 <img src={speedup} className="cursor-pointer" style={{ width: "100px" }}></img>
                 <text className='pt-7 text-4xl '>time left: 10 </text>
-                <img src={pause} className="cursor-pointer" onClick={() => bottonpause()} style={{ width: "100px" }}></img>
+                <img src={img} className="cursor-pointer" 
+                onClick={() => 
+                  {Toggle()
+                  bottonpause()}} style={{ width: "100px" }}></img>
               </div>
             </div>
 
