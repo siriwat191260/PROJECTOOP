@@ -1,6 +1,5 @@
 import { Store } from "pullstate";
 import React from "react";
-
 type Cell = {
     log: string[][]
     host: string
@@ -42,4 +41,20 @@ export const selectcell = (x: number, y:number,host:string) => {
     CellStore.update(s => {
         s.log[x][y] = host
     })
+}
+
+export const renderApi = (type: number, x:number, y:number) =>{
+    if(type == 4){
+        CellStore.update(s =>{
+            s.log[x][y] = "virus1"
+        })
+    }else if(type == 5){
+        CellStore.update(s =>{
+            s.log[x][y] = "virus2"
+        })
+    }else if(type == 6){
+        CellStore.update(s =>{
+            s.log[x][y] = "virus3"
+        })
+    }
 }
