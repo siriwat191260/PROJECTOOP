@@ -25,11 +25,10 @@ public class BodyData {
         n = body.getMN()[1];
         antiCredit = body.getAntiCredit();
         // get type
-        int num = 0;
         for(int i=0; i<=m; i++){
             for(int j=0; j<=n; j++){
                 if(body.getCellLoc()[i][j] !=0){
-                    Host host = body.getOrganism().get(num);
+                    Host host = body.getOrganism().get((body.getCellLoc()[i][j])-1);
                     int geneNum = host.getGeneNum();
                     // genetic code number of antibody is 1-3
                     // while virus is 4-6
@@ -40,7 +39,6 @@ public class BodyData {
                     posY.add(j);
                     order.add(body.getCellLoc()[i][j]);
                     hp.add(host.getHealth());
-                    num++;
                 }
             }
         }

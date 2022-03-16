@@ -46,7 +46,7 @@ public class Game implements Runnable{
             long currentTime = System.nanoTime();
             evalDeltaTime = currentTime - gameLastTime;
 
-            long timeUnit = 1000;
+            long timeUnit = 5000;
             if (evalDeltaTime * speed >= timeUnit * 1000000) {
                 gameLastTime = currentTime;
                 evaluate();
@@ -57,11 +57,11 @@ public class Game implements Runnable{
     }
 
     public void evaluate(){
+        // int g = (int) (Math.random()*3);
+        // body.addAntibody(new int[]{ (int) (Math.random()*(body.getMN()[0])+1), (int) (Math.random()*body.getMN()[1])+1},
+        // g);
+        // System.out.println("anti gene: "+g);
         body.addVirus();
-        int g = (int) (Math.random()*3);
-        body.addAntibody(new int[]{ (int) (Math.random()*(body.getMN()[0])+1), (int) (Math.random()*body.getMN()[1])+1},
-        g);
-        System.out.println("anti gene: "+g);
         body.run();
     }
 

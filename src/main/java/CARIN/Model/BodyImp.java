@@ -7,7 +7,8 @@ import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class BodyImp implements Body{
+public class BodyImp extends Thread implements Body{
+    Thread thread;
     private static BodyImp body;
     private List<Host>organismInOrder = new CopyOnWriteArrayList<>();
     private int[][] cellLoc;
@@ -27,6 +28,7 @@ public class BodyImp implements Body{
     // input from config file
     // assume m and n is <=10 first
     public BodyImp(GeneticManager gene, ConfigManager config) {
+        thread = new Thread(this);
         this.geneticCodeAnti  = gene.getAntiGene();
         this.geneticCodeVirus = gene.getVirusGene();
         this.m = config.m; this.n = config.n;
@@ -202,6 +204,11 @@ public class BodyImp implements Body{
                         System.out.println("Eval organism " + (organismInOrder.indexOf(each) + 1));
                         System.out.println("Type: "+each.getType());
                         each.eval();
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
             }
