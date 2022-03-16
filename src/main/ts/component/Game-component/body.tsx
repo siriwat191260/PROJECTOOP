@@ -46,7 +46,7 @@ const Body = () => {
                 <img src={zoomin} onClick={() => zoomIn()} className="btn-scale" style={{ width: "100px" }}></img>
                 <img src={zoomout} onClick={() => zoomOut()} className="btn-scale " style={{ width: "100px" }}></img>
                 <img src={speedup} className="btn-scale" style={{ width: "100px" }}></img>
-                <text className='pt-7 text-4xl '>time left: 10 </text>
+                <text className='pt-7 text-4xl '>time left: {api.time} </text>
                 <img src={img} className="btn-scale" 
                 onClick={() => 
                   {Toggle()

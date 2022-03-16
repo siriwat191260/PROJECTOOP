@@ -7,6 +7,7 @@ import java.io.IOException;
 
 public class Game implements Runnable{
     private long timeUnit = 5000;
+    private int count = (int)timeUnit/1000;
     private static Game game;
     private float speed = 1.0f;
     private Thread thread;
@@ -15,6 +16,10 @@ public class Game implements Runnable{
 
     public Game() throws IOException {
         body = BodyImp.createBody();
+    }
+
+    public int getCount(){
+        return count;
     }
 
     // singleton
@@ -40,12 +45,19 @@ public class Game implements Runnable{
 
     private void loop() throws InterruptedException {
         long gameLastTime = System.nanoTime();
-        long evalDeltaTime;
+        long countLastTime = System.nanoTime();
+        long evalDeltaTime, countDeltaTime;
 
         
         while (running) {
             long currentTime = System.nanoTime();
             evalDeltaTime = currentTime - gameLastTime;
+            countDeltaTime = countLastTime - currentTime;
+
+            if (countDeltaTime >= 1000 * 1000000){
+                countLastTime = currentTime;
+                count--;
+            }
 
             if (evalDeltaTime * speed >= timeUnit * 1000000) {
                 gameLastTime = currentTime;

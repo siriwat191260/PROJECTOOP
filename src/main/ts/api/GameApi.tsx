@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { renderApi, updatemn } from '../stores/Cellstore';
 
 const API_URL = 'http://localhost:8080/bodyData'
+const timer_URL = 'http://localhost:8080/countData'
 
 let pause: boolean = false
 
@@ -20,6 +21,7 @@ type BodyData = {
     virusNum: number
     antiHealth: number
     virusHealth: number
+    time : number
 }
 
 export const ApiDataStore = new Store<BodyData>({
@@ -34,7 +36,8 @@ export const ApiDataStore = new Store<BodyData>({
     antiNum: 0,
     virusNum: 0,
     antiHealth: 0,
-    virusHealth: 0
+    virusHealth: 0,
+    time : 0
 })
 
 export const bottonpause = () => {
@@ -42,9 +45,29 @@ export const bottonpause = () => {
     fetch(`/game/pause?p=${pause}`)
 }
 
-export const receiveData = () => {
-    const [data, setData] = useState<BodyData>();
+    
 
+
+export const receiveData = () => {
+        const [data, setData] = useState<BodyData>();
+        const [timerData, setTimerData] = useState<number>();
+     
+    //fetch timer    
+    const fetchCount = async () => {
+            try {
+                const resp = await axios.get<number>(timer_URL)
+                if (timerData != resp.data) {
+                    setTimerData(resp.data)
+                    console.log(resp.data)
+                    ApiDataStore.update(s=>s.time=timerData)
+                }
+
+            } catch (err) {
+                console.log(err)
+            }
+        }
+    
+    //fetch data
     const fetchData = async () => {
         try {
             const resp = await axios.get<BodyData>(API_URL)
@@ -62,6 +85,7 @@ export const receiveData = () => {
     useEffect(() => {
         setInterval(() => {
             fetchData()
+            fetchCount()
         }, (500))
     }, [])
 
@@ -86,8 +110,8 @@ export const receiveData = () => {
 
                     let x = 0;
                     data.order.forEach(() => {
-                        renderApi(data.type[x],data.posX[x],data.posY[x]-1)
-                        x+=1
+                        renderApi(data.type[x], data.posX[x], data.posY[x] - 1)
+                        x += 1
                     });
 
                     console.log("M :" + data.m)
