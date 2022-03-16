@@ -4,6 +4,7 @@ import { ApiDataStore } from "../../api/GameApi";
 import anti1 from '../CSSstyle/image/anti1.png'
 import anti2 from '../CSSstyle/image/anti2.png'
 import anti3 from '../CSSstyle/image/anti3.png'
+import '../CSSstyle/btn.css';
 
 type antibody = {
     anti: string
@@ -34,7 +35,7 @@ const Selectantibutton = ({ anti }: antibody) => {
     }
 
     return (
-        <div className={`${renderselect()} rounded-md w-24 h-24 cursor-pointer justify-self-center`}
+        <div className={`${renderselect()} btn-scale rounded-md w-24 h-24 cursor-pointer justify-self-center`}
             onClick={() => { selectanti(anti) }}
         >
             {render(anti)}
