@@ -184,7 +184,7 @@ public class BodyImp extends Thread implements Body{
         this.organismInOrder.add( new Virus(geneNum, geneticCode, antiHealth, antiAttack, antiGain,location,this));
         cellLoc[location[0]][location[1]] = order;
         int loc = Integer.parseInt((location[0])+String.valueOf(location[1]));
-        System.out.println("Antibody at cell"+ loc+"turned into virus!");
+        System.out.println("Antibody at cell"+ loc+"turned into virus!"+"gene: "+geneNum);
         virusNum++;
         order++;
         /* send add virus output */
@@ -202,10 +202,10 @@ public class BodyImp extends Thread implements Body{
                     }
                     else {
                         System.out.println("Eval organism " + (organismInOrder.indexOf(each) + 1));
-                        System.out.println("Type: "+each.getType());
+                        System.out.println("Type: "+each.getType()+ " gene: "+each.getGeneNum());
                         each.eval();
                         try {
-                            Thread.sleep(1000);
+                            Thread.sleep(500);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
@@ -282,13 +282,13 @@ public class BodyImp extends Thread implements Body{
     }
 
     public static void main(String[] args) throws IOException {
-        BodyImp body = BodyImp.createBody();
-        for (int i=0;i<5;i++){
-            body.addVirus();
-            body.addAntibody(new int[]{ (int) (Math.random()*(body.getMN()[0])+1), (int) (Math.random()*body.getMN()[1])+1},
-                    (int) (Math.random()*3));
-            body.run();
-        }
+//        BodyImp body = BodyImp.createBody();
+//        for (int i=0;i<5;i++){
+//            body.addVirus();
+//            body.addAntibody(new int[]{ (int) (Math.random()*(body.getMN()[0])+1), (int) (Math.random()*body.getMN()[1])+1},
+//                    (int) (Math.random()*3));
+//            body.run();
+//        }
 
     }
 
