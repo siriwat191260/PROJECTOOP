@@ -56,7 +56,7 @@ public class Game implements Runnable{
 
             if (countDeltaTime >= 1000 * 1000000){
                 countLastTime = currentTime;
-                count++;
+                count--;
             }
 
             if (evalDeltaTime * speed >= timeUnit * 1000000) {
