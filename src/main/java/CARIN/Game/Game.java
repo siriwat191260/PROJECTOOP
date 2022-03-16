@@ -1,9 +1,5 @@
 package CARIN.Game;
 
-import CARIN.Event.EventQueue;
-import CARIN.Event.Input.InputEvent;
-import CARIN.Event.Input.addAntibody;
-import CARIN.Event.Input.moveAntibody;
 import CARIN.Model.Body;
 import CARIN.Model.BodyImp;
 import CARIN.Parser.SyntaxError;
@@ -15,7 +11,6 @@ public class Game implements Runnable{
     private Thread thread;
     public boolean running = false;
     public Body body;
-    private EventQueue<InputEvent> inputEventQueue;
 
     public Game() throws IOException {
         body = BodyImp.createBody();
@@ -34,7 +29,6 @@ public class Game implements Runnable{
     @Override
     public void run() {
         thread = new Thread(this);
-        inputEventQueue = new EventQueue<>();
         running = true;
         try {
             loop();
@@ -45,20 +39,12 @@ public class Game implements Runnable{
 
     private void loop() throws InterruptedException {
         long gameLastTime = System.nanoTime();
-        long inputLastTime = System.nanoTime();
-        long evalDeltaTime, inputDeltaTime;
+        long evalDeltaTime;
 
         
         while (running) {
             long currentTime = System.nanoTime();
             evalDeltaTime = currentTime - gameLastTime;
-            inputDeltaTime = currentTime - inputLastTime;
-
-            // waiting for inputs
-            if (inputDeltaTime - inputLastTime >= 30 * 1000000) {
-                inputLastTime = currentTime;
-                receiveInputEvent();
-            }
 
             long timeUnit = 1000;
             if (evalDeltaTime * speed >= timeUnit * 1000000) {
@@ -77,22 +63,6 @@ public class Game implements Runnable{
         g);
         System.out.println("anti gene: "+g);
         body.run();
-    }
-
-    public void addInputEvent(InputEvent event) {
-        inputEventQueue.addEvent(event);
-    }
-
-    // processing move or add antibody
-    private void receiveInputEvent(){
-        if (!inputEventQueue.isEmpty()) {
-            InputEvent input = inputEventQueue.removeEvent();
-            if (input instanceof addAntibody addAntiEvent) {
-                body.addAntibody(addAntiEvent.getLocation(), addAntiEvent.getGeneNum());
-            } else if (input instanceof moveAntibody moveAntiEvent) {
-                body.move(moveAntiEvent.getLocation(), moveAntiEvent.getDestination());
-            }
-        }
     }
 
     public synchronized void start(){
