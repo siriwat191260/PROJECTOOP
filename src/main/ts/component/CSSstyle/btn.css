@@ -1,0 +1,7 @@
+.btn-scale{
+    transition: .2s ease-in-out 0s;
+    }
+    .btn-scale:hover{
+    cursor: pointer;
+    transform: scale(1.25);
+  }
