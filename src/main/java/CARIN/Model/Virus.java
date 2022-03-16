@@ -27,7 +27,7 @@ public class Virus extends HostImp {
 
     @Override
     public void cantMove() {
-        System.out.println("Cannot move a virus!");
+        System.out.println(location[0]+""+location[1]+"Cannot move a virus!");
     }
 
     @Override

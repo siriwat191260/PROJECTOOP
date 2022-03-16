@@ -29,7 +29,7 @@ public class Antibody extends HostImp{
 
     @Override
     public void cantMove() {
-        System.out.println("Cannot move a antibody!");
+        System.out.println(location[0]+""+location[1]+"Cannot move a antibody!");
     }
 
     @Override

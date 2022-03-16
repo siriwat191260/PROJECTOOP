@@ -1,7 +1,6 @@
 package CARIN.Model;
 
 import CARIN.Config.ConfigManager;
-import CARIN.Game.Game;
 import CARIN.GeneticCode.GeneticManager;
 
 import java.io.IOException;
@@ -116,6 +115,10 @@ public class BodyImp implements Body{
         int m = location[0];
         int n = location[1];
         int order = cellLoc[m][n];
+//        for (int i = 1; i <= this.m; i++) {
+//            for (int j = 1; j <= this.n; j++)
+//                System.out.println("order: "+cellLoc[i][j]);
+//        }
         return organismInOrder.get(order-1);
     }
 
@@ -181,6 +184,7 @@ public class BodyImp implements Body{
         int loc = Integer.parseInt((location[0])+String.valueOf(location[1]));
         System.out.println("Antibody at cell"+ loc+"turned into virus!");
         virusNum++;
+        order++;
         /* send add virus output */
         checkGameOver();
     }
@@ -231,23 +235,25 @@ public class BodyImp implements Body{
 
     private void removeOrganism() {
         for (Host each : organismInOrder){
-            if(each.getStatus().equals("death")){
+//            System.out.println(each.getLocation()[0]+""+each.getLocation()[1]+" ");
+            if(each.getStatus().equals("death")) {
                 int m = each.getLocation()[0];
                 int n = each.getLocation()[1];
                 int currentOrder = cellLoc[m][n];
-                if(each.getType()==1)
-                System.out.println("Virus order: "+currentOrder+" is dead" +each.getType());
-                else System.out.println("Antibody order: "+currentOrder+" is dead"+each.getType());
-                for(int i=1; i<=this.m; i++){
-                    for(int j=1; j<=this.n; j++)
-                        if(cellLoc[i][j]>currentOrder)
-                            cellLoc[i][j]-=1;
+                if (each.getType() == 1)
+                    System.out.println(m + "" + n + " Virus order: " + currentOrder + " is dead" + each.getType());
+                else
+                    System.out.println(m + "" + n + "Antibody order: " + currentOrder + " is dead" + each.getType());
+                for (int i = 1; i <= this.m; i++) {
+                    for (int j = 1; j <= this.n; j++)
+                        if (cellLoc[i][j] > currentOrder)
+                            cellLoc[i][j] -= 1;
                 }
                 cellLoc[m][n] = 0;
                 order--;
-                if(each.getType()==2){
-                    addAntiTurnVirus(each.getGeneNum(), each.getGeneticCode(),each.getLocation());
-                }else if(each.getType()==1){
+                if (each.getType() == 2) {
+                    addAntiTurnVirus(each.getGeneNum(), each.getGeneticCode(), each.getLocation());
+                } else if (each.getType() == 1) {
                     addVirusTurnAntiCredit();
                 }
                 organismInOrder.remove(each);
