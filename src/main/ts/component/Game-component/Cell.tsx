@@ -17,15 +17,15 @@ const render = (host: string) => {
   const state = CellStore.useState();
   if (host == 'anti1')
     return (
-      <img src={anti1} onClick={()=>{selectanti('anti1')}}></img>
+      <img src={anti1}></img>
     )
   if (host == 'anti2')
     return (
-      <img src={anti2} onClick={()=>{selectanti('anti2')}}></img>
+      <img src={anti2} ></img>
     )
   if (host == 'anti3')
     return (
-      <img src={anti3} onClick={()=>{selectanti('anti3')}}></img>
+      <img src={anti3} ></img>
     )
     if (host == 'virus1')
     return (
@@ -68,8 +68,8 @@ const Cell = ({ x, y }: celltype) => {
     <td className={`${size()} cursor-pointer`} style={{ borderColor: "transparent", backgroundImage: `url(${block})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }} onClick={() => {
       if (state.log[y][x] == '') {
         selectcell(y, x, state.host)
-        selectanti('')
         fetch_order_location(y, x, state.host)
+        selectanti('')
       }
     }}>
       {render(state.log[y][x])}
