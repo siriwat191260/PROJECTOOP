@@ -14,27 +14,27 @@ type celltype = {
 }
 
 const render = (host: string) => {
-  if (host === 'anti1')
+  if (host == 'anti1')
     return (
       <img src={anti1}></img>
     )
-  if (host === 'anti2')
+  if (host == 'anti2')
     return (
       <img src={anti2}></img>
     )
-  if (host === 'anti3')
+  if (host == 'anti3')
     return (
       <img src={anti3}></img>
     )
-    if (host === 'virus1')
+    if (host == 'virus1')
     return (
       <img src={virus1}></img>
     )
-  if (host === 'virus2')
+  if (host == 'virus2')
     return (
       <img src={virus2}></img>
     )
-  if (host === 'virus3')
+  if (host == 'virus3')
     return (
       <img src={virus3}></img>
     )
