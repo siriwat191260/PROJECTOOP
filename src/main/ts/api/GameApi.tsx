@@ -6,7 +6,6 @@ import { renderApi, updatemn } from '../stores/Cellstore';
 const API_URL = 'http://localhost:8080/bodyData'
 
 let pause: boolean = false
-let set: boolean = true
 
 type BodyData = {
     m: number
@@ -52,10 +51,6 @@ export const receiveData = () => {
             if (data != resp.data) {
                 setData(resp.data)
                 console.log(data)
-                if (set) {
-                    updatemn(data.m, data.n)
-                    set = false
-                }
             }
 
         }
