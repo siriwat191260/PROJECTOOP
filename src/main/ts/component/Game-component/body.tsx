@@ -27,7 +27,7 @@ const Body = () => {
                 <img src={zoomout} onClick={() => zoomOut()} className="" style={{ width: "100px" }}></img>
                 <img src={speedup} className="" style={{ width: "100px" }}></img>
                 <text className='pt-7 text-4xl '>time left: 10 </text>
-                <img src={pause} onClick={() => bottonpause(true)} style={{ width: "100px" }}></img>
+                <img src={pause} onClick={() => bottonpause()} style={{ width: "100px" }}></img>
               </div>
             </div>
 

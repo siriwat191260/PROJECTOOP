@@ -36,8 +36,8 @@ export const ApiDataStore = new Store<BodyData>({
     virusHealth: 0
 })
 
-export const bottonpause = (x:boolean) => {
-    if(x) pause = true
+export const bottonpause = () => {
+    pause = !pause
 }
 export const receiveData = () => {
     const [data, setData] = useState<BodyData>();
