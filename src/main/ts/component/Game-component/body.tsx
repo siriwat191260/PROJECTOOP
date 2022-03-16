@@ -1,18 +1,19 @@
 import React, { Component } from "react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { CellStore } from "../../stores/Cellstore";
+import { ApiDataStore } from "../../api/GameApi";
 import Cell from "./Cell";
 import zoomin from '../CSSstyle/image/zoomin.png'
 import zoomout from '../CSSstyle/image/zoomout.png'
 import speedup from '../CSSstyle/image/speed.png'
 import pause from '../CSSstyle/image/pause.png'
 import Antipicker from "./antipicker";
-import { receiveData } from "../../api/GameApi";
+import { bottonpause } from "../../api/GameApi";
 
 const Body = () => {
   const state = CellStore.useState()
-
-  return (
+  const api = ApiDataStore.useState()
+    return (
     <div>
       <TransformWrapper initialScale={1} initialPositionX={200} initialPositionY={100}>
         {({ zoomIn, zoomOut, ...rest }) => (
@@ -21,13 +22,13 @@ const Body = () => {
             <div className="tools">
               <div className="flex justify-center p-6 space-x-6 ">
                 <div className='pt-6 border-white rounded-full border-8 flex justify-center' style={{ width: "450px", height: "100px", backgroundColor: '#a6d2ff' }}>
-                  <text className='text-4xl'>Antibody credit : 1000 </text>
+                  <text className='text-4xl'>Antibody credit : {api.antiCredit} </text>
                 </div>
-                <img src={zoomin} onClick={() => zoomIn()} className="" style={{ width: "100px" }}></img>
-                <img src={zoomout} onClick={() => zoomOut()} className="" style={{ width: "100px" }}></img>
-                <img src={speedup} className="" style={{ width: "100px" }}></img>
+                <img src={zoomin} onClick={() => zoomIn()} className="cursor-pointer" style={{ width: "100px" }}></img>
+                <img src={zoomout} onClick={() => zoomOut()} className="cursor-pointer " style={{ width: "100px" }}></img>
+                <img src={speedup} className="cursor-pointer" style={{ width: "100px" }}></img>
                 <text className='pt-7 text-4xl '>time left: 10 </text>
-                <img src={pause} onClick={() => receiveData('pause')} style={{ width: "100px" }}></img>
+                <img src={pause} className="cursor-pointer" onClick={() => bottonpause()} style={{ width: "100px" }}></img>
               </div>
             </div>
 

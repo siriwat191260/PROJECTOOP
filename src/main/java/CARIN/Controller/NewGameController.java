@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -23,4 +24,11 @@ public class NewGameController {
             game.run();
             System.out.println("SAWADDEE");
         }
+
+        @RequestMapping("/game/pause")   
+        public void pauseGame(@RequestParam boolean p) throws InterruptedException, IOException{
+            game.pause(p);
+            System.out.println("Pause : "+p);
+        }
+        
 }

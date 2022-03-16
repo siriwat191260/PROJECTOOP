@@ -1,5 +1,6 @@
 import React from "react";
 import { CellStore, selectanti } from "../../stores/Cellstore";
+import { ApiDataStore } from "../../api/GameApi";
 import anti1 from '../CSSstyle/image/anti1.png'
 import anti2 from '../CSSstyle/image/anti2.png'
 import anti3 from '../CSSstyle/image/anti3.png'
@@ -42,9 +43,11 @@ const Selectantibutton = ({ anti }: antibody) => {
 }
 
 const Antipicker = () => {
+    const api = ApiDataStore.useState()
+    
     return (
         <div className="grid grid-flow-row justify-center pt-4 border-white border-8 rounded-lg shadow-lg" style={{ width: "150px", height: "450px", backgroundColor: "#e9b4f1" }}>
-            <text className="text-2xl font-bolds text-center ">Buy antibody cost : 100</text>
+            <text className="text-2xl font-bolds text-center ">Buy antibody cost : {api.antiCreditCost}</text>
             <Selectantibutton anti='anti1' />
             <Selectantibutton anti='anti2' />
             <Selectantibutton anti='anti3' />
