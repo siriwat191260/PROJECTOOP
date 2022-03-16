@@ -115,8 +115,6 @@ public class HostImp implements Host{
 
     @Override
     public void setStatus(String s, Host host) {
-        this.geneticCode = host.getGeneticCode();
-        this.gene = host.getGeneNum();
         status = s;
     }
 
