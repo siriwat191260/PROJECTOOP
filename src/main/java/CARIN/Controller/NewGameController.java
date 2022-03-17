@@ -34,12 +34,12 @@ public class NewGameController {
         @RequestMapping("/game/speedUp")
         public void speedGameUp(@RequestParam boolean spUp){
             System.out.println("Speed : "+spUp);
-            //check here
+            game.setSpeed(spUp);
         }
 
         @RequestMapping("/game/speedDown")
         public void speedGameDown(@RequestParam boolean spDown){
             System.out.println("Speed : "+spDown);
-            //check here
+            game.setSpeed(spDown);
         }
 }

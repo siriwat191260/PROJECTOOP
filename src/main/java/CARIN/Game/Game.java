@@ -28,8 +28,11 @@ public class Game implements Runnable{
         return game;
     }
 
-    public void setSpeed(float speed){
-        this.speed = speed;
+    public void setSpeed(boolean isUp){
+        if(isUp)
+            this.speed += 0.5;
+        else if (!isUp) this.speed -= 0.5;
+        System.out.println(this.speed);
     }
 
     @Override
