@@ -6,7 +6,7 @@ import CARIN.Parser.SyntaxError;
 import java.io.IOException;
 
 public class Game implements Runnable{
-    private long timeUnit = 5000;
+    private long timeUnit = 1000;
     private int count = (int)timeUnit/1000;
     private static Game game;
     private float speed = 1.0f;

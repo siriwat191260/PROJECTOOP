@@ -7,8 +7,8 @@ const API_URL = 'http://localhost:8080/bodyData'
 const timer_URL = 'http://localhost:8080/countData'
 
 let pause: boolean = false
-
-let time : number
+let timeapi: number = 5
+let game: boolean = false
 
 type BodyData = {
     m: number
@@ -25,9 +25,9 @@ type BodyData = {
     virusHealth: number
 }
 
-export const ApiTimerStore  = new Store<number>(
-    time=5
-)
+export const settimeapi = () =>{
+    return timeapi
+}
 
 export const ApiDataStore = new Store<BodyData>({
     m: 0,
@@ -41,7 +41,7 @@ export const ApiDataStore = new Store<BodyData>({
     antiNum: 0,
     virusNum: 0,
     antiHealth: 0,
-    virusHealth: 0,
+    virusHealth: 0
 })
 
 export const bottonpause = () => {
@@ -49,8 +49,23 @@ export const bottonpause = () => {
     fetch(`/game/pause?p=${pause}`)
 }
 
+export const endgame =() => {
+    let ans:number
+    ApiDataStore.update(s => {
+       
+        if(game){
+        if(s.antiNum == 0 && s.virusNum>0 ){
+            ans = 1 
+        }else if(s.virusNum == 0 && s.antiNum>0){
+            ans = 2
+        }
+        }else if(s.antiNum>0 && s.virusNum>0) {
+            game = true
+        }
     
-
+    })
+    return ans
+}
 
 export const receiveData = () => {
         const [data, setData] = useState<BodyData>();
@@ -140,10 +155,8 @@ export const receiveData = () => {
     useEffect(()=>{
         if(pause!=true){
             if(timerData != null){
-                ApiTimerStore.update(s =>{
-                    s = timerData
-                    console.log("Timer : "+ s)
-                })
+                    timeapi = timerData
+                    console.log("Timer : "+ timerData)
             }
         }else {
             console.log("pause")

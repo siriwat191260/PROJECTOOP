@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { CellStore } from "../../stores/Cellstore";
-import { ApiDataStore, ApiTimerStore } from "../../api/GameApi";
+import { ApiDataStore, settimeapi, endgame } from "../../api/GameApi";
 import Cell from "./Cell";
 import zoomin from '../CSSstyle/image/zoomin.png'
 import zoomout from '../CSSstyle/image/zoomout.png'
@@ -11,7 +11,6 @@ import playbt from '../CSSstyle/image/playbt.png'
 import Antipicker from "./antipicker";
 import { bottonpause } from "../../api/GameApi";
 import '../CSSstyle/btn.css';
-
 
 let pauseCheck: boolean = false
 let img = pause
@@ -30,7 +29,16 @@ const Toggle = () =>{
 const Body = () => {
   const state = CellStore.useState()
   const api = ApiDataStore.useState()
-  const timeapi = ApiTimerStore.useState()
+
+  const check =() =>{
+    let end = endgame()
+    if(end == 1){
+      return <text className='pt-2 text-4xl '>Game over   virus win! </text>
+
+    }else if(end == 2){
+      return <text className='pt-2 text-4xl '>Game over   anti win!</text>
+    }
+  }
 
 
     return (
@@ -47,7 +55,7 @@ const Body = () => {
                 <img src={zoomin} onClick={() => zoomIn()} className="btn-scale" style={{ width: "100px" }}></img>
                 <img src={zoomout} onClick={() => zoomOut()} className="btn-scale " style={{ width: "100px" }}></img>
                 <img src={speedup} className="btn-scale" style={{ width: "100px" }}></img>
-                <text className='pt-7 text-4xl '>time left: {timeapi} </text>
+                <text className='pt-7 text-4xl '>time left: {settimeapi} </text>
                 <img src={img} className="btn-scale" 
                 onClick={() => 
                   {Toggle()
@@ -79,6 +87,7 @@ const Body = () => {
           </React.Fragment>
         )}
       </TransformWrapper>
+      {check()}
     </div>
   )
 }
