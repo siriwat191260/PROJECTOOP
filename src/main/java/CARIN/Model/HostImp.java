@@ -312,7 +312,7 @@ public class HostImp implements Host{
                 System.out.println("Wrong direction!");
                 break;
         }
-        System.out.println(ans);
+//        System.out.println(ans);
         return ans;
     }
 }
