@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { CellStore } from "../../stores/Cellstore";
-import { ApiDataStore } from "../../api/GameApi";
+import { ApiDataStore, ApiTimerStore } from "../../api/GameApi";
 import Cell from "./Cell";
 import zoomin from '../CSSstyle/image/zoomin.png'
 import zoomout from '../CSSstyle/image/zoomout.png'
@@ -30,6 +30,7 @@ const Toggle = () =>{
 const Body = () => {
   const state = CellStore.useState()
   const api = ApiDataStore.useState()
+  const timeapi = ApiTimerStore.useState()
 
 
     return (
@@ -46,7 +47,7 @@ const Body = () => {
                 <img src={zoomin} onClick={() => zoomIn()} className="btn-scale" style={{ width: "100px" }}></img>
                 <img src={zoomout} onClick={() => zoomOut()} className="btn-scale " style={{ width: "100px" }}></img>
                 <img src={speedup} className="btn-scale" style={{ width: "100px" }}></img>
-                <text className='pt-7 text-4xl '>time left: {api.time} </text>
+                <text className='pt-7 text-4xl '>time left: {timeapi} </text>
                 <img src={img} className="btn-scale" 
                 onClick={() => 
                   {Toggle()

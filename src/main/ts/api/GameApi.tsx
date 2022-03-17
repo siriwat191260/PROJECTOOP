@@ -8,6 +8,8 @@ const timer_URL = 'http://localhost:8080/countData'
 
 let pause: boolean = false
 
+let time : number
+
 type BodyData = {
     m: number
     n: number
@@ -21,8 +23,11 @@ type BodyData = {
     virusNum: number
     antiHealth: number
     virusHealth: number
-    time : number
 }
+
+export const ApiTimerStore  = new Store<number>(
+    time=5
+)
 
 export const ApiDataStore = new Store<BodyData>({
     m: 0,
@@ -37,7 +42,6 @@ export const ApiDataStore = new Store<BodyData>({
     virusNum: 0,
     antiHealth: 0,
     virusHealth: 0,
-    time : 0
 })
 
 export const bottonpause = () => {
@@ -59,7 +63,6 @@ export const receiveData = () => {
                 if (timerData != resp.data) {
                     setTimerData(resp.data)
                     console.log(resp.data)
-                    ApiDataStore.update(s=>s.time=timerData)
                 }
 
             } catch (err) {
@@ -84,14 +87,15 @@ export const receiveData = () => {
 
     useEffect(() => {
         setInterval(() => {
-            fetchData()
             fetchCount()
+            fetchData()
+            
         }, (500))
     }, [])
 
     useEffect(() => {
         if (pause != true) {
-            if (data != null) {
+            if (data != null ) {
                 ApiDataStore.update(s => {
                     s.m = data.m
                     s.n = data.n
@@ -132,5 +136,21 @@ export const receiveData = () => {
             console.log("pause")
         }
     }, [data])
+
+    useEffect(()=>{
+        if(pause!=true){
+            if(timerData != null){
+                ApiTimerStore.update(s =>{
+                    s = timerData
+                    console.log("Timer : "+ s)
+                })
+            }
+        }else {
+            console.log("pause")
+        }
+    }, [1000])
+
+    
+
 }
 
