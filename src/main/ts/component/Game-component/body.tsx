@@ -45,7 +45,7 @@ const Body = () => {
 
     return (
     <div>
-      <TransformWrapper initialScale={1} initialPositionX={200} initialPositionY={100}>
+      <TransformWrapper initialScale={1} initialPositionX={0} initialPositionY={0}>
         {({ zoomIn, zoomOut, ...rest }) => (
           <React.Fragment>
             {/* bar */}
