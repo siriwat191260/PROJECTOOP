@@ -5,7 +5,8 @@ import { ApiDataStore, settimeapi, endgame } from "../../api/GameApi";
 import Cell from "./Cell";
 import zoomin from '../CSSstyle/image/zoomin.png'
 import zoomout from '../CSSstyle/image/zoomout.png'
-import speedup from '../CSSstyle/image/speed.png'
+import speedup from '../CSSstyle/image/speedup.png'
+import speeddown from '../CSSstyle/image/speeddown.png'
 import pause from '../CSSstyle/image/pause.png'
 import playbt from '../CSSstyle/image/playbt.png'
 import Antipicker from "./antipicker";
@@ -34,10 +35,10 @@ const Body = () => {
   const check =() =>{
     let end = endgame()
     if(end == 1){
-      return <text className='pt-2 text-4xl '>Game over   virus win! </text>
+      return <text className='pt-2 text-4xl pl-10'>Game over   virus win! </text>
 
     }else if(end == 2){
-      return <text className='pt-2 text-4xl '>Game over   anti win!</text>
+      return <text className='pt-2 text-4xl pl-10'>Game over   antibody win!</text>
     }
   }
 
@@ -55,7 +56,12 @@ const Body = () => {
                 </div>
                 <img src={zoomin} onClick={() => zoomIn()} className="btn-scale" style={{ width: "100px" }}></img>
                 <img src={zoomout} onClick={() => zoomOut()} className="btn-scale " style={{ width: "100px" }}></img>
+<<<<<<< HEAD
                 <img src={speedup} onClick={()=> buttonspeedUp()} className="btn-scale" style={{ width: "100px" }}></img>
+=======
+                <img src={speeddown} className="btn-scale" style={{ width: "100px" }}></img>
+                <img src={speedup} className="btn-scale" style={{ width: "100px" }}></img>
+>>>>>>> 49daf97a004cc49bf45c4bc5994f2d28522aaf1c
                 <text className='pt-7 text-4xl '>time left: {settimeapi} </text>
                 <img src={img} className="btn-scale" 
                 onClick={() => 
