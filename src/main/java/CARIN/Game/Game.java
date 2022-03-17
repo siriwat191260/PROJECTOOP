@@ -47,12 +47,14 @@ public class Game implements Runnable{
         long gameLastTime = System.nanoTime();
         long countLastTime = System.nanoTime();
         long evalDeltaTime, countDeltaTime;
+        
 
         
         while (running) {
             long currentTime = System.nanoTime();
             evalDeltaTime = currentTime - gameLastTime;
-            countDeltaTime = countLastTime - currentTime;
+            countDeltaTime = currentTime - countLastTime;
+            
 
             if (countDeltaTime >= 1000 * 1000000){
                 countLastTime = currentTime;
@@ -75,6 +77,7 @@ public class Game implements Runnable{
 //         System.out.println("anti gene: "+g);
         body.addVirus();
         body.run();
+        count = (int)timeUnit/1000;
     }
 
     public synchronized void start(){
