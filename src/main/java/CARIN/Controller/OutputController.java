@@ -16,11 +16,6 @@ public class OutputController {
         return new BodyData();
     }
 
-    @CrossOrigin
-    @GetMapping("/countData")
-    public CountData sendCount() throws IOException {
-        System.out.println("==== fetch Count ====");
-        return new CountData();
-    }
+
 
 }

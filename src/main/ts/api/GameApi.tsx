@@ -9,6 +9,7 @@ const timer_URL = 'http://localhost:8080/countData'
 let pause: boolean = false
 let timeapi: number = 5
 let game: boolean = false
+let speed: boolean = false
 
 type BodyData = {
     m: number
@@ -43,6 +44,16 @@ export const ApiDataStore = new Store<BodyData>({
     antiHealth: 0,
     virusHealth: 0
 })
+
+export const buttonspeedUp = () =>{
+    speed = true
+    fetch(`/game/speed?sp=${speed}`)
+}
+
+export const buttonspeedDown = () =>{
+    speed = false
+    fetch(`/game/speed?sp=${speed}`)
+}
 
 export const bottonpause = () => {
     pause = !pause

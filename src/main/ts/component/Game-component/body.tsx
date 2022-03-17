@@ -11,9 +11,11 @@ import pause from '../CSSstyle/image/pause.png'
 import playbt from '../CSSstyle/image/playbt.png'
 import Antipicker from "./antipicker";
 import { bottonpause } from "../../api/GameApi";
+import { buttonspeedUp , buttonspeedDown } from "../../api/GameApi";
 import '../CSSstyle/btn.css';
 
 let pauseCheck: boolean = false
+let speedCheck: boolean = false
 let img = pause
 
 const Toggle = () =>{
@@ -25,7 +27,6 @@ const Toggle = () =>{
     pauseCheck = false
   }
 }
-
 
 const Body = () => {
   const state = CellStore.useState()
@@ -55,8 +56,12 @@ const Body = () => {
                 </div>
                 <img src={zoomin} onClick={() => zoomIn()} className="btn-scale" style={{ width: "100px" }}></img>
                 <img src={zoomout} onClick={() => zoomOut()} className="btn-scale " style={{ width: "100px" }}></img>
+<<<<<<< HEAD
+                <img src={speedup} onClick={()=> buttonspeedUp()} className="btn-scale" style={{ width: "100px" }}></img>
+=======
                 <img src={speeddown} className="btn-scale" style={{ width: "100px" }}></img>
                 <img src={speedup} className="btn-scale" style={{ width: "100px" }}></img>
+>>>>>>> 49daf97a004cc49bf45c4bc5994f2d28522aaf1c
                 <text className='pt-7 text-4xl '>time left: {settimeapi} </text>
                 <img src={img} className="btn-scale" 
                 onClick={() => 
