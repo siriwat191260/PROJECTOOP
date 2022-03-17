@@ -47,12 +47,12 @@ export const ApiDataStore = new Store<BodyData>({
 
 export const buttonspeedUp = () =>{
     speed = true
-    fetch(`/game/speed?sp=${speed}`)
+    fetch(`/game/speedUp?spUp=${speed}`)
 }
 
 export const buttonspeedDown = () =>{
     speed = false
-    fetch(`/game/speed?sp=${speed}`)
+    fetch(`/game/speedDown?spDown=${speed}`)
 }
 
 export const bottonpause = () => {

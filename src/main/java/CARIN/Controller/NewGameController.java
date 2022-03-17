@@ -31,9 +31,15 @@ public class NewGameController {
             System.out.println("Pause : "+p);
         }
         
-        @RequestMapping("/game/speed")
-        public void speedGame(@RequestParam boolean sp){
-            System.out.println("Speed : "+sp);
+        @RequestMapping("/game/speedUp")
+        public void speedGameUp(@RequestParam boolean spUp){
+            System.out.println("Speed : "+spUp);
+            //check here
+        }
+
+        @RequestMapping("/game/speedDown")
+        public void speedGameDown(@RequestParam boolean spDown){
+            System.out.println("Speed : "+spDown);
             //check here
         }
 }

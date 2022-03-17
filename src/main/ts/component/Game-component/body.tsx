@@ -56,12 +56,8 @@ const Body = () => {
                 </div>
                 <img src={zoomin} onClick={() => zoomIn()} className="btn-scale" style={{ width: "100px" }}></img>
                 <img src={zoomout} onClick={() => zoomOut()} className="btn-scale " style={{ width: "100px" }}></img>
-<<<<<<< HEAD
-                <img src={speedup} onClick={()=> buttonspeedUp()} className="btn-scale" style={{ width: "100px" }}></img>
-=======
-                <img src={speeddown} className="btn-scale" style={{ width: "100px" }}></img>
-                <img src={speedup} className="btn-scale" style={{ width: "100px" }}></img>
->>>>>>> 49daf97a004cc49bf45c4bc5994f2d28522aaf1c
+                <img src={speeddown} onClick={()=>{buttonspeedDown()}} className="btn-scale" style={{ width: "100px" }}></img>
+                <img src={speedup} onClick={()=>{buttonspeedUp()}} className="btn-scale" style={{ width: "100px" }}></img>
                 <text className='pt-7 text-4xl '>time left: {settimeapi} </text>
                 <img src={img} className="btn-scale" 
                 onClick={() => 
