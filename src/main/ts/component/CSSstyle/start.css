@@ -1,30 +1,32 @@
-.btn-float-right-bottom{
+.btn-float-right-bottom {
     float: right;
     position: absolute;
-    right:    450px;
-    bottom:   70px;
-    }
+    right: 650px;
+    bottom: 150px;
+}
 
-.btnscale{
-        transition: .2s ease-in-out 0s;
-        }
-        .btn-scale:hover{
-        cursor: pointer;
-        transform: scale(1.25);
-      }    
-    
-.bg-main{
+.btnscale {
+    transition: .2s ease-in-out 0s;
+}
+
+.btn-scale:hover {
+    cursor: pointer;
+    transform: scale(1.25);
+}
+
+.bg-main {
     background-image: url('./image/main.jpg');
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     background-position: center;
-    width: 100%;
+    background-size: cover;
+    width: 100vw;
     height: 100vh;
 }
 
-.bg-white{
+.bg-white {
     background-color: white;
 }
 
-.bg-body{
-    background-color:#FFD7B5;
-  }
+.bg-body {
+    background-color: #FFD7B5;
+}

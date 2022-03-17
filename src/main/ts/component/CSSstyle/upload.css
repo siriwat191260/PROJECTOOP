@@ -2,67 +2,67 @@
     float: left;
     width: 33.33%;
     padding: 5px;
-  }
-  
-  /* Clearfix (clear floats) */
-  .row::after {
+}
+
+
+/* Clearfix (clear floats) */
+
+.row::after {
     content: "";
     clear: both;
     display: table;
-  }
-
-
-  .flex-gap {
-display: inline-flex;
-flex-wrap: wrap;
-  }
-
-.flex-gap > div {
-margin: 10px;
 }
 
-.float-right-top{
-      float: right;
-      position: absolute;
-      right:250px;
-      top : 100px;
-      }
-
-.float-left-tom{
-      float: left;
-      position: absolute;
-      left:100px;
-      top : 100px;
-      } 
-
-.float-right-bottom-btn{
-        float: right;
-        position: absolute;
-        right:130px;
-        bottom: 20px;
-        } 
-
-       
-
-.bg-body{
-  background-color:#FFD7B5;
+.flex-gap {
+    display: inline-flex;
+    flex-wrap: wrap;
 }
 
- .btnscale{
-  transition: .2s ease-in-out 0s;
-  }
-  .btn-scale:hover{
-  cursor: pointer;
-  transform: scale(1.25);
+.flex-gap>div {
+    margin: 10px;
+}
+
+.float-right-top {
+    float: right;
+    position: absolute;
+    right: 250px;
+    top: 100px;
+}
+
+.float-left-tom {
+    float: left;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+}
+
+.float-right-bottom-btn {
+    float: right;
+    position: absolute;
+    right: 110px;
+    bottom: 330px;
+}
+
+.bg-body {
+    background-color: #ffadad;
+}
+
+.btnscale {
+    transition: .2s ease-in-out 0s;
+}
+
+.btn-scale:hover {
+    cursor: pointer;
+    transform: scale(1.25);
 }
 
 .row:after {
-  content: "";
-  display: table;
-  clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .column {
-  float: left;
-  padding: 10px;
+    float: left;
+    padding: 10px;
 }
