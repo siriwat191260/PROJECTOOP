@@ -6,7 +6,7 @@ import CARIN.Parser.SyntaxError;
 import java.io.IOException;
 
 public class Game implements Runnable{
-    private long timeUnit = 1000;
+    private long timeUnit = 7000;
     private int count = (int)timeUnit/1000;
     private static Game game;
     private float speed = 1.0f;
@@ -29,9 +29,15 @@ public class Game implements Runnable{
     }
 
     public void setSpeed(boolean isUp){
-        if(isUp)
-            this.speed += 0.5;
-        else if (!isUp) this.speed -= 0.5;
+        if(isUp){
+            if(this.speed < 2.0f)
+                this.speed += 0.5f;
+        }else if (!isUp) {
+            if(this.speed > 0)
+                this.speed -= 0.5f;
+                if(this.speed == 0)
+                    this.speed = 0.5f;
+        }
         System.out.println(this.speed);
     }
 
